@@ -1,0 +1,364 @@
+﻿@{
+
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="format-detection" content="telephone=no">
+    <title>电子联盟方案</title>
+    <link href="@Url.Content("~/gxfa/statics/css/bootstrap.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/font-awesome.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/swiper.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/ectouch.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/photoswipe.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/style.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/basic.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/mobiscroll.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/mobiscroll_date.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/gxfa/statics/js/mobiscroll_date.js")" charset="gb2312"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/mobiscroll.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery-2.1.4.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
+
+    <link href="@Url.Content("~/gxfa/statics/css/search.css")" rel="stylesheet" />
+</head>
+<body style="max-width:640px;">
+    <div class="con m-b7 new-maxbox">
+        <div class="ect-bg">
+            <header class="ect-header ect-margin-tb ect-margin-lr text-center ect-bg icon-write">
+                <a href="javascript:history.go(-1)" class="pull-left ect-icon ect-icon1 ect-icon-history"></a>
+                <span>发布任务</span>
+                <a href="javascript:;" onclick="openMune()" class="pull-right ect-icon ect-icon1 ect-icon-mune icon-write"></a>
+            </header>
+            <nav class="ect-nav ect-nav-list" style="display:none;">
+                <ul class="ect-diaplay-box text-center">
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxIndex","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-home"></i>首页</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxFl","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-cate"></i>分类</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxPlan","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-flow"></i>发布任务</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxUser","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-user"></i>用户中心</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <ul class="choose-task">
+            <li id="falbAll"><p class="left">应用领域</p><p class="right" myvalue="" mytitle="" id="firTitle">全部</p><img src="@Url.Content("~/gxfa/images/downarrows.png")" /></li>
+            <div class="falb-kind-list" id="falbKindList">
+                <div class="hblank10"></div>
+                <ul>
+                    <li id="177">智能穿戴 </li>
+                    <li id="21">安防监控</li>
+                    <li id="30">便携产品</li>
+                    <li id="91">工业电子 </li>
+                    <li id="41">汽车电子</li>
+                    <li id="48">测试设备 </li>
+                    <li id="58">电源电池 </li>
+                    <li id="118">机器人无人机 </li>
+                    <li id="129">通信广电 </li>
+                    <li id="6">游戏玩具</li>
+                    <li id="142">医疗健康 </li>
+                    <li id="154">软件开发</li>
+                    <li id="5">智能家居</li>
+                    <li id="163">智能家电 </li>
+                    <li id="178">照明显示 </li>
+                    <li id="361">工业设计</li>
+                    <li id="194">其他</li>
+                </ul>
+            </div>
+            <li id="secBut"><p class="left">技术分类</p><p class="right" myvalue="" mytitle="" id="secTitle">全部</p><img src="@Url.Content("~/gxfa/images/downarrows.png")" /></li>
+            <div class="falb-kind-list" id="falbSeckind">
+                <div class="hblank10"></div>
+                <ul>
+                    <li id="11">微处理器</li>
+                    <li id="12">电源</li>
+                    <li id="13">接口</li>
+                    <li id="14">储存</li>
+                    <li id="293">射频</li>
+                    <li id="301">控制</li>
+                    <li id="305">传感</li>
+                    <li id="313" style="font-size: 13px;">电路保护与EMC</li>
+                    <li id="326">人机交互</li>
+                    <li id="343">软件开发</li>
+                    <li id="365">工业设计</li>
+                    <li id="342">其他</li>
+                </ul>
+            </div>
+        </ul>
+        <div class="hblank10"></div>
+        <h4 class="title" style="width: 95%;height: 40px;line-height: 40px;text-align: left;margin: 0 auto;">任务名称</h4>
+        <input class="rw-input" style="width: 95%;border: 10px solid #ccc;height: 50px;outline: 0;margin: 0 auto;text-align: left;text-indent: 10px;line-height: 50px;" placeholder="请填写任务名称">
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="blank10"></div>
+        <div class="hblank10"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <h4 class="title" style="width: 95%;height: 40px;line-height: 40px;text-align: left;margin: 0 auto;">截止时间 <input type="text" name="USER_AGE" id="USER_AGE" value="" readonly="" class="overdate" placeholder="请填写截止时间"></h4>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10"></div>
+        <h4 class="title" style="width: 95%;height: 40px;line-height: 40px;text-align: left;margin: 0 auto;">需求描述</h4>
+        <p class="text" style="width:95%; margin:0 auto; border:1px solid #ccc;height:150px;  margin:0 auto;text-align:left;"><textarea id="myckeditor" style="margin:10px; border:0;outline:0; width:95% ; height:90%" placeholder="请填写需求"></textarea></p>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="blank10"></div>
+        <div class="hblank10"></div>
+        <div class="blank10"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="phone-box">
+            <input type="text" class="phone-num" placeholder="请输入手机号码">
+            <p class="get-code">获取验证码</p>
+        </div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="blank10"></div>
+        <div class="hblank10"></div>
+        <div class="blank10"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <input type="text" class="de-code" placeholder="请输入验证码">
+        <input type="hidden" id="formtype" value="" class="">
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="blank10"></div>
+        <div class="hblank10"></div>
+        <div class="fbbox">
+            <h4 class="left" style="width: 95%;height: 40px;line-height: 40px;text-align: left;margin: 0 auto;">价格</h4>
+            <p class="middle"><input type="text" style="width: 65%;height: 30px;border-radius: 5px;border: 1px solid #e3e3e3;background: #fff;-webkit-appearance: none;" id="myprices" value=""> 元</p>
+        </div>
+        <div class="blank10"></div>
+        <div class="blank10"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10"></div>
+        <div class="box-flex" style="background-color:#eee;height:40px">
+            <a href="@Url.Action("GxfaWxCheck","Home")">
+                <div class="fa-more" style="line-height:50px;height:50px; background-color:#1cbb7f"><h4 style="line-height:40px">提      交</h4></div>
+            </a>
+        </div>
+        <div class="hblank10"></div>
+    </div>
+
+    <footer class="footer-nav dis-box">
+        <a href="@Url.Action("GxfaWxIndex","Home")" class="box-flex nav-list">
+            <i class="nav-box i-home"></i><span>首页</span>
+        </a>
+        <a href="@Url.Action("GxfaWxFl","Home")" class="box-flex nav-list">
+            <i class="nav-box i-cate"></i><span>分类</span>
+        </a>
+        <a href="@Url.Action("GxfaWxPlan","Home")" class="box-flex  nav-list  active">
+            <i class="nav-box i-flow"></i><span>发布任务</span>
+        </a>
+        <a href="@Url.Action("GxfaWxUser","Home")" class="box-flex nav-list">
+            <i class="nav-box i-user"></i><span>我的</span>
+        </a>
+    </footer>
+    <script type="text/javascript">
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+        function clearHistroy() {
+            setCookie('ECS[keywords]', '', -1);
+            document.getElementById("search_histroy").style.visibility = "hidden";
+        }
+    </script>
+    <script src="@Url.Content("~/assets/js/jquery-1.10.2.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.json.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/common.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.more.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/utils.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/swiper.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/simple-inheritance.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/code-photoswipe-1.0.11.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/bootstrap.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.scrollUp.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/validform.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/shopping_flow.js")"></script>
+
+    <script language="javascript">
+        var handler = function (e) { //禁止浏览器默认行为
+            e.preventDefault();
+        };
+        /*banner滚动图片*/
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 1,
+            loop: true,
+            autoplay: 2000
+        });
+        /*弹出评论层并隐藏其他层*/
+        function openSearch() {
+            document.addEventListener("touchmove", handler, false);
+            $("body").addClass("show-search-div");
+            $(".search-div").css("z-index", "4999");
+            $("input[name='keywords']").focus();
+        }
+    </script>
+    <script>
+        $('#search-kind').click(function () {
+            $("#search-kind ul").toggle();
+        })
+        $("#search-kind ul li").click(function () {
+            var v = $(this).html();
+            $("#search-kind span").html(v);
+        });
+
+
+        $("#task-list li").click(function () {
+            $(this).siblings().removeClass("on");
+            $(this).addClass("on");
+        })
+
+        //右上角弹框
+        $("#searchMore").click(function () {
+            $("#falbSave").toggle();
+        });
+
+        //一级列表选择
+        $("#falbAll").click(function () {
+            $("#falbKindList").slideToggle();
+            $(this).children(".pic").toggleClass("xz");
+        });
+
+        $("#falbKindList li").click(function () {
+            var val = $(this).text();
+            var pid = $(this).attr('id');
+            $(this).parent().parent().hide();
+            $("#firTitle").html(val);
+            $("#firTitle").attr("mytitle", val);
+            $("#firTitle").attr('myvalue', pid);
+            $("#falbAll .pic").toggleClass("xz");
+
+        });
+
+
+        //二级菜单选择
+        $("#secBut").click(function () {
+            $("#falbSeckind").slideToggle();
+            $(this).children(".pic").toggleClass("xz");
+        });
+
+        $("#falbSeckind li").click(function () {
+            var val = $(this).text();
+            var secButpid = $(this).attr('id');
+            $(this).parent().parent().hide();
+            $("#secTitle").html(val);
+            $("#secTitle").attr("myvalue", secButpid);
+            $("#secTitle").attr("mytitle", val);
+            $("#secBut .pic").toggleClass("xz");
+
+
+        });
+
+
+        //上传图片
+        $("#uploadPic li p").click(function () {
+
+            var idName = $(this).attr("id");
+            $("#" + idName + "But").click();
+        })
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var currYear = (new Date()).getFullYear();
+            var opt = {};
+            opt.date = { preset: 'date' };
+            opt.datetime = { preset: 'datetime' };
+            opt.time = { preset: 'time' };
+            opt.default = {
+                theme: 'android-ics light', //皮肤样式
+                display: 'modal', //显示方式
+                mode: 'scroller', //日期选择模式
+                dateFormat: 'yyyy-mm-dd',
+                lang: 'zh',
+                showNow: true,
+                nowText: "今天",
+                startYear: currYear - 50, //开始年份
+                endYear: currYear + 10 //结束年份
+            };
+
+            $("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
+
+        });
+    </script>
+    <style>
+        .overdate {
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            float: right;
+            text-align: left;
+            margin-right: 20px;
+            border: none;
+            font-family: "Microsoft Yahei";
+            font-size: 15px;
+            color: #333;
+        }
+
+        .phone-box {
+            width: 95%;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            height: 60px;
+        }
+
+            .phone-box .phone-num {
+                width: 60%;
+                float: left;
+                height: 50px;
+                margin: 5px;
+                border: 0;
+                outline: none;
+                line-height: 50px;
+            }
+
+            .phone-box p {
+                width: 30%;
+                float: right;
+                margin: 5px;
+                height: 50px;
+                line-height: 50px;
+                color: #fff;
+                background: #1CBB7F;
+                font-size: 1em;
+                text-align: center;
+                cursor: pointer;
+            }
+
+        .de-code {
+            width: 95%;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            height: 60px;
+            text-align: left;
+            text-indent: 5px;
+        }
+    </style>
+
+
+</body>
+</html>

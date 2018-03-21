@@ -1,0 +1,314 @@
+﻿@{
+
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="format-detection" content="telephone=no">
+    <title>电子联盟方案</title>
+    <link href="@Url.Content("~/gxfa/statics/css/bootstrap.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/font-awesome.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/swiper.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/ectouch.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/photoswipe.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/style.css")" rel="stylesheet" />
+
+    @*<link href="~/gxfa/statics/css/basic.css" rel="stylesheet" />*@
+
+    <link href="@Url.Content("~/gxfa/statics/css/mobiscroll.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/mobiscroll_date.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/gxfa/statics/js/mobiscroll_date.js")" charset="gb2312"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/mobiscroll.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery-2.1.4.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
+
+    <link href="@Url.Content("~/gxfa/statics/css/search.css")" rel="stylesheet" />
+</head>
+<body style="max-width:640px;">
+    <div class="con m-b7 new-maxbox">
+        <div class="ect-bg">
+            <header class="ect-header ect-margin-tb ect-margin-lr text-center ect-bg icon-write">
+                <a href="javascript:history.go(-1)" class="pull-left ect-icon ect-icon1 ect-icon-history"></a>
+                <span>任务详情</span>
+                <a href="javascript:;" onclick="openMune()" class="pull-right ect-icon ect-icon1 ect-icon-mune icon-write"></a>
+            </header>
+            <nav class="ect-nav ect-nav-list" style="display:none;">
+                <ul class="ect-diaplay-box text-center">
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxIndex","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-home"></i>首页</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxFl","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-cate"></i>分类</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxPlan","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-flow"></i>发布任务</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxUser","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-user"></i>用户中心</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="task" style="width: 100%;float: left;background-color:white">
+            <div class="middle" style="width: 60%;float: left; margin-left: 10px; text-align: left;">
+                <h2 style="margin-left:10px">汽车示波器</h2>
+                <p style="color:red;margin-left:20px;line-height:30px;font-size:20px">￥2000.00</p>
+            </div>
+            <div class="right" style="height: 25px;float: right;background: #1cbb7f;color: #fff;width: 60px;line-height: 25px; border-radius: 5px; text-align: center; margin-right: 10px;margin-top: 20px;">竞标中</div>
+            <ul class="list" style="width: 100%; float: left; height: 20px;">
+                <li style="width: 33%;float: left; line-height: 20px; text-align: center; color: #999;">热度：390</li>
+                <li style="width: 33%;float: left; line-height: 20px; text-align: center; color: #999;">申请：1</li>
+                <li style="width: 33%;float: left; line-height: 20px; text-align: center; color: #999;">收藏：0</li>
+            </ul>
+        </div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="rw-box" style="background-color:white">
+            <div class="rw-box" style="width: 100%;padding-top: 10px;height: 50px;padding-bottom: 10px;text-align: left;background-color:white">
+                @*<div class="user-head-img-box">
+                        <img src="http://wx.qlogo.cn/mmopen/vi_32/neHiaiasQGVWcRxYnASFfnsjBRQUTyygE7fWibt4zldx6Pzibe7XBwibn8lBEt5FzazanvMwCcVheVzkmQCw6kQAZPg/0" />
+                    </div>*@
+                <img src="@Url.Content("~/gxfa/statics/img/touxiang.jpg")" class="userpic" style="width: 50px;float: left;height: 50px;border-radius: 25px;margin-left:10px;background-color:white">
+                <!-- <img src="http://kb.cntronics.com" class="userpic"> -->
+
+                <div class="middle" style="width: 60%;float: left; margin-left: 10px; text-align: left;background-color:white">
+                    <h2 style="width: 100%;text-align: left;font-size: 30px;font-weight: normal;background-color:white">社会码农</h2>
+                    <p style="background-color:white">云南昆明</p>
+                </div>
+                <div class="right" style="height: 25px;float: right;;color: #fff;width: 60px;line-height: 25px; border-radius: 5px; text-align: center; margin-right: 10px;margin-top: 20px;background-color:white">
+                    <img src="@Url.Content("~/gxfa/images/20160920008_hui.jpg")" style="background-color:white" />
+                    @*<img src="/Public/images/20160920008_hui.jpg" class="image">
+                        <img src="/Public/images/20160920009_hui.jpg" class="image">
+                        <img src="/Public/images/20160920010_hui.jpg" class="image">
+                        <img src="/Public/images/20160920011.jpg" class="image">*@
+                </div>
+            </div>
+        </div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="task" style="width: 100%;float: left;background-color:white">
+            <div class="rw-title" style="background-color :white;font-size:30px;margin-left:10px">需求详情</div>
+            <ul class="rwsx" style="background-color:white;margin-left:10px;font-size:15px">
+                <li>发布时间：2017-11-25 00:09:15</li>
+                <li>报名截止时间：2017-12-28 00:00:00（剩余<span style="color:#ff0000;">20</span>天）</li>
+                <li>应用领域：测试设备 </li>
+                <li>交付方式：未知</li>
+            </ul>
+        </div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="task" style="width: 100%;float: left;background-color:white">
+            <div class="rw-title" style="background-color :white;font-size:30px;margin-left:10px">需求描述</div>
+            <div class="xqms" style="margin:10px; line-height:25px; text-align:left;">
+                <p style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">开发汽车示波器</span><span style="margin:0px;padding:0px;font-family:&quot;list-style:none;"><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span></span></span>
+                </p>
+                <p style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;" data-filtered="filtered">
+                    <span style="margin:0px;padding:0px;font-family:SimSun;list-style:none;" data-filtered="filtered"></span>
+                </p>
+                <p class="content" style="margin:0cm 0cm 0pt;padding:0cm;font-family:tahoma, arial, 宋体, sans-serif;list-style:none;color:#333333;font-size:14px;white-space:normal;width:750px;overflow:hidden;background-color:#FFFFFF;border-width:medium;border-style:none;border-color:initial;line-height:18.75pt;position:relative !important;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;list-style:none;font-size:24px;">
+                        <b style="margin:0px;padding:0px;font-family:&quot;list-style:none;">
+                            <span style="margin:0px;padding:0px;font-family:宋体;list-style:none;color:#AA2950;">
+                                <br style="margin:0px;padding:0px;font-family:&quot;list-style:none;" data-filtered="filtered">
+                            </span>
+                        </b>
+                    </span>
+                </p>
+                <p class="MsoNormal" style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;"><strong style="margin:0px;padding:0px;font-family:&quot;list-style:none;">主要功能：</strong></span>
+                </p>
+                <p class="MsoNormal" style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;"><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">1. 通过波形测试检测汽车元器件</span></span>
+                </p>
+                <p class="MsoNormal" style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;list-style:none;font-size:14px;color:#000000;"><span style="margin:0px;padding:0px;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;list-style:none;color:#000000;"><span style="font-family:&quot;font-size:14px;">2. 且带</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">OBD功能</span></span></span>
+                </p>
+                <p class="MsoNormal" style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <br data-filtered="filtered">
+                </p>
+                <p class="MsoNormal" style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <br data-filtered="filtered">
+                </p>
+                <p class="MsoNormal" style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;"><strong style="margin:0px;padding:0px;font-family:&quot;list-style:none;">特点：</strong></span>
+                </p>
+                <p class="MsoNormal" style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">1.&nbsp;</span><span style="margin:0px;padding:0px;font-family:Verdana, Arial, Helvetica, sans-serif;list-style:none;letter-spacing:1px;text-align:justify;"><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;color:#000000;list-style:none;"><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">可测试空气流量计数字式高/低频/模拟式，进气压力数字/模拟式，节气</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">门位置开关/模拟式，爆震，温度，防抱死系统车速传感器，车速传感器，</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">霍尔/光电/磁电式，曲轴位置霍尔/光电/磁电式，凸轮轴位置霍尔/光电/，</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">磁电式，EGR控制阀传感器，喷油嘴饱和开关/峰值保持/PNP型,怠速控制</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">电磁阀，怠速电机，混合器控制阀，混合比控制阀，碳罐清晰电磁阀，涡</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">轮增压电磁阀，EGR控制阀，ABS电磁阀，变身换挡控制电磁阀</span></span><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;color:#000000;list-style:none;"></span></span><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;color:#000000;list-style:none;"></span></span><o:p style="margin:0px;padding:0px;font-family:&quot;list-style:none;"></o:p>
+                </p>
+                <p class="MsoNormal" style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">2.&nbsp;&nbsp;</span><span style="margin:0px;padding:0px;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;list-style:none;color:#000000;"><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">通过蓝牙连接，OBD模块自行</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">测试识别汽车的通讯协议，读取车辆</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">VIN码，然后进入实时数据的测</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">量界面。界面上会显示蓝牙状</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">态、OBD连接状态、车辆ECU连接</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">状态，及汽车模块的型号、车辆的</span><span style="color:#333333;font-family:&quot;letter-spacing:1px;text-align:justify;white-space:normal;background-color:#FFFFFF;font-size:14px;">通讯协议名称、以及车辆的VIN码</span></span><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;color:#000000;list-style:none;"></span></span><o:p style="margin:0px;padding:0px;font-family:&quot;list-style:none;"></o:p>
+                </p>
+                <p class="MsoNormal" style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <br data-filtered="filtered">
+                </p>
+                <p class="MsoNormal" style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <br data-filtered="filtered">
+                </p>
+                <span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;" data-filtered="filtered"></span><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;white-space:normal;background-color:#FFFFFF;list-style:none;color:#333333;" data-filtered="filtered"></span><span style="color:#333333;font-family:&quot;font-size:14px;white-space:normal;background-color:#FFFFFF;" data-filtered="filtered"></span>
+                <p class="content" style="margin:0cm 0cm 0pt;padding:0cm;font-family:tahoma, arial, 宋体, sans-serif;list-style:none;color:#333333;font-size:14px;white-space:normal;width:750px;overflow:hidden;background-color:#FFFFFF;border-width:medium;border-style:none;border-color:initial;line-height:18.75pt;position:relative !important;">
+                    <span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;" data-filtered="filtered"></span>
+                </p>
+                <p class="content" style="margin:0cm 0cm 0pt;padding:0cm;font-family:tahoma, arial, 宋体, sans-serif;list-style:none;color:#333333;font-size:14px;white-space:normal;width:750px;overflow:hidden;background-color:#FFFFFF;border-width:medium;border-style:none;border-color:initial;line-height:18.75pt;position:relative !important;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;list-style:none;color:#686868;font-size:14px;"><strong>参数：</strong></span>
+                </p>
+                <p class="content" style="margin:0cm 0cm 0pt;padding:0cm;font-family:tahoma, arial, 宋体, sans-serif;list-style:none;color:#333333;font-size:14px;white-space:normal;width:750px;overflow:hidden;background-color:#FFFFFF;border-width:medium;border-style:none;border-color:initial;line-height:18.75pt;position:relative !important;">
+                    <span style="margin:0px;padding:0px;font-family:宋体;list-style:none;color:#686868;font-size:20px;">
+                        <span style="color:#333333;font-family:&quot;white-space:normal;background-color:#FFFFFF;font-size:14px;">带宽（-3dB）: 5MHz</span><br style="color:#333333;font-family:Verdana, Arial, Helvetica, sans-serif;white-space:normal;background-color:#FFFFFF;" data-filtered="filtered">
+                        <span style="color:#333333;font-family:&quot;white-space:normal;background-color:#FFFFFF;font-size:14px;">样率: 最大实时采样率100MSa/S</span><br style="color:#333333;font-family:Verdana, Arial, Helvetica, sans-serif;white-space:normal;background-color:#FFFFFF;" data-filtered="filtered">
+                        <span style="color:#333333;font-family:&quot;white-space:normal;background-color:#FFFFFF;font-size:14px;">通道: 2</span><br style="color:#333333;font-family:Verdana, Arial, Helvetica, sans-serif;white-space:normal;background-color:#FFFFFF;" data-filtered="filtered">
+                        <span style="color:#333333;font-family:&quot;white-space:normal;background-color:#FFFFFF;font-size:14px;">耦合: 交流、直流</span><br style="color:#333333;font-family:Verdana, Arial, Helvetica, sans-serif;white-space:normal;background-color:#FFFFFF;" data-filtered="filtered">
+                        <span style="color:#333333;font-family:&quot;white-space:normal;background-color:#FFFFFF;font-size:14px;">记录长度: 4K/通道</span><br style="color:#333333;font-family:Verdana, Arial, Helvetica, sans-serif;white-space:normal;background-color:#FFFFFF;" data-filtered="filtered">
+                        <span style="color:#333333;font-family:&quot;white-space:normal;background-color:#FFFFFF;font-size:14px;">存储: 6组波形(深度4K /组，共24K)+1组参数</span><br style="color:#333333;font-family:Verdana, Arial, Helvetica, sans-serif;white-space:normal;background-color:#FFFFFF;" data-filtered="filtered">
+                        <span style="color:#333333;font-family:&quot;white-space:normal;background-color:#FFFFFF;font-size:14px;">触发模式: 自动、普通、单次</span><span style="font-family:&quot;font-size:14px;"></span><br data-filtered="filtered">
+                    </span>
+                </p>
+                <p class="content" style="margin:0cm 0cm 0pt;padding:0cm;font-family:tahoma, arial, 宋体, sans-serif;list-style:none;color:#333333;font-size:14px;white-space:normal;width:750px;overflow:hidden;background-color:#FFFFFF;border-width:medium;border-style:none;border-color:initial;line-height:18.75pt;position:relative !important;">
+                    <span style="margin:0px;padding:0px;font-family:宋体;list-style:none;color:#686868;font-size:24px;">
+                        <br data-filtered="filtered">
+                    </span>
+                </p>
+                <p class="content" style="margin:0cm 0cm 0pt;padding:0cm;font-family:tahoma, arial, 宋体, sans-serif;list-style:none;color:#333333;font-size:14px;white-space:normal;width:750px;overflow:hidden;background-color:#FFFFFF;border-width:medium;border-style:none;border-color:initial;line-height:18.75pt;position:relative !important;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;"><b style="margin:0px;padding:0px;font-family:&quot;list-style:none;"><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">组成：</span></b></span>
+                </p>
+                <p class="content" style="margin:0cm 0cm 0pt;padding:0cm;font-family:tahoma, arial, 宋体, sans-serif;list-style:none;color:#333333;font-size:14px;white-space:normal;width:750px;overflow:hidden;background-color:#FFFFFF;border-width:medium;border-style:none;border-color:initial;line-height:18.75pt;position:relative !important;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;"><span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">仪器，操作手册</span></span>
+                </p>
+                <p style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <br data-filtered="filtered">
+                </p>
+                <p style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;"><strong style="margin:0px;padding:0px;font-family:&quot;list-style:none;">预算说明：</strong></span>
+                </p>
+                <p style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">1.开发费用可以商量。</span>
+                </p>
+                <p style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">2.需要可量产的全套资料，包括硬件和源代码。</span>
+                </p>
+                <p style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">3.最好是做过该产品的有经验的开发者。</span>
+                </p>
+                <p style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">4.本公司需要各种汽车电子方案和汽车用品方案，有成熟可量产的方案者，欢迎洽谈。</span>
+                </p>
+                <div>
+                    <br data-filtered="filtered">
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="formtype" value="" data-filtered="filtered">
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="box-flex" style="background-color:white">
+            <div class="ect-header-text " style="text-align:center">
+                <h2><span class="color-green" style="line-height:55px;height:55px;color:#1cbb7f">— 相关任务 —</span></h2>
+            </div>
+        </div>
+        <ul class="task-list" style="background-color:white">
+            <a href="@Url.Action("GxfaWxPFl", "home")">
+                <li>
+                    <div class="middle" style="width:auto;margin-left:10px"><h4>irmcf171</h4><span style="font-size:15px">  浙江台州 2017-11-07</span></div>
+                    <p class="right" style="margin-right:10px;line-height:20px">￥30000.00<br>申请：6 竞标中</p>
+                </li>
+            </a>
+            <a href="@Url.Action("GxfaWxFl", "home")">
+                <li>
+                    <div class="middle" style="width:auto;margin-left:10px"><h4>医院HIS、li</h4><span style="font-size:15px">  甘肃兰州 2017-12-02</span></div>
+                    <p class="right" style="margin-right:10px;line-height:20px">￥200000.00<br>申请：5 竞标中</p>
+                </li>
+            </a>
+        </ul>
+        <div class="hblank10"></div>
+        <div class="box-flex" style="background-color:#eee">
+            <a href="@Url.Action("GxfaWxFl", "home")">
+                <div class="fa-more" style="line-height:60px;height:30px; background-color:#1cbb7f"><h3>更多需求任务</h3></div>
+            </a>
+        </div>
+        <div class="hblank10"></div>
+    </div>
+    <footer class="footer-nav dis-box" style="background-color:#1cbb7f;height:50px">
+        <a href="@Url.Action("GxfaWxCheck","Home")" class="box-flex nav-list">
+            <h2 style="color:white">申       请</h2>
+        </a>
+    </footer>
+    <style>
+        .rw-detail {
+            width: 100%;
+        }
+
+            .rw-detail .task {
+                width: 100%;
+                float: left;
+            }
+
+                .rw-detail .task .tb {
+                    width: 50px;
+                    height: 50px;
+                    float: left;
+                    margin-left: 5px;
+                }
+
+                .rw-detail .task .middle {
+                    width: 60%;
+                    float: left;
+                    margin-left: 10px;
+                    text-align: left;
+                }
+
+                    .rw-detail .task .middle h2 {
+                        width: 100%;
+                        text-align: left;
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
+
+                        .rw-detail .task .middle h2 img {
+                            height: 20px;
+                            float: right;
+                        }
+
+                    .rw-detail .task .middle p {
+                        color: red;
+                    }
+
+                .rw-detail .task .right {
+                    height: 25px;
+                    float: right;
+                    background: #0066cc;
+                    color: #fff;
+                    width: 60px;
+                    line-height: 25px;
+                    border-radius: 5px;
+                    text-align: center;
+                    margin-right: 10px;
+                    margin-top: 20px;
+                }
+
+                .rw-detail .task .list {
+                    width: 100%;
+                    float: left;
+                    height: 20px;
+                }
+
+                    .rw-detail .task .list li {
+                        width: 33%;
+                        float: left;
+                        line-height: 20px;
+                        text-align: center;
+                        color: #999;
+                    }
+    </style>
+</body>
+</html>
