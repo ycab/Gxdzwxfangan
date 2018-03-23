@@ -14,7 +14,24 @@
     <link href="@Url.Content("~/gxfa/statics/css/ectouch.css")" rel="stylesheet" />
 
     <link href="@Url.Content("~/gxfa/statics/css/swiper.min.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/gxfa/statics/js/jquery-2.1.4.min.js")"></script>
 
+    <script src="@Url.Content("~/gxfa/statics/js/swiper.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.json.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery-ui-1.10.1.custom.min.js")"></script>
+
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.ui.touch-punch.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.scrollUp.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.lazyload.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/common.js")"></script>
 </head>
 
 <body style="max-width:640px;">
@@ -125,7 +142,7 @@
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifukuan my-img-size"></i></h4>
                         <p class="t-remark3">已选中</p>
-                        <div class="user-list-num">
+                        <div id="send_selected" class="user-list-num">
                             2
                         </div>
                     </li>
@@ -224,6 +241,29 @@
     </div>*@
 
     <script type="text/javascript">
+        $(document).ready(function () {
+          
+            $("#send_selected").html("210");
+            var a=$("#send_selected").html();
+            var myinfo = {
+                name:a
+            }
+            var url = '@Url.Content("~/Home/MyTaskInfo")';
+            $.ajax({
+                type: 'post',
+                url: url,
+                dataType:"json",
+                data: myinfo,
+                success: function (data) {
+                    var nammm = data.msg;
+                   
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        });
+
 //设置cookie
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -236,23 +276,6 @@ function clearHistroy(){
 	document.getElementById("search_histroy").style.visibility = "hidden";
 }
     </script>
-    <script src="@Url.Content("~/gxfa/statics/js/jquery-2.1.4.min.js")"></script>
 
-    <script src="@Url.Content("~/gxfa/statics/js/swiper.min.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/jquery.json.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/jquery-ui-1.10.1.custom.min.js")"></script>
-
-
-    <script src="@Url.Content("~/gxfa/statics/js/jquery.ui.touch-punch.min.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/jquery.scrollUp.min.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/jquery.lazyload.min.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/common.js")"></script>
 </body>
 </html>

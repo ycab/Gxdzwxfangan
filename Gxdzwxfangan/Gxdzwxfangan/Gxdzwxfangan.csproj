@@ -525,6 +525,27 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Gxdzwxfangan.pubxml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gxdzwxfangan.Bll\Gxdzwxfangan.Bll.csproj">
+      <Project>{37c567db-2dfd-43d8-a006-6a4e578dfb84}</Project>
+      <Name>Gxdzwxfangan.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gxdzwxfangan.Dal\Gxdzwxfangan.Dal.csproj">
+      <Project>{d53a1165-512b-4cc8-b8e8-66b2e0b5b11e}</Project>
+      <Name>Gxdzwxfangan.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gxdzwxfangan.Model\Gxdzwxfangan.Model.csproj">
+      <Project>{22793799-13c4-4444-b6d9-ad2d4b5599d3}</Project>
+      <Name>Gxdzwxfangan.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gxdzwxfangan.Utilities\Gxdzwxfangan.Utilities.csproj">
+      <Project>{eb96726e-4329-4b5e-b787-7d212b137d0a}</Project>
+      <Name>Gxdzwxfangan.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

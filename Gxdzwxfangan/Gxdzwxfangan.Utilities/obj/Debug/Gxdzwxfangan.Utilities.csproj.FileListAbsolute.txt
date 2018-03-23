@@ -1,0 +1,7 @@
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\bin\Debug\Gxdzwxfangan.Utilities.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\bin\Debug\Gxdzwxfangan.Utilities.pdb
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\obj\Debug\Gxdzwxfangan.Utilities.csprojResolveAssemblyReference.cache
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\obj\Debug\Gxdzwxfangan.Utilities.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\obj\Debug\Gxdzwxfangan.Utilities.pdb

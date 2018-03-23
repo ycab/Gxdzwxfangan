@@ -60,52 +60,49 @@
             <div class="falb-kind-list" id="falbKindList">
                 <div class="hblank10"></div>
                 <ul>
-                    <li id="177">智能穿戴 </li>
-                    <li id="21">安防监控</li>
-                    <li id="30">便携产品</li>
-                    <li id="91">工业电子 </li>
-                    <li id="41">汽车电子</li>
-                    <li id="48">测试设备 </li>
-                    <li id="58">电源电池 </li>
-                    <li id="118">机器人无人机 </li>
-                    <li id="129">通信广电 </li>
-                    <li id="6">游戏玩具</li>
-                    <li id="142">医疗健康 </li>
-                    <li id="154">软件开发</li>
-                    <li id="5">智能家居</li>
-                    <li id="163">智能家电 </li>
-                    <li id="178">照明显示 </li>
-                    <li id="361">工业设计</li>
-                    <li id="194">其他</li>
+                    <li id="101">智能穿戴 </li>
+                    <li id="102">安防监控</li>
+                    <li id="103">便携产品</li>
+                    <li id="104">工业电子 </li>
+                    <li id="105">汽车电子</li>
+                    <li id="106">测试设备 </li>
+                    <li id="107">电源电池 </li>
+                    <li id="108">机器人无人机 </li>
+                    <li id="109">通信广电 </li>
+                    <li id="110">游戏玩具</li>
+                    <li id="111">医疗健康 </li>
+                    <li id="112">软件开发</li>
+                    <li id="113">智能家居</li>
+                    <li id="114">智能家电 </li>
+                    <li id="115">照明显示 </li>
+                    <li id="116">工业设计</li>
+                    <li id="117">其他</li>
                 </ul>
             </div>
             <li id="secBut"><p class="left">技术分类</p><p class="right" myvalue="" mytitle="" id="secTitle">全部</p><img src="@Url.Content("~/gxfa/images/downarrows.png")" /></li>
             <div class="falb-kind-list" id="falbSeckind">
                 <div class="hblank10"></div>
                 <ul>
-                    <li id="11">微处理器</li>
-                    <li id="12">电源</li>
-                    <li id="13">接口</li>
-                    <li id="14">储存</li>
-                    <li id="293">射频</li>
-                    <li id="301">控制</li>
-                    <li id="305">传感</li>
-                    <li id="313" style="font-size: 13px;">电路保护与EMC</li>
-                    <li id="326">人机交互</li>
-                    <li id="343">软件开发</li>
-                    <li id="365">工业设计</li>
-                    <li id="342">其他</li>
+                    <li id="201">示波器</li>
+                    <li id="202">开关电源</li>
+                    <li id="203">无线充电</li>
+                    <li id="204">逻辑器件</li>
+                    <li id="205">生产设备</li>
+                    <li id="206">伺服系统</li>
+                    <li id="207">蓝牙/WiFi测试仪</li>
+                    <li id="208">其他</li>
+             
                 </ul>
             </div>
         </ul>
         <div class="hblank10"></div>
         <h4 class="title" style="width: 95%;height: 40px;line-height: 40px;text-align: left;margin: 0 auto;">任务名称</h4>
-        <input class="rw-input" style="width: 95%;border: 10px solid #ccc;height: 50px;outline: 0;margin: 0 auto;text-align: left;text-indent: 10px;line-height: 50px;" placeholder="请填写任务名称">
+        <input id="task_name"class="rw-input" style="width: 95%;border: 10px solid #ccc;height: 50px;outline: 0;margin: 0 auto;text-align: left;text-indent: 10px;line-height: 50px;" placeholder="请填写任务名称">
         <div class="hblank10" style="background-color:#F5F5F5"></div>
         <div class="blank10"></div>
         <div class="hblank10"></div>
         <div class="hblank10" style="background-color:#F5F5F5"></div>
-        <h4 class="title" style="width: 95%;height: 40px;line-height: 40px;text-align: left;margin: 0 auto;">截止时间 <input type="text" name="USER_AGE" id="USER_AGE" value="" readonly="" class="overdate" placeholder="请填写截止时间"></h4>
+        <h4 class="title" style="width: 95%;height: 40px;line-height: 40px;text-align: left;margin: 0 auto;">截止时间 <input type="text" name="USER_AGE" id="USER_AGE" value="" class="overdate" placeholder="请填写截止时间"></h4>
         <div class="hblank10" style="background-color:#F5F5F5"></div>
         <div class="hblank10"></div>
         <h4 class="title" style="width: 95%;height: 40px;line-height: 40px;text-align: left;margin: 0 auto;">需求描述</h4>
@@ -114,10 +111,16 @@
         <div class="blank10"></div>
         <div class="hblank10"></div>
         <div class="blank10"></div>
+        <h4 class="title" style="width: 95%;height: 40px;line-height: 40px;text-align: left;margin: 0 auto;">详情描述</h4>
+        <p class="text" style="width:95%; margin:0 auto; border:1px solid #ccc;height:150px;  margin:0 auto;text-align:left;"><textarea id="detail" style="margin:10px; border:0;outline:0; width:95% ; height:90%" placeholder="请填写任务详情"></textarea></p>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="blank10"></div>
+        <div class="hblank10"></div>
+        <div class="blank10"></div>
         <div class="hblank10" style="background-color:#F5F5F5"></div>
         <div class="phone-box">
-            <input type="text" class="phone-num" placeholder="请输入手机号码">
-            <p class="get-code">获取验证码</p>
+            <input type="text" id="phone" class="phone-num" placeholder="请输入手机号码">
+            <p class="get-code" id="get-code">获取验证码</p>
         </div>
         <div class="hblank10" style="background-color:#F5F5F5"></div>
         <div class="blank10"></div>
@@ -138,8 +141,8 @@
         <div class="hblank10" style="background-color:#F5F5F5"></div>
         <div class="hblank10"></div>
         <div class="box-flex" style="background-color:#eee;height:40px">
-            <a href="@Url.Action("GxfaWxCheck","Home")">
-                <div class="fa-more" style="line-height:50px;height:50px; background-color:#1cbb7f"><h4 style="line-height:40px">提      交</h4></div>
+            <a @*href="@Url.Action("GxfaWxCheck","Home")"*@>
+                <div class="fa-more" id="submit" style="line-height:50px;height:50px; background-color:#1cbb7f"><h4 style="line-height:40px">提      交</h4></div>
             </a>
         </div>
         <div class="hblank10"></div>
@@ -219,6 +222,85 @@
         }
     </script>
     <script>
+        var application_area = "";                //应用领域
+        var techical_classificationclass = "";    //技术分类
+        var task_name = "";                       //任务名称
+        var deadline = "";                        //截止时间
+        var demand_description = "";              //需求描述
+        var phone = "";                           //手机号码
+        var verification_code = "";               //验证码
+        var price = "";                           //价格     
+        var detail="";
+        $('#get-code').click(function () {
+           phone=$('#phone').val()
+           var available = isPoneAvailable(phone);
+           if (available == true)
+           {
+               var phoneinfo = {
+                   phone: phone,
+               };
+               var url = '@Url.Content("~/Home/GetCode")';
+               $.ajax({
+                   type: 'post',
+                   url: url,
+                   data: phoneinfo,
+                   success: function (data) {
+                       if (data == "ok") {
+                           alert("获取验证码成功");
+                       }
+                       else {
+                           alert("获取验证码失败");
+                       }
+                   },
+                   error: function () {
+                       alert("error");
+                   }
+               });
+           }
+           else
+           {
+               alert("请输入正确的手机号码");
+           }
+
+        })
+        $('#submit').click(function () {
+            task_name = $('#task_name').val();
+            deadline = $('#USER_AGE').val();
+            demand_description = $('#myckeditor').val();
+            phone = $('#phone').val();
+            price = $('#myprices').val();
+            detail = $('#detail').val();
+            var taskinfo = {
+                   application_area: application_area,
+                   phone: phone,
+                   task_name: task_name,
+                   dealine: deadline,
+                   demand_description: demand_description,
+                   phone: phone,
+                   price: price,
+                   detail: detail
+
+                };
+                var url ='@Url.Content("~/Home/SendTask")';
+                $.ajax({
+                    type: 'post',
+                    url: url,
+                    data: taskinfo,
+                    success: function (data) {
+                        if (data == "ok") {
+                            alert("获取验证码成功");
+                        }
+                        else {
+                            alert("获取验证码失败");
+                        }
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+                });
+
+
+        })
         $('#search-kind').click(function () {
             $("#search-kind ul").toggle();
         })
@@ -247,11 +329,18 @@
         $("#falbKindList li").click(function () {
             var val = $(this).text();
             var pid = $(this).attr('id');
+            if ((pid > 100) && (val < 199)) {
+                application_area = val;
+            }
+            if ((pid > 200) && (val < 299)) {
+                techical_classificationclass = val;
+            }
             $(this).parent().parent().hide();
             $("#firTitle").html(val);
             $("#firTitle").attr("mytitle", val);
             $("#firTitle").attr('myvalue', pid);
             $("#falbAll .pic").toggleClass("xz");
+
 
         });
 
@@ -281,6 +370,14 @@
             var idName = $(this).attr("id");
             $("#" + idName + "But").click();
         })
+        function isPoneAvailable(str) {
+            var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+            if (!myreg.test(str)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
     </script>
     <script type="text/javascript">
         $(function () {

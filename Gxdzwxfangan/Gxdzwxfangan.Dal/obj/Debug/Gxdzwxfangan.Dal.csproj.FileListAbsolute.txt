@@ -1,0 +1,11 @@
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\Debug\Gxdzwxfangan.Dal.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\Debug\Gxdzwxfangan.Dal.pdb
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\Debug\Gxdzwxfangan.Model.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\Debug\Gxdzwxfangan.Utilities.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\Debug\Gxdzwxfangan.Model.pdb
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\Debug\Gxdzwxfangan.Utilities.pdb
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\obj\Debug\Gxdzwxfangan.Dal.csprojResolveAssemblyReference.cache
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\obj\Debug\Gxdzwxfangan.Dal.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\obj\Debug\Gxdzwxfangan.Dal.pdb
