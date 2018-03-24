@@ -38,6 +38,23 @@ namespace Gxdzwxfangan.Controllers
         }
         public ActionResult GxfaWxSendPackge()
         {
+            string mytaskinfo = Request["mytaskinfo"];
+            if(mytaskinfo=="1")
+            {
+
+            }
+            else if (mytaskinfo == "2")
+            {
+
+            }
+            else if (mytaskinfo == "3")
+            {
+
+            }
+            else if (mytaskinfo == "4")
+            {
+
+            }
             return View();
         }
         public ActionResult GxfaWxReceptPackge()
@@ -118,6 +135,12 @@ namespace Gxdzwxfangan.Controllers
             string json = JsonHelper.SerializeObject(task);
             return json;
         }
-
+        public ActionResult MySendTaskListInfo()
+        {
+            string responseText = "";
+            TaskSortDal SortInfoDal = new TaskSortDal();
+            responseText = SortInfoDal.MySendTaskSortInfo("1","3");
+            return Content(responseText);
+        }
     }
 }

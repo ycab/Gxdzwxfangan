@@ -32,6 +32,7 @@
     <script src="@Url.Content("~/gxfa/statics/js/jquery.lazyload.min.js")"></script>
 
     <script src="@Url.Content("~/gxfa/statics/js/common.js")"></script>
+    <script type="text/javascript">var rootUrl = "@Url.Content("~")";//获取根路径，防止iis部署位置不同</script>
 </head>
 
 <body style="max-width:640px;">
@@ -92,7 +93,7 @@
             </div>
         </div>
         <section class="b-color-f my-nav-box m-top10">
-            <a href="@Url.Action("GxfaWxSendPackge","Home")">
+            <a onclick='javascript: Send_task_list("1")'>
                 <div class="dis-box padding-all my-bottom">
                     <h3 class="box-flex text-all-span my-u-title-size"><i class="iconfont icon-quanbudingdan is-user-size t-first"></i>我的发包</h3>
                     <div class="box-flex t-goods1 text-right onelist-hidden jian-top">全部发包</div>
@@ -100,7 +101,7 @@
                 </div>
             </a>
             <ul class="user-money-list g-s-i-title-2 dis-box text-center my-dingdan">
-                <a href="@Url.Action("GxfaWxSendPackge","Home")" class="box-flex">
+                <a onclick='javascript: Send_task_list("2")'  class=" box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifukuan my-img-size"></i></h4>
                         <p class="t-remark3">已选中</p>
@@ -109,7 +110,7 @@
                         </div>
                     </li>
                 </a>
-                <a href="@Url.Action("GxfaWxSendPackge","Home")" class="box-flex">
+                <a onclick='javascript: Send_task_list("3")' class="box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifahuo my-img-size"></i></h4>
                         <p class="t-remark3">已托管</p>
@@ -118,7 +119,7 @@
                         </div>
                     </li>
                 </a>
-                <a href="@Url.Action("GxfaWxSendPackge","Home")" class="box-flex">
+                <a onclick='javascript: Send_task_list("4")' class="box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daipingjia my-img-size"></i></h4>
                         <p class="t-remark3">已完成</p>
@@ -130,7 +131,7 @@
             </ul>
         </section>
         <section class="b-color-f my-nav-box m-top10">
-            <a href="@Url.Action("GxfaWxReceptPackge","Home")">
+            <a onclick='javascript: Receive_task_list("1")'>
                 <div class="dis-box padding-all my-bottom">
                     <h3 class="box-flex text-all-span my-u-title-size"><i class="iconfont icon-quanbudingdan is-user-size t-first"></i>我的接包</h3>
                     <div class="box-flex t-goods1 text-right onelist-hidden jian-top">全部接包</div>
@@ -138,7 +139,7 @@
                 </div>
             </a>
             <ul class="user-money-list g-s-i-title-2 dis-box text-center my-dingdan">
-                <a href="@Url.Action("GxfaWxReceptPackge","Home")" class="box-flex">
+                <a onclick='javascript: Receive_task_list("2")' class="box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifukuan my-img-size"></i></h4>
                         <p class="t-remark3">已选中</p>
@@ -147,7 +148,7 @@
                         </div>
                     </li>
                 </a>
-                <a href="@Url.Action("GxfaWxReceptPackge","Home")" class="box-flex">
+                <a onclick='javascript: Receive_task_list("3")' class="box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifahuo my-img-size"></i></h4>
                         <p class="t-remark3">已托管</p>
@@ -156,7 +157,7 @@
                         </div>
                     </li>
                 </a>
-                <a href="@Url.Action("GxfaWxReceptPackge","Home")" class="box-flex">
+                <a onclick='javascript: Receive_task_list("4")' class="box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daipingjia my-img-size"></i></h4>
                         <p class="t-remark3">已结束</p>
@@ -267,7 +268,16 @@
                 }
             });
         });
+        function Send_task_list(mytaskinfo) {
 
+
+            window.location.href = rootUrl + "Home/GxfaWxSendPackge?mytaskinfo=" + mytaskinfo + "&random=" + Math.floor(Math.random() * (100000 + 1));
+        }
+        function Receive_task_list(mytaskinfo) {
+
+
+            window.location.href = rootUrl + "Home/GxfaWxReceptPackge?mytaskinfo=" + mytaskinfo + "&random=" + Math.floor(Math.random() * (100000 + 1));
+        }
 //设置cookie
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();

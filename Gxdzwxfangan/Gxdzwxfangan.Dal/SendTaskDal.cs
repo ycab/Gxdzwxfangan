@@ -26,13 +26,13 @@ namespace Gxdzwxfangan.Dal
             DataTable dt = OracleHelper.GetTable(sql, null);
             return dt.Rows.Count.ToString();
         }
-        public string GetMySendTaskInfo(string user_id,string is_received)//得到我的发包信息
+        public string GetMySendTaskInfo(string user_id,string is_received)//得到我的发包数量信息
         {
             string sql = string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}' and IS_RECEIVED='{1}' ", user_id,is_received);
             DataTable dt = OracleHelper.GetTable(sql, null);
             return dt.Rows.Count.ToString();
         }
-        public string GetMyReceiveTaskInfo(string user_id, string is_accepted)//得到我的接包信息
+        public string GetMyReceiveTaskInfo(string user_id, string is_accepted)//得到我的接包数量信息
         {
             string sql = string.Format("select * from GXFW_RECEIVE_TASK  where USER_ID='{0}' and IS_ACCEPTED='{1}' ", user_id,is_accepted);
             DataTable dt = OracleHelper.GetTable(sql, null);

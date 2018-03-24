@@ -53,8 +53,8 @@
                 </ul>
             </nav>
         </div>
-        <div class="ect-pro-list user-order" style="border-bottom:none;">
-            <ul id="J_ItemList">
+        <div id="showgoods" class="ect-pro-list user-order" style="border-bottom:none;">
+            @*<ul id="J_ItemList">
                 <li>
                     <a href="@Url.Action("GxfaWxExample", "Home")">
                         <dl style="margin-left:10px">
@@ -69,6 +69,21 @@
                     </a>
                 </li>
             </ul>
+            <ul id="J_ItemList">
+                <li>
+                    <a href="@Url.Action("GxfaWxExample", "Home")">
+                        <dl style="margin-left:10px">
+                            <dt>
+                                <h4 class="title">方案号：2017120719360087433</h4>
+                            </dt>
+                            <dd>方案状态：投标中,未选中,未托管,未完成</dd>
+                            <dd>方案金额：<span class="ect-color">￥1098.00元</span></dd>
+                            <dd>发布时间：2017-12-07 19:36:00</dd>
+                        </dl>
+                        <i class="pull-right fa fa-angle-right" style="position: absolute;top: 50%;margin-top: -1.3em;right: 0.6em;font-size:12px"></i>
+                    </a>
+                </li>
+            </ul>*@
         </div>
         <section class="padding-all">
             <ul class="dis-box">
@@ -138,6 +153,65 @@
             setCookie('ECS[keywords]', '', -1);
             document.getElementById("search_histroy").style.visibility = "hidden";
         }
+        function MiddleSortNameInfo() {
+            $.ajax({
+                type: "POST",
+                url: rootUrl + "Home/MySendTaskListInfo?random=" + Math.floor(Math.random() * (100000 + 1)),
+                dataType: "json",
+                data: { middlesortname_last: MiddleSortName_Last, middlesortname_amount: MiddleSortName_Amount },
+                async: true,
+                success: function (obj) {
+                    if (obj.msg == "success") {
+                        var middleinfo = obj.middlesortinfo;//middleinfo是整个信息
+                        $("#showgoods").html("");
+                        for (var i = 0; i < middleinfo.length; i++) {
+                        
+
+
+                                   }
+                    }
+                    else {
+                        $('#loading').hide();
+                    }
+
+                },
+                error: function () {
+                    alert("ajax wrong!");
+                    $('#loading').hide();
+                }
+            });
+        }
     </script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var a = "a";
+        var myinfo = {
+            name: a
+        }
+        var url = '@Url.Content("~/Home/MySendTaskListInfo")';
+        $.ajax({
+            type: 'post',
+            url: url,
+            dataType: "json",
+            data: myinfo,
+            success: function (data) {
+                $("#task_name").html(data.Task_Name);
+                $("#apply_number").html("申请：" + data.Apply_Number);
+                $("#price").html("￥" + data.Price);
+                $("#send_time").html("发布时间：" + data.Send_Time);
+                $("#deadline").html("报名截止时间：" + data.deadline);
+                $("#detail").html("详情：" + data.Demand_Detail);
+                $("#demand_description").html(data.Demand_Description);
+                $("#application_area").html("应用领域：" + data.Application_area);
+                $("#user_name").html(data.User_Name);
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+    });
+
+    </script>
+
 </body>
 </html>

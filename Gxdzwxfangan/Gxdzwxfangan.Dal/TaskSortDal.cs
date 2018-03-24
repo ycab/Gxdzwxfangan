@@ -68,5 +68,42 @@ namespace Gxdzwxfangan.Dal
             return task;
 
         }
+
+        public string MySendTaskSortInfo(string user_id,string send_flag )//send_flag为1，所有包，2：已选中；3：已托管
+        {
+            string sql="";
+            string responseText = "";
+            if (send_flag == "1")
+            {
+                 sql = string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}'", user_id);
+            }
+            else if(send_flag=="2")
+            {
+                sql = string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}' and IS_RECEIVED='{1}' ", user_id, "1");
+            }
+            else if (send_flag == "3")
+            {
+                sql = string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}' and IS_RECEIVED='{1}' ", user_id, "3");
+            }
+            else if (send_flag == "4")
+            {
+                sql = string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}' and IS_RECEIVED='{1}' ", user_id, "4");
+            }
+
+            DataTable dt = OracleHelper.GetTable(sql, null);
+            if (dt.Rows.Count != 0)
+            {
+                responseText = JsonHelper.getRecordJson(dt);
+                responseText = "{\"msg\":\"success\",\"send_flag\":\""+send_flag+"\",\"sortinfo\":[" + responseText + "]}";
+            }
+            else
+            {
+                responseText = "{\"msg\":\"fail\",\"failinfo\":\"查询出错\"}";
+            }
+
+
+
+            return responseText;
+        }
     }
 }
