@@ -104,7 +104,7 @@
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifukuan my-img-size"></i></h4>
                         <p class="t-remark3">已选中</p>
-                        <div class="user-list-num">
+                        <div id="send_selected" class="user-list-num">
                             2
                         </div>
                     </li>
@@ -113,7 +113,7 @@
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifahuo my-img-size"></i></h4>
                         <p class="t-remark3">已托管</p>
-                        <div class="user-list-num">
+                        <div id="send_hosting" class="user-list-num">
                             0
                         </div>
                     </li>
@@ -122,7 +122,7 @@
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daipingjia my-img-size"></i></h4>
                         <p class="t-remark3">已完成</p>
-                        <div class="user-list-num">
+                        <div id="send_finished" class="user-list-num">
                             0
                         </div>
                     </li>
@@ -142,8 +142,8 @@
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifukuan my-img-size"></i></h4>
                         <p class="t-remark3">已选中</p>
-                        <div id="send_selected" class="user-list-num">
-                            2
+                        <div id="receive_selected" class="user-list-num">
+                            0
                         </div>
                     </li>
                 </a>
@@ -151,7 +151,7 @@
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifahuo my-img-size"></i></h4>
                         <p class="t-remark3">已托管</p>
-                        <div class="user-list-num">
+                        <div id="receive_hosting" class="user-list-num">
                             0
                         </div>
                     </li>
@@ -160,7 +160,7 @@
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daipingjia my-img-size"></i></h4>
                         <p class="t-remark3">已结束</p>
-                        <div class="user-list-num">
+                        <div id="receive_finished" class="user-list-num">
                             0
                         </div>
                     </li>
@@ -243,7 +243,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
           
-            $("#send_selected").html("210");
+            $("#send_selected").html("0");
             var a=$("#send_selected").html();
             var myinfo = {
                 name:a
@@ -255,8 +255,12 @@
                 dataType:"json",
                 data: myinfo,
                 success: function (data) {
-                    var nammm = data.msg;
-                   
+                    $("#send_selected").html(data.SendTaskSelected);
+                    $("#send_hosting").html(data.SendTaskHosting);
+                    $("#send_finished").html(data.SendTaskFinished);
+                    $("#receive_selected").html(data.ReceiveTaskSelected);
+                    $("#receive_hosting").html(data.ReceiveTaskHosting);
+                    $("#receive_finished").html(data.ReceiveTaskFinished);
                 },
                 error: function () {
                     alert("error");

@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReceiveTaskDal.cs" />
     <Compile Include="SendTaskDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskSortDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gxdzwxfangan.Model\Gxdzwxfangan.Model.csproj">

@@ -7,6 +7,7 @@ using Gxdzwxfangan.Model;
 using Gxdzwxfangan.Utilities;
 using Gxdzwxfangan.Dal;
 using System.Data.OracleClient;
+
 namespace Gxdzwxfangan.Dal
 {
     public class SendTaskDal
@@ -21,9 +22,30 @@ namespace Gxdzwxfangan.Dal
         }
         public string GetSendTaskNumber(string user_id)
         {
-            string sql = string.Format("select * from GXFW_SEND_TASK t where USER_ID='{0}' order by t.SORT_ORDER asc", user_id);
+            string sql = string.Format("select * from GXFW_SEND_TASK t where USER_ID='{0}'", user_id);
             DataTable dt = OracleHelper.GetTable(sql, null);
             return dt.Rows.Count.ToString();
         }
+        public string GetMySendTaskInfo(string user_id,string is_received)//得到我的发包信息
+        {
+            string sql = string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}' and IS_RECEIVED='{1}' ", user_id,is_received);
+            DataTable dt = OracleHelper.GetTable(sql, null);
+            return dt.Rows.Count.ToString();
+        }
+        public string GetMyReceiveTaskInfo(string user_id, string is_accepted)//得到我的接包信息
+        {
+            string sql = string.Format("select * from GXFW_RECEIVE_TASK  where USER_ID='{0}' and IS_ACCEPTED='{1}' ", user_id,is_accepted);
+            DataTable dt = OracleHelper.GetTable(sql, null);
+            return dt.Rows.Count.ToString();
+        }
+        public string UpdateReceiveTaskNumber(string task_id)//跟新发包表中的申请者数量
+        {
+            string sql = string.Format("select * from GXFW_RECEIVE_TASK  where TASK_ID='{0}' ", task_id);
+            DataTable dt = OracleHelper.GetTable(sql, null);
+            string sql2 = "update GXFW_SEND_TASK set APPLY_NUMBER=" + dt.Rows.Count.ToString() + " where TASK_ID='" + task_id+"'";
+            int flag = OracleHelper.ExecuteNonQuery(sql2, null);
+            return "ok";
+        }
+
     }
 }

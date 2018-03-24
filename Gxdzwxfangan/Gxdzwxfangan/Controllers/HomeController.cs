@@ -23,6 +23,7 @@ namespace Gxdzwxfangan.Controllers
         }
         public ActionResult GxfaWxPlan()
         {
+          
             return View();
         }
         public ActionResult GxfaWxUser()
@@ -31,6 +32,8 @@ namespace Gxdzwxfangan.Controllers
         }
         public ActionResult GxfaWxPlanDetail()
         {
+            string task_id = Request["task_id"];
+            Session["task_id"] = task_id;
             return View();
         }
         public ActionResult GxfaWxSendPackge()
@@ -47,6 +50,22 @@ namespace Gxdzwxfangan.Controllers
         }
         public ActionResult GxfaWxCheck()
         {
+            Task task = new Task();
+            
+            TaskSortBll SortTaskInfo = new TaskSortBll();
+           
+            Task_Receive receivetask = new Task_Receive();
+            ReceiveTaskDal receivetaskdal = new ReceiveTaskDal();
+            SendTaskDal sendtaskdal = new SendTaskDal();
+            string task_id = Session["task_id"].ToString();
+            task = SortTaskInfo.GetOneTaskInfo(task_id);
+            receivetask.User_ID = "";
+            receivetask.User_Name = "";
+            receivetask.Task_ID = task_id;
+            receivetask.Is_Accepted = "1";
+            receivetask.Receive_Time = DateTime.Now.ToLocalTime().ToString();
+            receivetaskdal.ReceiveTask(receivetask);
+            sendtaskdal.UpdateReceiveTaskNumber(task_id);
             return View();
         }
         public ActionResult GetCode()
@@ -75,14 +94,29 @@ namespace Gxdzwxfangan.Controllers
             send_task.SendTask(task);
             return Content("ok");
         }
-        public ActionResult MyTaskInfo()
+        public string MyTaskInfo()
+        {
+            SendTaskBll send_task = new SendTaskBll();
+            MyTaskInfo mytask = new MyTaskInfo();
+            mytask=send_task.GetMyTaskInfo("1");
+            string json = JsonHelper.SerializeObject(mytask);
+            return json;
+        }
+        public ActionResult MiddleSortNameInfo()
+        {
+            string responseText = "";
+            TaskSortBll SortInfoBll = new TaskSortBll();
+            responseText = SortInfoBll.MiddleSortNameInfo();
+            return Content(responseText);
+        }
+        public string GetTaskDetail()
         {
             Task task = new Task();
-            task.User_Name = "xingming";
-            task.User_ID = "123";
+            string task_id = Session["task_id"].ToString();
+            TaskSortBll SortTaskInfo = new TaskSortBll();
+            task=SortTaskInfo.GetOneTaskInfo(task_id);
             string json = JsonHelper.SerializeObject(task);
-            string responseText = "{\"msg\":\"fail\",\"failinfo\":\"查询出错\"}";
-            return Content(json);
+            return json;
         }
 
     }

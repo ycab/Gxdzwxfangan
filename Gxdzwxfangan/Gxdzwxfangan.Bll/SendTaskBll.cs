@@ -21,5 +21,16 @@ namespace Gxdzwxfangan.Bll
             responseText = taskinfo.GetSendTaskNumber(user_id);
             return responseText;
         }
+        public MyTaskInfo GetMyTaskInfo(string user_id)//得到我的接发包信息
+        {
+            MyTaskInfo task = new MyTaskInfo();
+            task.SendTaskSelected = taskinfo.GetMySendTaskInfo(user_id, "1");
+            task.SendTaskHosting = taskinfo.GetMySendTaskInfo(user_id, "3");
+            task.SendTaskFinished = taskinfo.GetMySendTaskInfo(user_id, "4");
+            task.ReceiveTaskSelected = taskinfo.GetMyReceiveTaskInfo(user_id, "1");
+            task.ReceiveTaskHosting = taskinfo.GetMyReceiveTaskInfo(user_id, "3");
+            task.ReceiveTaskFinished = taskinfo.GetMyReceiveTaskInfo(user_id, "4");
+            return task;
+        }
     }
 }

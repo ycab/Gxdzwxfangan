@@ -270,6 +270,8 @@
             phone = $('#phone').val();
             price = $('#myprices').val();
             detail = $('#detail').val();
+            application_area = $('#firTitle').html();
+            techical_classificationclass = $('#secTitle').html();
             var taskinfo = {
                    application_area: application_area,
                    phone: phone,
@@ -278,7 +280,8 @@
                    demand_description: demand_description,
                    phone: phone,
                    price: price,
-                   detail: detail
+                   detail: detail,
+                   techical_classificationclass: techical_classificationclass,
 
                 };
                 var url ='@Url.Content("~/Home/SendTask")';
@@ -329,12 +332,6 @@
         $("#falbKindList li").click(function () {
             var val = $(this).text();
             var pid = $(this).attr('id');
-            if ((pid > 100) && (val < 199)) {
-                application_area = val;
-            }
-            if ((pid > 200) && (val < 299)) {
-                techical_classificationclass = val;
-            }
             $(this).parent().parent().hide();
             $("#firTitle").html(val);
             $("#firTitle").attr("mytitle", val);
