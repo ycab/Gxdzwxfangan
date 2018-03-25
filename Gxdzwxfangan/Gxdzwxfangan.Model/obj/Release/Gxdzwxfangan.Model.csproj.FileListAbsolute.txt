@@ -1,0 +1,5 @@
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Model\bin\Release\Gxdzwxfangan.Model.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Model\bin\Release\Gxdzwxfangan.Model.pdb
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Model\obj\Release\Gxdzwxfangan.Model.csprojResolveAssemblyReference.cache
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Model\obj\Release\Gxdzwxfangan.Model.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Model\obj\Release\Gxdzwxfangan.Model.pdb

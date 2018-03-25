@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetUserInfoDal.cs" />
     <Compile Include="ReceiveTaskDal.cs" />
     <Compile Include="SendTaskDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

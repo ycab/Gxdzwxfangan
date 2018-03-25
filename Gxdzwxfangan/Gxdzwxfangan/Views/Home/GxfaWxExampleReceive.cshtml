@@ -1,0 +1,242 @@
+﻿@{
+
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="format-detection" content="telephone=no">
+    <title>电子联盟方案</title>
+    <link href="@Url.Content("~/gxfa/statics/css/bootstrap.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/font-awesome.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/swiper.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/ectouch.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/photoswipe.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/style.css")" rel="stylesheet" />
+
+    @*<link href="~/gxfa/statics/css/basic.css" rel="stylesheet" />*@
+
+    <link href="@Url.Content("~/gxfa/statics/css/mobiscroll.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/mobiscroll_date.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/gxfa/statics/js/mobiscroll_date.js")" charset="gb2312"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/mobiscroll.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery-2.1.4.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
+
+    <link href="@Url.Content("~/gxfa/statics/css/search.css")" rel="stylesheet" />
+</head>
+<body style="max-width:640px;">
+    <div class="con m-b7 new-maxbox">
+        <div class="ect-bg">
+            <header class="ect-header ect-margin-tb ect-margin-lr text-center ect-bg icon-write">
+                <a href="javascript:history.go(-1)" class="pull-left ect-icon ect-icon1 ect-icon-history"></a>
+                <span>任务详情</span>
+                <a href="javascript:;" onclick="openMune()" class="pull-right ect-icon ect-icon1 ect-icon-mune icon-write"></a>
+            </header>
+            <nav class="ect-nav ect-nav-list" style="display:none;">
+                <ul class="ect-diaplay-box text-center">
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxIndex","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-home"></i>首页</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxFl","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-cate"></i>分类</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxPlan","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-flow"></i>发布任务</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxUser","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-user"></i>用户中心</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="task" style="width: 100%;float: left;background-color:white">
+            <div class="middle" style="width: 60%;float: left; margin-left: 10px; text-align: left;">
+                <h2 id="task_name"style="margin-left:10px">汽车示波器</h2>
+                <p style="color:red;margin-left:20px;line-height:30px;font-size:20px">￥2000.00</p>
+            </div>
+            <div id="Is_Received" class="right" style="height: 25px;float: right;background: #1cbb7f;color: #fff;width: 60px;line-height: 25px; border-radius: 5px; text-align: center; margin-right: 10px;margin-top: 20px;"></div>
+            <ul class="list" style="width: 100%; float: left; height: 20px;">
+                <li style="width: 33%;float: left; line-height: 20px; text-align: center; color: #999;">热度：390</li>
+                <li id="apply_number" style="width: 33%;float: left; line-height: 20px; text-align: center; color: #999;">申请：1</li>
+                <li style="width: 33%;float: left; line-height: 20px; text-align: center; color: #999;">收藏：0</li>
+            </ul>
+        </div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="rw-box" style="background-color:white">
+            <div class="rw-box" style="width: 100%;padding-top: 10px;height: 50px;padding-bottom: 10px;text-align: left;background-color:white">
+                @*<div class="user-head-img-box">
+                    <img src="http://wx.qlogo.cn/mmopen/vi_32/neHiaiasQGVWcRxYnASFfnsjBRQUTyygE7fWibt4zldx6Pzibe7XBwibn8lBEt5FzazanvMwCcVheVzkmQCw6kQAZPg/0" />
+                </div>*@
+                <img src="@Url.Content("~/gxfa/statics/img/touxiang.jpg")" class="userpic" style="width: 50px;float: left;height: 50px;border-radius: 25px;margin-left:10px;background-color:white">
+                <!-- <img src="http://kb.cntronics.com" class="userpic"> -->
+
+                <div class="middle" style="width: 60%;float: left; margin-left: 10px; text-align: left;background-color:white">
+                    <h2 id="user_name" style="width: 100%;text-align: left;font-size: 30px;font-weight: normal;background-color:white">社会码农</h2>
+
+                </div>
+                <div class="right" style="height: 25px;float: right;;color: #fff;width: 60px;line-height: 25px; border-radius: 5px; text-align: center; margin-right: 10px;margin-top: 20px;background-color:white">
+                    <img src="@Url.Content("~/gxfa/images/20160920008_hui.jpg")" style="background-color:white" />
+                    @*<img src="/Public/images/20160920008_hui.jpg" class="image">
+                    <img src="/Public/images/20160920009_hui.jpg" class="image">
+                    <img src="/Public/images/20160920010_hui.jpg" class="image">
+                    <img src="/Public/images/20160920011.jpg" class="image">*@
+                </div>
+            </div>
+        </div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="task" style="width: 100%;float: left;background-color:white">
+            <div class="rw-title" style="background-color :white;font-size:30px;margin-left:10px">需求详情</div>
+            <ul class="rwsx" style="background-color:white;margin-left:10px;font-size:15px">
+                <li id="send_time">发布时间：2017-11-25 00:09:15</li>
+                <li id="deadline">报名截止时间：2017-12-28 00:00:00（剩余<span style="color:#ff0000;">20</span>天）</li>
+                <li id="application_area">应用领域：测试设备 </li>
+                <li id="detail">交付方式：未知</li>
+            </ul>
+        </div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="hblank10" style="background-color:#F5F5F5"></div>
+        <div class="hblank10" style="background-color:white"></div>
+        <div class="task" style="width: 100%;float: left;background-color:white">
+            <div class="rw-title" style="background-color :white;font-size:30px;margin-left:10px">需求描述</div>
+            <div class="xqms" style="margin:10px; line-height:25px; text-align:left;">
+                <p style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:&quot;list-style:none;color:#333333;font-size:14px;white-space:normal;background-color:#FFFFFF;">
+                    <span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"><span id="demand_description" style="margin:0px;padding:0px;font-family:&quot;font-size:14px;">开发汽车示波器</span><span style="margin:0px;padding:0px;font-family:&quot;list-style:none;"><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span><span style="margin:0px;padding:0px;font-family:NSimSun;list-style:none;"></span></span></span>
+                </p>
+
+                <div>
+                    <br data-filtered="filtered">
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="formtype" value="" data-filtered="filtered">
+        <script type="text/javascript">
+      $(document).ready(function () {
+        var a = "a";
+        var myinfo = {
+            name: a
+        }
+        var url = '@Url.Content("~/Home/GetTaskDetail")';
+        $.ajax({
+            type: 'post',
+            url: url,
+            dataType: "json",
+            data: myinfo,
+            success: function (data) {
+                $("#task_name").html(data.Task_Name);
+                $("#apply_number").html("申请：" + data.Apply_Number);
+                $("#price").html("￥" + data.Price);
+                $("#send_time").html("发布时间：" + data.Send_Time);
+                $("#deadline").html("报名截止时间：" + data.deadline);
+                $("#detail").html("详情：" + data.Demand_Detail);
+                $("#demand_description").html(data.Demand_Description);
+                $("#application_area").html("应用领域：" + data.Application_area);
+                $("#user_name").html(data.User_Name);
+                if(data.Is_Received=="0")
+                {
+                    data.Is_Received = "发包成功";
+                }
+                else if(data.Is_Received=="1")
+                {
+                    data.Is_Received = "竞标中";
+                }
+                else if (data.Is_Received == "2") {
+                    data.Is_Received = "竞标成功";
+                }
+                else if (data.Is_Received == "3") {
+                    data.Is_Received = "托管中";
+                }
+                else if (data.Is_Received == "4") {
+                    data.Is_Received = "任务完成";
+                }
+                $("#Is_Received").html(data.Is_Received);
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+    });
+
+        </script>
+
+
+
+        <style>
+            .rw-detail {
+                width: 100%;
+            }
+
+                .rw-detail .task {
+                    width: 100%;
+                    float: left;
+                }
+
+                    .rw-detail .task .tb {
+                        width: 50px;
+                        height: 50px;
+                        float: left;
+                        margin-left: 5px;
+                    }
+
+                    .rw-detail .task .middle {
+                        width: 60%;
+                        float: left;
+                        margin-left: 10px;
+                        text-align: left;
+                    }
+
+                        .rw-detail .task .middle h2 {
+                            width: 100%;
+                            text-align: left;
+                            font-size: 14px;
+                            font-weight: normal;
+                        }
+
+                            .rw-detail .task .middle h2 img {
+                                height: 20px;
+                                float: right;
+                            }
+
+                        .rw-detail .task .middle p {
+                            color: red;
+                        }
+
+                    .rw-detail .task .right {
+                        height: 25px;
+                        float: right;
+                        background: #0066cc;
+                        color: #fff;
+                        width: 60px;
+                        line-height: 25px;
+                        border-radius: 5px;
+                        text-align: center;
+                        margin-right: 10px;
+                        margin-top: 20px;
+                    }
+
+                    .rw-detail .task .list {
+                        width: 100%;
+                        float: left;
+                        height: 20px;
+                    }
+
+                        .rw-detail .task .list li {
+                            width: 33%;
+                            float: left;
+                            line-height: 20px;
+                            text-align: center;
+                            color: #999;
+                        }
+        </style>
+</body>
+</html>

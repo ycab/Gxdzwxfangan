@@ -62,7 +62,7 @@
                 <h2 id="task_name"style="margin-left:10px">汽车示波器</h2>
                 <p style="color:red;margin-left:20px;line-height:30px;font-size:20px">￥2000.00</p>
             </div>
-            <div class="right" style="height: 25px;float: right;background: #1cbb7f;color: #fff;width: 60px;line-height: 25px; border-radius: 5px; text-align: center; margin-right: 10px;margin-top: 20px;">竞标中</div>
+            <div id="Is_Received" class="right" style="height: 25px;float: right;background: #1cbb7f;color: #fff;width: 60px;line-height: 25px; border-radius: 5px; text-align: center; margin-right: 10px;margin-top: 20px;">竞标中</div>
             <ul class="list" style="width: 100%; float: left; height: 20px;">
                 <li style="width: 33%;float: left; line-height: 20px; text-align: center; color: #999;">热度：390</li>
                 <li id="apply_number"style="width: 33%;float: left; line-height: 20px; text-align: center; color: #999;">申请：1</li>
@@ -173,6 +173,20 @@
                     $("#demand_description").html(data.Demand_Description);
                     $("#application_area").html("应用领域："+data.Application_area);
                     $("#user_name").html(data.User_Name);
+
+                    if (data.Is_Received == "1") {
+                        data.Is_Received = "竞标中";
+                    }
+                    else if (data.Is_Received == "2") {
+                        data.Is_Received = "竞标成功";
+                    }
+                    else if (data.Is_Received == "3") {
+                        data.Is_Received = "托管中";
+                    }
+                    else if (data.Is_Received == "4") {
+                        data.Is_Received = "已完成";
+                    }
+                    $("#Is_Received").html(data.Is_Received);
                 },
                 error: function () {
                     alert("error");

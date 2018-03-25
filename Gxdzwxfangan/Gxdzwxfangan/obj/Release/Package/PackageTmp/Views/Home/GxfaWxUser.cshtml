@@ -14,7 +14,25 @@
     <link href="@Url.Content("~/gxfa/statics/css/ectouch.css")" rel="stylesheet" />
 
     <link href="@Url.Content("~/gxfa/statics/css/swiper.min.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/gxfa/statics/js/jquery-2.1.4.min.js")"></script>
 
+    <script src="@Url.Content("~/gxfa/statics/js/swiper.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.json.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery-ui-1.10.1.custom.min.js")"></script>
+
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.ui.touch-punch.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.scrollUp.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery.lazyload.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/common.js")"></script>
+    <script type="text/javascript">var rootUrl = "@Url.Content("~")";//获取根路径，防止iis部署位置不同</script>
 </head>
 
 <body style="max-width:640px;">
@@ -37,7 +55,7 @@
                         <div class="box-flex">
                             <div class="g-s-i-title-a">
                                 <a href="javascript:;">
-                                    <h4 class="ellipsis-one user-admin-size">社会码农</h4>
+                                    <h4 class="ellipsis-one user-admin-size">@Session["user_id"]</h4>
                                 </a>
                                 <a href="javascript:;">
                                     <p class="user-reg-top color-whie f-03">皇家VIP</p>
@@ -75,7 +93,7 @@
             </div>
         </div>
         <section class="b-color-f my-nav-box m-top10">
-            <a href="@Url.Action("GxfaWxSendPackge","Home")">
+            <a onclick='javascript: Send_task_list("1")'>
                 <div class="dis-box padding-all my-bottom">
                     <h3 class="box-flex text-all-span my-u-title-size"><i class="iconfont icon-quanbudingdan is-user-size t-first"></i>我的发包</h3>
                     <div class="box-flex t-goods1 text-right onelist-hidden jian-top">全部发包</div>
@@ -83,29 +101,29 @@
                 </div>
             </a>
             <ul class="user-money-list g-s-i-title-2 dis-box text-center my-dingdan">
-                <a href="@Url.Action("GxfaWxSendPackge","Home")" class="box-flex">
+                <a onclick='javascript: Send_task_list("2")'  class=" box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifukuan my-img-size"></i></h4>
                         <p class="t-remark3">已选中</p>
-                        <div class="user-list-num">
+                        <div id="send_selected" class="user-list-num">
                             2
                         </div>
                     </li>
                 </a>
-                <a href="@Url.Action("GxfaWxSendPackge","Home")" class="box-flex">
+                <a onclick='javascript: Send_task_list("3")' class="box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifahuo my-img-size"></i></h4>
                         <p class="t-remark3">已托管</p>
-                        <div class="user-list-num">
+                        <div id="send_hosting" class="user-list-num">
                             0
                         </div>
                     </li>
                 </a>
-                <a href="@Url.Action("GxfaWxSendPackge","Home")" class="box-flex">
+                <a onclick='javascript: Send_task_list("4")' class="box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daipingjia my-img-size"></i></h4>
                         <p class="t-remark3">已完成</p>
-                        <div class="user-list-num">
+                        <div id="send_finished" class="user-list-num">
                             0
                         </div>
                     </li>
@@ -113,7 +131,7 @@
             </ul>
         </section>
         <section class="b-color-f my-nav-box m-top10">
-            <a href="@Url.Action("GxfaWxReceptPackge","Home")">
+            <a onclick='javascript: Receive_task_list("1")'>
                 <div class="dis-box padding-all my-bottom">
                     <h3 class="box-flex text-all-span my-u-title-size"><i class="iconfont icon-quanbudingdan is-user-size t-first"></i>我的接包</h3>
                     <div class="box-flex t-goods1 text-right onelist-hidden jian-top">全部接包</div>
@@ -121,29 +139,29 @@
                 </div>
             </a>
             <ul class="user-money-list g-s-i-title-2 dis-box text-center my-dingdan">
-                <a href="@Url.Action("GxfaWxReceptPackge","Home")" class="box-flex">
+                <a onclick='javascript: Receive_task_list("2")' class="box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daifukuan my-img-size"></i></h4>
                         <p class="t-remark3">已选中</p>
-                        <div class="user-list-num">
-                            2
-                        </div>
-                    </li>
-                </a>
-                <a href="@Url.Action("GxfaWxReceptPackge","Home")" class="box-flex">
-                    <li>
-                        <h4 class="ellipsis-one"><i class="iconfont icon-daifahuo my-img-size"></i></h4>
-                        <p class="t-remark3">已托管</p>
-                        <div class="user-list-num">
+                        <div id="receive_selected" class="user-list-num">
                             0
                         </div>
                     </li>
                 </a>
-                <a href="@Url.Action("GxfaWxReceptPackge","Home")" class="box-flex">
+                <a onclick='javascript: Receive_task_list("3")' class="box-flex">
+                    <li>
+                        <h4 class="ellipsis-one"><i class="iconfont icon-daifahuo my-img-size"></i></h4>
+                        <p class="t-remark3">已托管</p>
+                        <div id="receive_hosting" class="user-list-num">
+                            0
+                        </div>
+                    </li>
+                </a>
+                <a onclick='javascript: Receive_task_list("4")' class="box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daipingjia my-img-size"></i></h4>
                         <p class="t-remark3">已结束</p>
-                        <div class="user-list-num">
+                        <div id="receive_finished" class="user-list-num">
                             0
                         </div>
                     </li>
@@ -224,6 +242,42 @@
     </div>*@
 
     <script type="text/javascript">
+        $(document).ready(function () {
+          
+            $("#send_selected").html("0");
+            var a=$("#send_selected").html();
+            var myinfo = {
+                name:a
+            }
+            var url = '@Url.Content("~/Home/MyTaskInfo")';
+            $.ajax({
+                type: 'post',
+                url: url,
+                dataType:"json",
+                data: myinfo,
+                success: function (data) {
+                    $("#send_selected").html(data.SendTaskSelected);
+                    $("#send_hosting").html(data.SendTaskHosting);
+                    $("#send_finished").html(data.SendTaskFinished);
+                    $("#receive_selected").html(data.ReceiveTaskSelected);
+                    $("#receive_hosting").html(data.ReceiveTaskHosting);
+                    $("#receive_finished").html(data.ReceiveTaskFinished);
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        });
+        function Send_task_list(mytaskinfo) {
+
+
+            window.location.href = rootUrl + "Home/GxfaWxSendPackge?mytaskinfo=" + mytaskinfo + "&random=" + Math.floor(Math.random() * (100000 + 1));
+        }
+        function Receive_task_list(mytaskinfo) {
+
+
+            window.location.href = rootUrl + "Home/GxfaWxReceptPackge?mytaskinfo=" + mytaskinfo + "&random=" + Math.floor(Math.random() * (100000 + 1));
+        }
 //设置cookie
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -236,23 +290,6 @@ function clearHistroy(){
 	document.getElementById("search_histroy").style.visibility = "hidden";
 }
     </script>
-    <script src="@Url.Content("~/gxfa/statics/js/jquery-2.1.4.min.js")"></script>
 
-    <script src="@Url.Content("~/gxfa/statics/js/swiper.min.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/jquery.json.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/jquery-ui-1.10.1.custom.min.js")"></script>
-
-
-    <script src="@Url.Content("~/gxfa/statics/js/jquery.ui.touch-punch.min.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/jquery.scrollUp.min.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/jquery.lazyload.min.js")"></script>
-
-    <script src="@Url.Content("~/gxfa/statics/js/common.js")"></script>
 </body>
 </html>

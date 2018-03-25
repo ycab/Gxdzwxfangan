@@ -21,7 +21,7 @@ namespace Gxdzwxfangan.Dal
                 {
                     string task_category_name = dt.Rows[i]["TASK_CATEGORY_NAME"].ToString();
                     string task_category_id = dt.Rows[i]["TASK_CATEGORY_ID"].ToString();
-                    string sql1 = string.Format("select * from GXFW_SEND_TASK t where TECHNICAL_CLASSIFICATIONCLASS='{0}' ",task_category_name);
+                    string sql1 = string.Format("select * from GXFW_SEND_TASK t where TECHNICAL_CLASSIFICATIONCLASS='{0}'and IS_RECEIVED <> '{1}' ", task_category_name,"0");
                     DataTable dt1 = OracleHelper.GetTable(sql1, null);
                     string response = JsonHelper.getRecordJson(dt1);
                     if (i == dt.Rows.Count - 1)
@@ -75,18 +75,22 @@ namespace Gxdzwxfangan.Dal
             string responseText = "";
             if (send_flag == "1")
             {
+                send_flag = "所有包";
                  sql = string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}'", user_id);
             }
             else if(send_flag=="2")
             {
+                send_flag = "已选中";
                 sql = string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}' and IS_RECEIVED='{1}' ", user_id, "1");
             }
             else if (send_flag == "3")
             {
+                send_flag = "已托管";
                 sql = string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}' and IS_RECEIVED='{1}' ", user_id, "3");
             }
             else if (send_flag == "4")
             {
+                send_flag = "已完成";
                 sql = string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}' and IS_RECEIVED='{1}' ", user_id, "4");
             }
 
@@ -98,7 +102,47 @@ namespace Gxdzwxfangan.Dal
             }
             else
             {
-                responseText = "{\"msg\":\"fail\",\"failinfo\":\"查询出错\"}";
+                responseText = "{\"msg\":\"fail\",\"receive_flag\":\"" + send_flag + "\",\"failinfo\":\"查询出错\"}";
+            }
+
+
+
+            return responseText;
+        }
+        public string MyReceiveTaskSortInfo(string user_id, string receive_flag)//send_flag为1，所有包，2：已选中；3：已托管
+        {
+            string sql = "";
+            string responseText = "";
+            if (receive_flag == "1")
+            {
+                receive_flag = "所有包";
+                sql = string.Format("select * from GXFW_RECEIVE_TASK  where USER_ID='{0}'", user_id);
+            }
+            else if (receive_flag == "2")
+            {
+                receive_flag = "已选中";
+                sql = string.Format("select * from GXFW_RECEIVE_TASK  where USER_ID='{0}' and IS_ACCEPTED='{1}' ", user_id, "1");
+            }
+            else if (receive_flag == "3")
+            {
+                receive_flag = "已托管";
+                sql = string.Format("select * from GXFW_RECEIVE_TASK  where USER_ID='{0}' and IS_ACCEPTED='{1}' ", user_id, "3");
+            }
+            else if (receive_flag == "4")
+            {
+                receive_flag = "已完成";
+                sql = string.Format("select * from GXFW_RECEIVE_TASK  where USER_ID='{0}' and IS_ACCEPTED='{1}' ", user_id, "4");
+            }
+
+            DataTable dt = OracleHelper.GetTable(sql, null);
+            if (dt.Rows.Count != 0)
+            {
+                responseText = JsonHelper.getRecordJson(dt);
+                responseText = "{\"msg\":\"success\",\"receive_flag\":\"" + receive_flag + "\",\"sortinfo\":[" + responseText + "]}";
+            }
+            else
+            {
+                responseText = "{\"msg\":\"fail\",\"receive_flag\":\"" + receive_flag + "\",\"failinfo\":\"查询出错\"}";
             }
 
 

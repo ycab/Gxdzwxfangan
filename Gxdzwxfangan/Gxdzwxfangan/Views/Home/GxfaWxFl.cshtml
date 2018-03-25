@@ -186,6 +186,22 @@
                             }
                             var domli = "<ul class='fb-list'>";
                             for (var j = 0; j < info.length; j++) {
+                                if (info[j].IS_RECEIVED == "1")
+                                {
+                                    info[j].IS_RECEIVED = "竞标中";
+                                }
+                                else if (info[j].IS_RECEIVED == "2")
+                                {
+                                    info[j].IS_RECEIVED = "竞标成功";
+                                }
+                                else if (info[j].IS_RECEIVED == "3")
+                                {
+                                    info[j].IS_RECEIVED = "托管中";
+                                }
+                                else if (info[j].IS_RECEIVED == "4")
+                                {
+                                    info[j].IS_RECEIVED = "已完成";
+                                }
                                 domli += '<a onclick="javascript:task_list(\'' + info[j].TASK_ID + '\');">'
                                            + "<li>"
                                              + "<div class='middle' style='width:41%;'>"
@@ -195,7 +211,7 @@
                                                + "<div class='right' style='width:28%;'>"
                                                  + "<h2>￥" + info[j].PRICE + "</h2>"
                                                  + "<p>"+info[j].APPLY_NUMBER+"人申请"
-                                                 + "<span>竞标中</span>"
+                                                 + "<span>"+info[j].IS_RECEIVED+"</span>"
                                                  + "</p>"
                                                + "</div>"
                                               + "</li>"

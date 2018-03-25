@@ -35,13 +35,14 @@
     <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
 
     <link href="@Url.Content("~/gxfa/statics/css/search.css")" rel="stylesheet" />
+    <script type="text/javascript">var rootUrl = "@Url.Content("~")";//获取根路径，防止iis部署位置不同</script>
 </head>
 <body style="max-width:640px;">
     <div class="con m-b7 new-maxbox">
         <div class="ect-bg">
             <header class="ect-header ect-margin-tb ect-margin-lr text-center ect-bg icon-write">
                 <a href="javascript:history.go(-1)" class="pull-left ect-icon ect-icon1 ect-icon-history"></a>
-                <span>全部发包</span>
+                <span id="send_flag"></span>
                 <a href="javascript:;" onclick="openMune()" class="pull-right ect-icon ect-icon1 ect-icon-mune icon-write"></a>
             </header>
             <nav class="ect-nav ect-nav-list" style="display:none;">
@@ -153,34 +154,6 @@
             setCookie('ECS[keywords]', '', -1);
             document.getElementById("search_histroy").style.visibility = "hidden";
         }
-        function MiddleSortNameInfo() {
-            $.ajax({
-                type: "POST",
-                url: rootUrl + "Home/MySendTaskListInfo?random=" + Math.floor(Math.random() * (100000 + 1)),
-                dataType: "json",
-                data: { middlesortname_last: MiddleSortName_Last, middlesortname_amount: MiddleSortName_Amount },
-                async: true,
-                success: function (obj) {
-                    if (obj.msg == "success") {
-                        var middleinfo = obj.middlesortinfo;//middleinfo是整个信息
-                        $("#showgoods").html("");
-                        for (var i = 0; i < middleinfo.length; i++) {
-                        
-
-
-                                   }
-                    }
-                    else {
-                        $('#loading').hide();
-                    }
-
-                },
-                error: function () {
-                    alert("ajax wrong!");
-                    $('#loading').hide();
-                }
-            });
-        }
     </script>
     <script type="text/javascript">
     $(document).ready(function () {
@@ -195,22 +168,77 @@
             dataType: "json",
             data: myinfo,
             success: function (data) {
-                $("#task_name").html(data.Task_Name);
-                $("#apply_number").html("申请：" + data.Apply_Number);
-                $("#price").html("￥" + data.Price);
-                $("#send_time").html("发布时间：" + data.Send_Time);
-                $("#deadline").html("报名截止时间：" + data.deadline);
-                $("#detail").html("详情：" + data.Demand_Detail);
-                $("#demand_description").html(data.Demand_Description);
-                $("#application_area").html("应用领域：" + data.Application_area);
-                $("#user_name").html(data.User_Name);
+                if (data.msg == "success")
+                {
+                    //if (data.send_flag == "1")
+                    //{
+                    //    data.send_flag = "全部发包";
+
+                    //}
+                    //else if (data.send_flag == "2")
+                    //{
+                    //    data.send_flag = "已选中";
+                    //}
+                    //else if (data.send_flag == "3")
+                    //{
+                    //    data.send_flag = "已托管";
+                    //}
+                    //else if (data.send_flag == "4")
+                    //{
+                    //    data.send_flag = "已完成";
+                    //}
+                    $("#send_flag").html(data.send_flag);
+                    var sortinfo = data.sortinfo;
+                    var domli = "";
+                    for (var i = 0; i < sortinfo.length; i++) {
+                        if (sortinfo[i].IS_RECEIVED == "0")
+                        {
+                            sortinfo[i].IS_RECEIVED = "未选中,未托管,未完成";
+                        }
+                        else if (sortinfo[i].IS_RECEIVED == "1")
+                        {
+                            sortinfo[i].IS_RECEIVED = "竞标中,未托管,未完成";
+                        }
+                        else if (sortinfo[i].IS_RECEIVED == "2") {
+                            sortinfo[i].IS_RECEIVED = "竞标成功，未托管";
+                        }
+                        else if (sortinfo[i].IS_RECEIVED == "3") {
+                            sortinfo[i].IS_RECEIVED = "托管中";
+                        }
+                        else if (sortinfo[i].IS_RECEIVED == "4") {
+                            sortinfo[i].IS_RECEIVED = "已完成";
+                        }
+                        domli += "  <ul id='J_ItemList'>"
+                    + "<li>"
+                        + '<a onclick="javascript:task_list(\''+sortinfo[i].TASK_ID+'\');">'
+                         + "<dl style='margin-left:10px'>"
+                                + "<dt>"
+                                    + "<h4 class='title'>方案号："+sortinfo[i].TASK_ID+"</h4>"
+                                + "</dt>"
+                                + "<dd>方案状态：" + sortinfo[i].IS_RECEIVED + "</dd>"
+                                + "<dd>方案金额：<span class='ect-color'>￥"+sortinfo[i].PRICE+"元</span></dd>"
+                                + "<dd>发布时间："+sortinfo[i].SEND_TIME+"</dd>"
+                            + "</dl>"
+                            + "<i class='pull-right fa fa-angle-right' style='position: absolute;top: 50%;margin-top: -1.3em;right: 0.6em;font-size:12px'></i>"
+                       + "</a>"
+                    + "</li>"
+                + "</ul>"
+                    }
+                    $("#showgoods").append(domli);
+                }
+
             },
+
             error: function () {
                 alert("error");
             }
         });
     });
+        function task_list(task_id) {
 
+
+            window.location.href = rootUrl + "Home/GxfaWxExample?task_id=" + task_id + "&random=" + Math.floor(Math.random() * (100000 + 1));
+        }
     </script>
 
 </body>

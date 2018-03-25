@@ -524,6 +524,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Gxdzwxfangan.pubxml" />
+    <Content Include="Views\Home\GxfaWxExampleReceive.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gxdzwxfangan.Bll\Gxdzwxfangan.Bll.csproj">
