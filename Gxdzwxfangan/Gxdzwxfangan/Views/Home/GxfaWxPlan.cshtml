@@ -36,6 +36,7 @@
     <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
 
     <link href="@Url.Content("~/gxfa/statics/css/search.css")" rel="stylesheet" />
+    <script type="text/javascript">var rootUrl = "@Url.Content("~")";//获取根路径，防止iis部署位置不同</script>
 </head>
 <body style="max-width:640px;">
     <div class="con m-b7 new-maxbox">
@@ -294,7 +295,9 @@
                             alert("发布成功");
                         }
                         else {
-                            alert("发布失败");
+                            alert("发布失败,请先注册");
+                            var url = '@Url.Content("~/Home/Rediret")';
+                            window.location.href = url;
                         }
                     },
                     error: function () {
