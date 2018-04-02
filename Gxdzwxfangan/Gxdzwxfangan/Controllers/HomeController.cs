@@ -24,10 +24,15 @@ namespace Gxdzwxfangan.Controllers
                 ViewBag.openid = openid;
                 CookieHelper.ClearCookie("openid");
                 CookieHelper.SetCookie("openid", openid);
+  
+
                 string user_id = getuserinfodal.GetUserID(openid);
                 if (user_id == "none")
                 {
-                    Response.Redirect("http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid=oXx_Mw-hx0yNF3wIELsf_RP6cJoA", false);
+                    string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
+                    string url2 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid= " + openid + "&url1=" + url1;
+                    //非会员，跳转登陆页面
+                    System.Web.HttpContext.Current.Response.Redirect(url2);
                 }
                 Session["user_id"] = user_id;
                 Session["user_name"] = user_id;
