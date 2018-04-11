@@ -13,7 +13,7 @@ namespace Gxdzwxfangan.Dal
 {
     public class GetUserInfoDal
     {
-        public string GetUserID(string openid)
+        public string GetUserID(string openid) //根据openid得到userid
         {
             string sql = string.Format("select * from GX_USER  where open_id='{0}' ", openid);
             DataTable dt = OracleHelper.GetTable(sql, null);
@@ -28,7 +28,7 @@ namespace Gxdzwxfangan.Dal
             }
             return userid;
         }
-        public string GetUserName(string userid)
+        public string GetUserName(string userid)//根据userid得到个人会员表中的用户名
         {
             string sql = string.Format("select * from GX_USER_MEMBER_PERSONAL  where USER_ID='{0}' ", userid);
             DataTable dt = OracleHelper.GetTable(sql, null);
