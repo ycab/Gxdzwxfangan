@@ -165,6 +165,7 @@
     <Content Include="assets\css\ace-skins.min.css" />
     <Content Include="assets\css\ace.min.css" />
     <Content Include="assets\css\ace.onpage-help.css" />
+    <Content Include="assets\css\basic_app.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\codemirror.css" />
     <Content Include="assets\css\font-awesome.min.css" />
@@ -345,6 +346,19 @@
     <Content Include="gxfa\statics\js\TouchSlide.1.1.js" />
     <Content Include="gxfa\statics\js\utils.js" />
     <Content Include="gxfa\statics\js\validform.js" />
+    <Content Include="Public\home\jquery.validate.min.js" />
+    <Content Include="Public\home\webuploader\webuploader.min.js" />
+    <Content Include="Public\js\jq.js" />
+    <Content Include="Public\js\jquery-1.11.3.min.js" />
+    <Content Include="Public\js\jquery-1.8.2.min.js" />
+    <Content Include="Public\js\jquery.cookie.js" />
+    <Content Include="Public\js\jquery.raty.min.js" />
+    <Content Include="Public\js\jquery.SuperSlide.2.1.1.js" />
+    <Content Include="Public\layer\layer.js" />
+    <Content Include="Public\layer\skin\layer.css" />
+    <Content Include="Public\style\app_sec.css" />
+    <Content Include="Public\style\LArea.css" />
+    <Content Include="Public\style\layer.css" />
     <Content Include="Scripts\Jquery\jquery-1.10.2.js" />
     <Content Include="Scripts\Jquery\jquery-1.9.1.js" />
     <Content Include="Scripts\Jquery\jquery.unobtrusive-ajax.js" />
@@ -437,6 +451,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="gxfa\css\" />
     <Folder Include="Models\" />
+    <Folder Include="Public\images\" />
     <Folder Include="weui-master\src\style\base\mixin\" />
     <Folder Include="weui-master\src\style\base\variable\" />
     <Folder Include="weui-master\src\style\icon\" />

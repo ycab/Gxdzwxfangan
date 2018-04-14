@@ -13,7 +13,40 @@
     <title>电子联盟方案</title>
     <link href="@Url.Content("~/gxfa/statics/css/ectouch.css")" rel="stylesheet" />
 
-
+    <link href="@Url.Content("~/assets/css/basic_app.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/weui-master/dist/style/weui.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/weui-master/dist/style/weui.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/weui-master/dist/example/example.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/weui-master/dist/example/example.js")"></script>
+    <style type="text/css">
+        /*.weui-btn_mini {
+            display: inline-block;
+            padding: 0 1.32em;
+            line-height: 2.3;
+            font-size: 13px;
+        }
+        .weui-btn{
+              position:relative;
+              display:block;
+              margin-left:auto;
+              margin-right:auto;
+              padding-left:14px;
+              padding-right:14px;
+              box-sizing:border-box;
+              font-size:18px;
+              text-align:center;
+              text-decoration:none;
+              color:#FFFFFF;
+              line-height:2.55555556;
+              border-radius:5px;
+              -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+              overflow:hidden;
+         }
+        .weui-btn_default{
+          color:#000000;
+          background-color:#F8F8F8;
+        }*/
+    </style>
 </head>
 <body style="max-width:640px;">
     <div id="loading">
@@ -38,17 +71,171 @@
             <aside>
                 <div class="menu-left scrollbar-none" id="sidebar">
                     <ul>
-                        <li class="active">示波器</li>
-                        <li>开关电源</li>
-                        <li>无线充电</li>
-                        <li>PLC</li>
-                        <li>生产设备</li>
-                        <li>伺服系统</li>
-                        <li>蓝牙/wifi测试仪</li>
+                        <li class="active">智能穿戴</li>
+                        <li>安防监控</li>
+                        <li>便携产品</li>
+                        <li>工业电子</li>
+                        <li>汽车电子</li>
+                        <li>测试设备</li>
+                        <li>电源电池</li>
+                        <li>机器人无人机</li>
+                        <li>通信广电</li>
+                        <li>游戏玩具</li>
+                        <li>医疗健康</li>
+                        <li>软件开发</li>
+                        <li>智能家居</li>
+                        <li>智能家电</li>
+                        <li>照明显示</li>
+                        <li>工业设计</li>
                         <li>其他</li>
                     </ul>
                 </div>
             </aside>
+            @*智能穿戴*@
+            <section class="menu-right padding-all   j-content" style="text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能手环</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能手表</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">触控</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能戒指</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能植入</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">体感</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能眼镜</a>
+            </section>
+            @*安防监控*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">门禁识别</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">报警器</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">摄像机</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">可视对讲</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">图片识别</a>
+            </section>
+            @*便携产品*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">耳机</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">蓝牙音箱</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">wifi音箱</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能水杯</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">照相机</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">手机周边</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">手机</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">笔记本电脑</a>
+            </section>
+            @*工业电子*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">仪器仪表</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">轨道交通</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">新能源</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">生产设备</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">PLC</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">运动执行</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">自动控制</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">伺服系统</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">广告机</a>
+            </section>
+            @*汽车电子*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">电动汽车充电桩</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">车身电子</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">动力控制</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">胎压监测</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">新能源汽车</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">汽车电池</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">车载娱乐</a>
+            </section>
+            @*测试设备*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">示波器</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">综测仪</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">网络分析仪</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">蓝牙/wifi测试仪</a>
+            </section>
+            @*电源电池*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">交直流转换器</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">开关电源</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">无线充电</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">电源管理系统</a>
+            </section>
+            @*机器人无人机*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">服务机器人</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">机器视觉</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">教学机器人</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">学习机器人</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">单功能机器人</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">娱乐无人机</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">工业无人机</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">农业无人机</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">无人机控制器</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">雷达测距</a>
+            </section>
+            @*通信广电*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">数据通信</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">移动通信</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">网络传输</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">语音电话</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">无线射频</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">无线接收</a>
+            </section>
+            @*游戏玩具*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能玩具</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">礼物玩具</a>
+            </section>
+            @*医疗健康*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">血压计</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">血糖仪</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">心率仪</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">健身机</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">医疗仪器</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">监护仪</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">医疗影像</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">超声波</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">体验机</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">按摩器</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">多普勒</a>
+            </section>
+            @*软件开发*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">App开发</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">HTML5</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">网站开发</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">微信公众号开发</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">ERP系统</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">pc软件</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">其他</a>
+            </section>
+            @*智能家居*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能照明</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能监控</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能小区</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能插座</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能路由</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">智能开关</a>
+            </section>
+            @*智能家电*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">空调</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">PC电脑</a>
+            </section>
+            @*照明显示*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">LED</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">有机发光二极管（OLED）</a>
+            </section>
+            @*工业设计*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">机械设计</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">外观设计</a>
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">结构设计</a>
+            </section>
+            @*其他*@
+            <section class="menu-right padding-all   j-content" style="display:none;text-align:left;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">其他</a>
+            </section>
             <div id="showgoods">
 
             </div>
@@ -154,100 +341,87 @@
         //初始化，异步加载大分类名字
 
         ///初始化，异步加载中分类的名字信息
-        function MiddleSortNameInfo() {
-            $.ajax({
-                type: "POST",
-                url: rootUrl + "Home/MiddleSortNameInfo?random=" + Math.floor(Math.random() * (100000 + 1)),
-                dataType: "json",
-                data: { middlesortname_last: MiddleSortName_Last, middlesortname_amount: MiddleSortName_Amount },
-                async: true,
-                success: function (obj) {
-                    if (obj.msg == "success") {
-                        var middleinfo = obj.middlesortinfo;//middleinfo是整个信息
-                        $("#showgoods").html("");
-                        for (var i = 0; i < middleinfo.length; i++) {
-                            var middle = middleinfo[i];//{parentid:1,parentname:'',info:[{:'',...},{},{}]}
-                            //var parentid = middle.parentid;middle是一个职业的所有信息
-                            var task_category_name = middle.task_category_name;
-                            var task_category_id = middle.task_category_id;
-                            var info = middle.info;//[{:'',.....},{},{}]某个职业单条数据的集合.例如：info[0].USER_NAME，某职业第一条数据的人名
-                            if (i == 0) {
-                                $("#showgoods").append(
-                                "<section class='menu-right padding-all j-content' data-parentid='" + task_category_id + "'>"
-                               + "<h5>" + task_category_name + "</h5>"
-                               + "</section>");
+        //function MiddleSortNameInfo() {
+        //    $.ajax({
+        //        type: "POST",
+        //        url: rootUrl + "Home/MiddleSortNameInfo?random=" + Math.floor(Math.random() * (100000 + 1)),
+        //        dataType: "json",
+        //        data: { middlesortname_last: MiddleSortName_Last, middlesortname_amount: MiddleSortName_Amount },
+        //        async: true,
+        //        success: function (obj) {
+        //            if (obj.msg == "success") {
+        //                var middleinfo = obj.middlesortinfo;//middleinfo是整个信息
+        //                $("#showgoods").html("");
+        //                for (var i = 0; i < middleinfo.length; i++) {
+        //                    var middle = middleinfo[i];//{parentid:1,parentname:'',info:[{:'',...},{},{}]}
+        //                    //var parentid = middle.parentid;middle是一个职业的所有信息
+        //                    var task_category_name = middle.task_category_name;
+        //                    var task_category_id = middle.task_category_id;
+        //                    var info = middle.info;//[{:'',.....},{},{}]某个职业单条数据的集合.例如：info[0].USER_NAME，某职业第一条数据的人名
+        //                    if (i == 0) {
+        //                        $("#showgoods").append(
+        //                        "<section class='menu-right padding-all j-content' data-parentid='" + task_category_id + "'>"
+        //                       + "<h5>" + task_category_name + "</h5>"
+        //                       + "</section>");
 
-                            }
-                            else {
-                                $("#showgoods").append(
-                                "<section class='menu-right padding-all j-content' style='display:none' data-parentid='" + task_category_id + "'>"
-                                + "<h5>" + task_category_name + "</h5>"
-                                + "</section>");
-                            }
-                            var domli = "<ul class='fb-list'>";
-                            for (var j = 0; j < info.length; j++) {
-                                if (info[j].IS_RECEIVED == "1")
-                                {
-                                    info[j].IS_RECEIVED = "竞标中";
-                                }
-                                else if (info[j].IS_RECEIVED == "2")
-                                {
-                                    info[j].IS_RECEIVED = "竞标成功";
-                                }
-                                else if (info[j].IS_RECEIVED == "3")
-                                {
-                                    info[j].IS_RECEIVED = "托管中";
-                                }
-                                else if (info[j].IS_RECEIVED == "4")
-                                {
-                                    info[j].IS_RECEIVED = "已完成";
-                                }
-                                domli += '<a onclick="javascript:task_list(\'' + info[j].TASK_ID + '\');">'
-                                           + "<li>"
-                                             + "<div class='middle' style='width:41%;'>"
-                                               + "<h2>"+info[j].TASK_NAME+"</h2>"
-                                               + "<p>"+info[j].SEND_TIME+"</p>"
-                                               + "</div>"
-                                               + "<div class='right' style='width:28%;'>"
-                                                 + "<h2>￥" + info[j].PRICE + "</h2>"
-                                                 + "<p>"+info[j].APPLY_NUMBER+"人申请"
-                                                 + "<span>"+info[j].IS_RECEIVED+"</span>"
-                                                 + "</p>"
-                                               + "</div>"
-                                              + "</li>"
-                                              +"<a>"
+        //                    }
+        //                    else {
+        //                        $("#showgoods").append(
+        //                        "<section class='menu-right padding-all j-content' style='display:none' data-parentid='" + task_category_id + "'>"
+        //                        + "<h5>" + task_category_name + "</h5>"
+        //                        + "</section>");
+        //                    }
+        //                    var domli = "<ul class='fb-list'>";
+        //                    for (var j = 0; j < info.length; j++) {
+        //                        if (info[j].IS_RECEIVED == "1")
+        //                        {
+        //                            info[j].IS_RECEIVED = "竞标中";
+        //                        }
+        //                        else if (info[j].IS_RECEIVED == "2")
+        //                        {
+        //                            info[j].IS_RECEIVED = "竞标成功";
+        //                        }
+        //                        else if (info[j].IS_RECEIVED == "3")
+        //                        {
+        //                            info[j].IS_RECEIVED = "托管中";
+        //                        }
+        //                        else if (info[j].IS_RECEIVED == "4")
+        //                        {
+        //                            info[j].IS_RECEIVED = "已完成";
+        //                        }
+        //                        domli += '<a onclick="javascript:task_list(\'' + info[j].TASK_ID + '\');">'
+        //                                   + "<li>"
+        //                                     + "<div class='middle' style='width:41%;'>"
+        //                                       + "<h2>"+info[j].TASK_NAME+"</h2>"
+        //                                       + "<p>"+info[j].SEND_TIME+"</p>"
+        //                                       + "</div>"
+        //                                       + "<div class='right' style='width:28%;'>"
+        //                                         + "<h2>￥" + info[j].PRICE + "</h2>"
+        //                                         + "<p>"+info[j].APPLY_NUMBER+"人申请"
+        //                                         + "<span>"+info[j].IS_RECEIVED+"</span>"
+        //                                         + "</p>"
+        //                                       + "</div>"
+        //                                      + "</li>"
+        //                                      +"<a>"
 
-                            }
-                            domli+="</ul>"
-                            $("section[data-parentid='" + task_category_id + "']").append(domli);
-                            @*$("#showgoods").append(
-                            "<section class='menu-right padding-all j-content' style='display:none'>"
-                                + "<h5>工艺工程师</h5>"
-                                + "<ul class='fb-list'>"
-                                 + "<a href=\"@Url.Action("GxFreelanceWxExample", "home")\">"
-                                  + "<li style='height:70px'>"
-                                    + "<img src=\"@Url.Content("~/gxfreelance/statics/img/3333333333.png")\"" + " style='float:left;height:80px;width:auto'>"
-                                      + "<div class='middle' style='width:41%;'>"
-                                        + "<h4>王曦晨</h4>"
-                                         + "<p style='font-size:15px;margin-left:10px;margin-top:-0.5em'>编号：117110022225</p>"
-                                         + "</div>  </li>    </a>  </ul></section>"
-
-                                   );*@
+        //                    }
+        //                    domli+="</ul>"
+        //                    $("section[data-parentid='" + task_category_id + "']").append(domli);
 
 
-                                   }
-                    }
-                    else {
-                        $('#loading').hide();
-                    }
+        //                           }
+        //            }
+        //            else {
+        //                $('#loading').hide();
+        //            }
 
-                },
-                error: function () {
-                    alert("ajax wrong!");
-                    $('#loading').hide();
-                }
-            });
-        }
+        //        },
+        //        error: function () {
+        //            alert("ajax wrong!");
+        //            $('#loading').hide();
+        //        }
+        //    });
+        //}
             $(function ($) {
                 $('#sidebar ul li').click(function () {
                     $(this).addClass('active').siblings('li').removeClass('active');
@@ -259,13 +433,6 @@
             $(document).ready(function () {
                 get_asynclist("", "");
 
-                //因为使用ajax动态加载了dom，所以使用普通的click无法绑定click事件，用了$('id').on('click','id',function(){})委托形式
-                //$('#sidebar').on('click', '#sortul li', function () {
-                //    $(this).addClass('active').siblings('li').removeClass('active');
-                //    var index = $(this).index();
-                //    $('.j-content').eq(index).show().siblings('.j-content').hide();
-                //    $(window).scrollTop(0);
-                //})
 
             });
             function redirect_list(id) {

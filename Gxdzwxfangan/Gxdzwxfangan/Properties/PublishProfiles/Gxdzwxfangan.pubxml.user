@@ -24,6 +24,9 @@
     <File Include="assets/css/ace.onpage-help.css">
       <publishTime>12/04/2017 15:05:26</publishTime>
     </File>
+    <File Include="assets/css/basic_app.css">
+      <publishTime>04/13/2018 17:22:13</publishTime>
+    </File>
     <File Include="assets/css/bootstrap.min.css">
       <publishTime>12/04/2017 15:05:26</publishTime>
     </File>
@@ -118,19 +121,19 @@
       <publishTime>12/04/2017 15:06:30</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Bll.dll">
-      <publishTime>03/25/2018 16:07:43</publishTime>
+      <publishTime>04/13/2018 16:06:26</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Dal.dll">
-      <publishTime>03/25/2018 16:07:43</publishTime>
+      <publishTime>04/13/2018 16:06:26</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.dll">
-      <publishTime>04/02/2018 22:26:20</publishTime>
+      <publishTime>04/14/2018 20:43:54</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Model.dll">
-      <publishTime>03/25/2018 10:37:39</publishTime>
+      <publishTime>04/13/2018 16:06:25</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Utilities.dll">
-      <publishTime>03/25/2018 10:37:39</publishTime>
+      <publishTime>04/13/2018 16:06:25</publishTime>
     </File>
     <File Include="bin/Microsoft.CSharp.dll">
       <publishTime>03/18/2010 19:31:26</publishTime>
@@ -747,6 +750,45 @@
     <File Include="packages.config">
       <publishTime>12/22/2017 12:44:38</publishTime>
     </File>
+    <File Include="Public/home/jquery.validate.min.js">
+      <publishTime>04/13/2018 17:50:13</publishTime>
+    </File>
+    <File Include="Public/home/webuploader/webuploader.min.js">
+      <publishTime>04/13/2018 17:50:24</publishTime>
+    </File>
+    <File Include="Public/js/jq.js">
+      <publishTime>04/13/2018 17:50:52</publishTime>
+    </File>
+    <File Include="Public/js/jquery-1.11.3.min.js">
+      <publishTime>04/13/2018 17:50:55</publishTime>
+    </File>
+    <File Include="Public/js/jquery-1.8.2.min.js">
+      <publishTime>04/13/2018 17:50:59</publishTime>
+    </File>
+    <File Include="Public/js/jquery.cookie.js">
+      <publishTime>04/13/2018 17:51:05</publishTime>
+    </File>
+    <File Include="Public/js/jquery.raty.min.js">
+      <publishTime>04/13/2018 17:51:08</publishTime>
+    </File>
+    <File Include="Public/js/jquery.SuperSlide.2.1.1.js">
+      <publishTime>04/13/2018 17:51:01</publishTime>
+    </File>
+    <File Include="Public/layer/layer.js">
+      <publishTime>04/13/2018 17:51:20</publishTime>
+    </File>
+    <File Include="Public/layer/skin/layer.css">
+      <publishTime>04/13/2018 17:51:14</publishTime>
+    </File>
+    <File Include="Public/style/app_sec.css">
+      <publishTime>04/13/2018 17:51:27</publishTime>
+    </File>
+    <File Include="Public/style/LArea.css">
+      <publishTime>04/13/2018 17:51:25</publishTime>
+    </File>
+    <File Include="Public/style/layer.css">
+      <publishTime>04/13/2018 17:51:14</publishTime>
+    </File>
     <File Include="Scripts/Jquery/jquery-1.10.2.js">
       <publishTime>12/04/2017 15:21:50</publishTime>
     </File>
@@ -790,13 +832,13 @@
       <publishTime>03/25/2018 19:04:03</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxFl.cshtml">
-      <publishTime>03/25/2018 14:27:25</publishTime>
+      <publishTime>04/14/2018 20:57:09</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxIndex.cshtml">
       <publishTime>12/26/2017 14:32:28</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxPlan.cshtml">
-      <publishTime>04/02/2018 21:57:29</publishTime>
+      <publishTime>04/09/2018 13:10:47</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxPlanDetail.cshtml">
       <publishTime>03/25/2018 14:33:36</publishTime>
