@@ -30,6 +30,12 @@ namespace Gxdzwxfangan.Bll
             task = SortInfoDal.GetOneTaskInfo(task_id);
             return task;
         }
+        public string GetTaskInfoByField(string application_area)
+        {
+            string responseText = "";
+            responseText = SortInfoDal.GetTaskInfoByField(application_area);
+            return responseText;
+        }
 
     }
 }

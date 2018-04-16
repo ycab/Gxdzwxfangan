@@ -1,0 +1,339 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="format-detection" content="telephone=no">
+    <title>电子联盟方案</title>
+    <link href="@Url.Content("~/gxfa/statics/css/bootstrap.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/font-awesome.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/swiper.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/ectouch.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/photoswipe.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/style.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/user.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/mobiscroll.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/gxfa/statics/css/mobiscroll_date.css")" rel="stylesheet" />
+    <style>
+        .ulborder {  
+ border-bottom:solid 1px #eee;
+
+        }
+    </style>
+
+    <script src="@Url.Content("~/gxfa/statics/js/mobiscroll_date.js")" charset="gb2312"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/mobiscroll.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/jquery-2.1.4.min.js")"></script>
+
+    <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
+
+    <link href="@Url.Content("~/gxfa/statics/css/search.css")" rel="stylesheet" />
+    <script type="text/javascript">var rootUrl = "@Url.Content("~")";//获取根路径，防止iis部署位置不同</script>
+</head>
+<body style="max-width:640px;">
+    <div class="con m-b7 new-maxbox">
+        <div class="ect-bg">
+            <header class="ect-header ect-margin-tb ect-margin-lr text-center ect-bg icon-write">
+                <a href="javascript:history.go(-1)" class="pull-left ect-icon ect-icon1 ect-icon-history"></a>
+                <span id="send_flag"></span>
+                <a href="javascript:;" onclick="openMune()" class="pull-right ect-icon ect-icon1 ect-icon-mune icon-write"></a>
+            </header>
+            <nav class="ect-nav ect-nav-list" style="display:none;">
+                <ul class="ect-diaplay-box text-center">
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxIndex","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-home"></i>首页</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxFl","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-cate"></i>分类</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxPlan","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-flow"></i>发布任务</a></li>
+                    <li class="ect-box-flex"><a href="@Url.Action("GxfaWxUser","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-user"></i>用户中心</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="showgoods" class="ect-pro-list user-order" >
+            @*<ul class='fb-list ulborder'>
+              <a onclick="javascript:task_list('63');">
+                <li>
+                  <div class='middle' style='width:41%;'>
+                    <h2>打发打发</h2>
+                    <p>2018/4/15 13:22:26</p>
+                  </div>
+                  <div class='right' style='width:28%;'>
+                    <h2>￥10000</h2>
+                    <p>0人申请<span>竞标中</span></p>
+                    </div>
+                  </li>
+
+                 </a>
+            </ul>
+            
+            <ul class='fb-list ulborder'>
+                <a onclick="javascript:task_list('63');">
+                    <li>
+                        <div class='middle' style='width:41%;'>
+                            <h2>按法律是否</h2>
+                            <p>2018/4/15 13:22:26</p>
+                        </div>
+                        <div class='right' style='width:28%;'>
+                            <h2>￥10000</h2>
+                            <p>5人申请<span>托管中</span></p>
+                        </div>
+                    </li>
+                </a>
+            </ul>
+            
+            <ul class='fb-list  ulborder'>
+                <a onclick="javascript:task_list('63');">
+                    <li>
+                        <div class='middle' style='width:41%;'>
+                            <h2>发的回复</h2>
+                            <p>2018/4/15 13:22:26</p>
+                        </div>
+                        <div class='right' style='width:28%;'>
+                            <h2>￥10000</h2>
+                            <p>5人申请<span>托管中</span></p>
+                        </div>
+                    </li>
+                </a>
+            </ul>*@
+        </div>
+        <section class="padding-all">
+            <ul class="dis-box">
+                <li class="n-page-but"><a href="#"><div class="page-but">上一页</div></a></li>
+
+                <li class="box-flex">
+                    <div class="page-num">
+                        <select name="sel_question" onchange="window.location.href=this.value;">
+                            <option value="/v2/index.php?m=default&amp;c=user&amp;a=order_list&amp;u=60636" selected="">1/1</option>
+                        </select>
+                    </div>
+                </li>
+
+                <li class="n-page-but"><a href="#"><div class="page-but">下一页</div></a></li>
+
+            </ul>
+        </section>
+    </div>
+    @*<div class="search-div ts-3">
+            <section class="search">
+                <form action="/v2/index.php?m=default&amp;c=category&amp;a=index&amp;u=60636" method="post">
+                    <div class="text-all dis-box j-text-all">
+                        <a class="a-icon-back j-close-search" href="javascript:history.go(-1)"><i class="iconfont icon-jiantou is-left-font"></i></a>
+                        <div class="box-flex input-text">
+                            <input class="j-input-text" type="text" name="name" placeholder="请输入搜索关键词！" id="newinput" autofocus="autofocus">
+                            <i class="iconfont icon-guanbi2 is-null j-is-null"></i>
+                        </div>
+                        <button type="submit" class="btn-submit">搜索</button>
+                    </div>
+                </form>
+            </section>
+            <section class="search-con">
+                <div class="swiper-scroll history-search swiper-container-vertical swiper-container-free-mode swiper-container-android">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-slide-active">
+                            <p>
+                                <label class="fl">热门搜索</label>
+                            </p>
+                            <ul class="hot-search a-text-more">
+                                <li class="w-3"><a href="/v2/index.php?m=default&amp;c=category&amp;a=index&amp;keywords=%E7%BE%8E%E5%9B%BD&amp;u=60636"><span>美国</span></a></li>
+                                <li class="w-3"><a href="/v2/index.php?m=default&amp;c=category&amp;a=index&amp;keywords=%E6%96%B0%E7%94%9F%E5%A9%B4%E5%84%BF&amp;u=60636"><span>新生婴儿</span></a></li>
+                            </ul>
+                            <p class="hos-search">
+                                <label class="fl">最近搜索</label>
+                                <span class="fr" onclick="javascript:clearHistroy();"><i class="iconfont icon-xiao10 is-xiao10 jian-top fr"></i></span>
+                            </p>
+
+                            <ul class="hot-search a-text-more a-text-one" id="search_histroy"></ul>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar" style="display: none; opacity: 0;"><div class="swiper-scrollbar-drag" style="height: 0px;"></div></div>
+                </div>
+            </section>
+            <footer class="close-search j-close-search">
+                点击关闭
+            </footer>
+        </div>*@
+    <script type="text/javascript">
+        //设置cookie
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+        function clearHistroy() {
+            setCookie('ECS[keywords]', '', -1);
+            document.getElementById("search_histroy").style.visibility = "hidden";
+        }
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var a = "a";
+        var myinfo = {
+            name: a
+        }
+
+        $.ajax({
+            type: 'post',
+            url: rootUrl + "Home/GetTaskListByField?random=" + Math.floor(Math.random() * (100000 + 1)),
+            dataType: "json",
+            data: myinfo,
+            async: true,
+            success: function (data) {
+                if (data.msg == "success") {
+                    var info = data.middlesortinfo;//middleinfo是整个信息
+                   // $("#showgoods").html("");
+                    var domli = "";
+                    for (var j = 0; j < info.length; j++) {
+                       
+                            if (info[j].IS_RECEIVED == "1")
+                            {
+                                info[j].IS_RECEIVED = "竞标中";
+                            }
+                            else if (info[j].IS_RECEIVED == "2")
+                            {
+                                info[j].IS_RECEIVED = "竞标成功";
+                            }
+                            else if (info[j].IS_RECEIVED == "3")
+                            {
+                                info[j].IS_RECEIVED = "托管中";
+                            }
+                            else if (info[j].IS_RECEIVED == "4")
+                            {
+                                info[j].IS_RECEIVED = "已完成";
+                            }
+                            domli += "<ul class='fb-list ulborder'>"
+                                     + '<a onclick="javascript:task_list(\'' + info[j].TASK_ID + '\');">'
+                                       + "<li>"
+                                         + "<div class='middle' style='width:41%;'>"
+                                           + "<h2>"+info[j].TASK_NAME+"</h2>"
+                                           + "<p>"+info[j].SEND_TIME+"</p>"
+                                           + "</div>"
+                                           + "<div class='right' style='width:28%;'>"
+                                             + "<h2>￥" + info[j].PRICE + "</h2>"
+                                             + "<p>"+info[j].APPLY_NUMBER+"人申请"
+                                             + "<span>"+info[j].IS_RECEIVED+"</span>"
+                                             + "</p>"
+                                           + "</div>"
+                                          + "</li>"
+                                          +"</a>"
+                                     +"</ul>"
+                        }
+                        //domli+="</ul>"
+                        $("#showgoods").append(domli);
+
+
+                               
+                }
+                else {
+                    $('#loading').hide();
+                }
+
+            },
+
+            error: function () {
+                alert("error");
+            }
+        });
+    });
+        function task_list(task_id) {
+
+
+            window.location.href = rootUrl + "Home/GxfaWxPlanDetail?task_id=" + task_id + "&random=" + Math.floor(Math.random() * (100000 + 1));
+        }
+    </script>
+    <style>
+        .fb-list {
+            width: 100%;
+            float: left;
+        }
+
+            .fb-list li {
+                width: 100%;
+                height: 50px;
+                line-height: 50px;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+
+            .fb-list .tb {
+                height: 50px;
+                float: left;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .fb-list .middle h2 {
+                font-size: 15px;
+                font-weight: normal;
+                width: 100%;
+                float: left;
+                height: 25px;
+                line-height: 25px;
+                text-align: left;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            .fb-list .middle p {
+                width: 200px;
+                height: 25px;
+                line-height: 35px;
+                float: left;
+                text-align: left;
+                color: #999;
+                font-size: 12px;
+            }
+
+            .fb-list .rightarrows {
+                float: right;
+            }
+
+            .fb-list .middle {
+                float: left;
+                width: 48%;
+                height: 50px;
+            }
+
+            .fb-list .right {
+                width: 30%;
+                float: right;
+                text-align: right;
+            }
+
+                .fb-list .right h2 {
+                    color: #ff0000;
+                    font-weight: normal;
+                    font-size: 14px;
+                    font-weight: normal;
+                    height: 25px;
+                    line-height: 25px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    margin-right: 10px;
+                }
+
+                .fb-list .right p {
+                    height: 25px;
+                    line-height: 30px;
+                    text-align: left;
+                    color: #999;
+                    float: right;
+                    font-size: 15px;
+                }
+    </style>
+
+</body>
+</html>
+

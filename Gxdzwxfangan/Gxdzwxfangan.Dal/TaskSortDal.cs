@@ -149,5 +149,22 @@ namespace Gxdzwxfangan.Dal
 
             return responseText;
         }
+        public string GetTaskInfoByField(string application_area)
+        {
+            string responseText = "";
+            string sql = string.Format("select * from GXFW_SEND_TASK  where APPLICATION_AREA='{0}'", application_area);
+            DataTable dt = OracleHelper.GetTable(sql, null);
+            if (dt.Rows.Count != 0)
+            {
+                responseText = JsonHelper.getRecordJson(dt);
+                responseText = "{\"msg\":\"success\",\"middlesortinfo\":[" + responseText + "]}";
+
+            }
+            else
+            {
+                responseText = "{\"msg\":\"fail\",\"failinfo\":\"查询出错\"}";
+            }
+            return responseText;
+        }
     }
 }

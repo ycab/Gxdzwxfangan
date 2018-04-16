@@ -121,16 +121,16 @@
       <publishTime>12/04/2017 15:06:30</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Bll.dll">
-      <publishTime>04/13/2018 16:06:26</publishTime>
+      <publishTime>04/15/2018 21:08:14</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Dal.dll">
-      <publishTime>04/13/2018 16:06:26</publishTime>
+      <publishTime>04/15/2018 21:08:13</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.dll">
-      <publishTime>04/14/2018 20:43:54</publishTime>
+      <publishTime>04/15/2018 21:08:15</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Model.dll">
-      <publishTime>04/13/2018 16:06:25</publishTime>
+      <publishTime>04/15/2018 21:08:13</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Utilities.dll">
       <publishTime>04/13/2018 16:06:25</publishTime>
@@ -832,7 +832,10 @@
       <publishTime>03/25/2018 19:04:03</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxFl.cshtml">
-      <publishTime>04/14/2018 20:57:09</publishTime>
+      <publishTime>04/15/2018 21:05:07</publishTime>
+    </File>
+    <File Include="Views/Home/GxfaWxFl2.cshtml">
+      <publishTime>04/15/2018 18:28:32</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxIndex.cshtml">
       <publishTime>12/26/2017 14:32:28</publishTime>

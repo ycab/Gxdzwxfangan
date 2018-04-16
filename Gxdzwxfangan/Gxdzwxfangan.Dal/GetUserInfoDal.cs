@@ -35,7 +35,7 @@ namespace Gxdzwxfangan.Dal
             string username="";
             if (dt.Rows.Count != 0)
             {
-                username = dt.Rows[0]["USER_NAME"].ToString();
+                username = dt.Rows[0]["NAME"].ToString();
             }
             else
             {

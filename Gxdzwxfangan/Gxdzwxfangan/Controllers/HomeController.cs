@@ -17,7 +17,20 @@ namespace Gxdzwxfangan.Controllers
             /////获取openid
             if (openid == null)
             {
-
+                openid = "oXx_Mw-hx0yNF3wIELsf_RP6cJoA";
+                string user_id = getuserinfodal.GetUserID(openid);
+                string username = getuserinfodal.GetUserName(user_id);
+                CookieHelper.ClearCookie("openid");
+                CookieHelper.SetCookie("openid", openid);
+                Session["user_id"] = user_id;
+                Session["user_name"] = username;
+                string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
+                string url2 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid= " + openid + "&url1=" + url1;
+                Session["RegisterUrl"] = url2;
+                string url3 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
+                string url4 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/Register/GxLoginRegisterPersonal/?openid= " + openid + "&url1=" + url3;
+                Session["FinishRegisterUrl"] = url4;
+                ViewBag.openid = openid;
             }
             else
             {
@@ -46,6 +59,13 @@ namespace Gxdzwxfangan.Controllers
             return View();
 
         }
+        public ActionResult GxfaWxFl2()
+        {
+            string application_area = Request["application_area"];
+            Session["application_area"] = application_area;
+            return View();
+
+        }
         public ActionResult GxfaWxPlan()
         {
             return View();
@@ -68,7 +88,7 @@ namespace Gxdzwxfangan.Controllers
         }
         public ActionResult GxfaWxReceptPackge()
         {
-            string receive_flag = Request["mytaskinfo"];//发包标志位，1为全部发包，2为已选中，3为已托管，4为已完成
+            string receive_flag = Request["mytaskinfo"];//接包标志位，1为全部发包，2为已选中，3为已托管，4为已完成
             Session["receive_flag"] = receive_flag;
             return View();
         }
@@ -167,7 +187,7 @@ namespace Gxdzwxfangan.Controllers
             }
 
         }
-        public string MyTaskInfo()
+        public string MyTaskInfo()//我的接发包数量
         {
             SendTaskBll send_task = new SendTaskBll();
             MyTaskInfo mytask = new MyTaskInfo();
@@ -220,6 +240,14 @@ namespace Gxdzwxfangan.Controllers
             System.Web.HttpContext.Current.Response.Redirect(url);
             //return View();
             return View();
+        }
+        public ActionResult GetTaskListByField()
+        {
+            string application_area = Session["application_area"].ToString();
+            TaskSortBll sorttaskinfo = new TaskSortBll();
+            string responseText = "";
+            responseText = sorttaskinfo.GetTaskInfoByField(application_area);
+            return Content(responseText);
         }
     }
 }

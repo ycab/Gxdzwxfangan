@@ -540,6 +540,7 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Gxdzwxfangan.pubxml" />
     <Content Include="Views\Home\GxfaWxExampleReceive.cshtml" />
+    <Content Include="Views\Home\GxfaWxFl2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gxdzwxfangan.Bll\Gxdzwxfangan.Bll.csproj">
