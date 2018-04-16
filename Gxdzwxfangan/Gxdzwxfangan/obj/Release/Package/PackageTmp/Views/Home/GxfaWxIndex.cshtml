@@ -38,13 +38,14 @@
     <script src="@Url.Content("~/gxfa/statics/js/common.js")"></script>
     <script src="@Url.Content("~/gxfa/statics/js/jquery.more.js")"></script>
     <script src="@Url.Content("~/Scripts/packpageindex/SendPackage.js")"></script>
+    <script type="text/javascript">var rootUrl = "@Url.Content("~")";//获取根路径，防止iis部署位置不同</script>
 </head>
 <body style="max-width:640px;">
     <div id="loading">
         <img src="@Url.Content("~/gxdz/statics/img/loading.gif")" />
     </div>
     <div class="con m-b7 new-maxbox">
-        <header class="header-max-box">
+        @*<header class="header-max-box">
             <div class="ect-header-banner dis-box">
                 <div class="box-flex">
                     <div class="ect-header-text fl">
@@ -59,7 +60,7 @@
                 <p class="text-c">长按二维码关注公众微信</p>
             </div>
             <div class="index-bg-box"></div>
-        </header>
+        </header>*@
         <div class="index-banner swiper-container box position-rel banner-first">
             <div class="index-nav-box">
                 <ul class="dis-box">
@@ -96,73 +97,157 @@
             <div class="linear"></div>
         </div>
         <div class="hblank10"></div>
-        <nav class="bg-white ptb-1 index-nav">
-            <ul class="box ul-4 text-c bg-white">
-                <li class="fl">
-                    <a href="@Url.Action("gxfawxfl", "home")" ><img src="@Url.Content("~/gxfa/images/nav/nav_0.png")"></a>
-                    <a class="index-menu-text" href="@Url.Action("gxfawxfl", "home")">示波器</a>
-                </li>
-                <li class="fl">
-                    <a href="@Url.Action("gxfawxfl", "home")"><img src="@Url.Content("~/gxfa/images/nav/nav_1.png")"></a>
-                    <a class="index-menu-text" href="@Url.Action("gxfawxfl", "home")">开关电源</a>
-                </li>
-                <li class="fl">
-                    <a href="@Url.Action("gxfawxfl", "home")"><img src="@Url.Content("~/gxfa/images/nav/nav_2.png")"></a>
-                    <a class="index-menu-text" href="@Url.Action("gxfawxfl", "home")">无线充电</a>
-                </li>
-                <li class="fl">
-                    <a href="@Url.Action("gxfawxfl", "home")"><img src="@Url.Content("~/gxfa/images/nav/nav_3.png")"></a>
-                    <a class="index-menu-text" href="@Url.Action("gxfawxfl", "home")">逻辑器件</a>
-                </li>
-                <li class="fl">
-                    <a href="@Url.Action("gxfawxfl", "home")"><img src="@Url.Content("~/gxfa/images/nav/nav_4.png")"></a>
-                    <a class="index-menu-text" href="@Url.Action("gxfawxfl", "home")">生产设备</a>
-                </li>
-                <li class="fl">
-                    <a href="@Url.Action("gxfawxfl", "home")"><img src="@Url.Content("~/gxfa/images/nav/nav_5.png")"></a>
-                    <a class="index-menu-text" href="@Url.Action("gxdzwxppj", "home")">私服系统</a>
-                </li>
-                <li class="fl">
-                    <a href="@Url.Action("gxfawxfl", "home")"><img src="@Url.Content("~/gxfa/images/nav/nav_6.png")"></a>
-                    <a class="index-menu-text" href="@Url.Action("gxfawxfl", "home")">蓝牙/WiFi测试仪</a>
-                </li>
-                <li class="fl">
-                    <a href="@Url.Action("gxfawxfl", "home")"><img src="@Url.Content("~/gxfa/images/nav/nav_7.png")" "></a>
-                    <a class="index-menu-text" href="@Url.Action("gxfawxfl", "home")">其他</a>
-                </li>
-            </ul>
-        </nav>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <nav class="bg-white ptb-1 index-nav">
+                        <ul class="box ul-4 text-c bg-white">
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img style="width:4.4rem" src="@Url.Content("~/gxfa/images/nav/nav_0.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("GoodsSortIndex", "GoodsSort")">智能穿戴</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_1.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("ordermanageindex", "ordermanage")">安防监控</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_2.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("CommentIndex", "Comment")">便携产品</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_3.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("AboutIndex", "AboutWechatShop")">工业电子</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_4.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("CollectGoods", "PersonalCenter")">汽车电子</a>
+                            </li>
+
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_5.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("PersonalCenterIndex", "PersonalCenter")">测试设备</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_6.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("GxdzWxGwc", "Cart")">电源电池</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_7.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("ContactUs", "AboutWechatShop")">机器人无人机</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="swiper-slide">
+                    <nav class="bg-white ptb-1 index-nav">
+                        <ul class="box ul-4 text-c bg-white">
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img style="width:4.4rem" src="@Url.Content("~/gxfa/images/nav/nav_0.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("GoodsSortIndex", "GoodsSort")">通信广电</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_1.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("ordermanageindex", "ordermanage")">游戏玩具</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_2.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("CommentIndex", "Comment")">医疗健康</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_3.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("AboutIndex", "AboutWechatShop")">软件开发</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_4.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("CollectGoods", "PersonalCenter")">智能家居</a>
+                            </li>
+
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_5.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("PersonalCenterIndex", "PersonalCenter")">智能家电</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_6.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("GxdzWxGwc", "Cart")">照明显示</a>
+                            </li>
+                            <li class="fl">
+                                <a href="@Url.Action("gxfawxfl", "home")">
+                                    <img src="@Url.Content("~/gxfa/images/nav/nav_7.png")" />
+                                </a>
+                                <a class="index-menu-text" href="@Url.Action("ContactUs", "AboutWechatShop")">工业设计</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        
         <div class="hblank10"></div>
         <div class="box-flex" style="background-color:white">
             <div class="ect-header-text " style="text-align:center">
                 <h4><span class="color-green" style="line-height:55px;height:55px;color:#1cbb7f">— 需求任务 —</span></h4>
             </div>
         </div>
-        <ul class="task-list" style="background-color:white">
-            <a href="@Url.Action("gxfawxfl", "home")">
-                <li>
-                    <div class="middle" style="width:auto;margin-left:10px"><h4>irmcf171</h4><span style="font-size:15px">  浙江台州 2017-11-07</span></div>
+        <ul id="showgoods"class="task-list" style="background-color:white">
+            @*<a href="@Url.Action("gxfawxfl", "home")">
+                <li style="font-size:15px">
+                    <div class="middle" style="width:auto;margin-left:10px "><h4>irmcf171</h4><span style="font-size:15px">  浙江台州 2017-11-07</span></div>
                     <p class="right" style="margin-right:10px;">￥30000.00<br>申请：6 竞标中</p>
                 </li>
             </a>
             <a href="@Url.Action("gxfawxfl", "home")">
-                <li>
+                <li style="font-size:15px">
                     <div class="middle" style="width:auto;margin-left:10px"><h4>医院HIS、li</h4><span style="font-size:15px">  甘肃兰州 2017-12-02</span></div>
                     <p class="right" style="margin-right:10px;">￥200000.00<br>申请：5 竞标中</p>
                 </li>
             </a>
             <a href="@Url.Action("gxfawxfl", "home")">
-                <li>
+                <li style="font-size:15px">
                     <div class="middle" style="width:auto;margin-left:10px"><h4>24点高速IO口</h4><span style="font-size:15px">  广东汕头 2017-12-03</span></div>
                     <p class="right" style="margin-right:10px;">￥30000.00<br>申请：4 竞标中</p>
                 </li>
             </a>
             <a href="@Url.Action("gxfawxfl", "home")">
-                <li>
+                <li style="font-size:15px">
                     <div class="middle" style="width:auto;margin-left:10px"><h4>42步进电机驱动</h4><span style="font-size:15px">广东广州 2017-12-01</span></div>
                     <p class="right" style="margin-right:10px;">￥3000.00<br>申请：3 竞标中</p>
                 </li>
-            </a>
+            </a>*@
         </ul>
         <div class="hblank10"></div>
 
@@ -240,8 +325,64 @@
         }
     </script>
 
-    <script>
+    <script type="text/javascript">
+     $(document).ready(function () {
+        var a = "a";
+        var myinfo = {
+            name: a
+        }
+        var url = '@Url.Content("~/Home/GetSomeTask")';
+        $.ajax({
+            type: 'post',
+            url: url,
+            dataType: "json",
+            data: myinfo,
+            success: function (data) {
+                if (data.msg == "success") {
+                    var info = data.middlesortinfo;//middleinfo是整个信息
+                    // $("#showgoods").html("");
+                    var domli = "";
+                    for (var j = 0; j < info.length; j++) {
 
+                        if (info[j].IS_RECEIVED == "1") {
+                            info[j].IS_RECEIVED = "竞标中";
+                        }
+                        else if (info[j].IS_RECEIVED == "2") {
+                            info[j].IS_RECEIVED = "竞标成功";
+                        }
+                        else if (info[j].IS_RECEIVED == "3") {
+                            info[j].IS_RECEIVED = "托管中";
+                        }
+                        else if (info[j].IS_RECEIVED == "4") {
+                            info[j].IS_RECEIVED = "已完成";
+                        }
+                        domli += '<a onclick="javascript:task_list(\'' + info[j].TASK_ID + '\');">'
+                            +'<li style="font-size:15px">'
+                                + '<div class="middle" style="width:auto;margin-left:10px "><h4>' + info[j].TASK_NAME + '</h4><span style="font-size:15px">' + info[j].SEND_TIME + '</span></div>'
+                                + '<p class="right" style="margin-right:10px;">￥' + info[j].PRICE + '<br>申请：' + info[j].APPLY_NUMBER + info[j].IS_RECEIVED + '</p>'
+                            +'</li>'
+                        +'</a>'
+                    }
+                    //domli+="</ul>"
+                    $("#showgoods").append(domli);
+
+
+
+                }
+                else {
+                    $('#loading').hide();
+                }
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+    });
+        function task_list(task_id) {
+
+
+            window.location.href = rootUrl + "Home/GxfaWxPlanDetail?task_id=" + task_id + "&random=" + Math.floor(Math.random() * (100000 + 1));
+        }
     </script>
 
     <script type="text/javascript">

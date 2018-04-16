@@ -7,6 +7,7 @@ using Gxdzwxfangan.Model;
 using Gxdzwxfangan.Bll;
 using Gxdzwxfangan.Dal;
 using Gxdzwxfangan.Utilities;
+using System.IO;
 namespace Gxdzwxfangan.Controllers
 {
     public class HomeController : Controller
@@ -27,6 +28,7 @@ namespace Gxdzwxfangan.Controllers
                 string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
                 string url2 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid= " + openid + "&url1=" + url1;
                 Session["RegisterUrl"] = url2;
+                Session["url"] = url2;
                 string url3 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
                 string url4 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/Register/GxLoginRegisterPersonal/?openid= " + openid + "&url1=" + url3;
                 Session["FinishRegisterUrl"] = url4;
@@ -106,6 +108,7 @@ namespace Gxdzwxfangan.Controllers
         {
             string openid = CookieHelper.GetCookieValue("openid");
             string user_id = getuserinfodal.GetUserID(openid);
+            string user_name = getuserinfodal.GetUserName(user_id);
             if (user_id == "none")
             {
                 string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
@@ -117,6 +120,11 @@ namespace Gxdzwxfangan.Controllers
                // System.Web.HttpContext.Current.Response.Redirect(url3);
                 return View();
                 //return Content("fail");
+            }
+             else if(user_name=="")
+            {
+                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
+                return View("GxFaWxPersonal");
             }
             else
             {
@@ -136,7 +144,8 @@ namespace Gxdzwxfangan.Controllers
                 receivetask.Receive_Time = DateTime.Now.ToLocalTime().ToString();
                 receivetaskdal.ReceiveTask(receivetask);
                 sendtaskdal.UpdateReceiveTaskNumber(task_id);
-                return View();
+                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"申请成功，等待审核\")" + "</script>");
+                return View("GxfaWxFl");
             }
 
         }
@@ -148,6 +157,7 @@ namespace Gxdzwxfangan.Controllers
         {
             string openid=CookieHelper.GetCookieValue("openid");
             string user_id = getuserinfodal.GetUserID(openid);
+            string user_name = getuserinfodal.GetUserName(user_id);
             if (user_id == "none")
             {
                     string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
@@ -160,6 +170,11 @@ namespace Gxdzwxfangan.Controllers
                     //Response.Redirect(url2, false);
                     return Content("fail");
              }
+            else if (user_name == "")
+            {
+                //System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
+                return Content("needfinish");
+            }
             else
             {
                 Session["user_id"] = user_id;
@@ -241,12 +256,63 @@ namespace Gxdzwxfangan.Controllers
             //return View();
             return View();
         }
+        public ActionResult RediretToFinish()
+        {
+            return View("GxFaWxPersonal");
+        }
         public ActionResult GetTaskListByField()
         {
             string application_area = Session["application_area"].ToString();
             TaskSortBll sorttaskinfo = new TaskSortBll();
             string responseText = "";
             responseText = sorttaskinfo.GetTaskInfoByField(application_area);
+            return Content(responseText);
+        }
+        public ActionResult GetSomeTask()//得到首页的一些需求任务
+        {
+            TaskSortBll sorttaskinfo = new TaskSortBll();
+            string responseText = "";
+            responseText = sorttaskinfo.GetSomeTask();
+            return Content(responseText);
+        }
+        public ActionResult SetPersonalInfo(PersonalInfoModel Personal)
+        {
+            LoginBll LoginInfoBll = new LoginBll();
+            string responseText = "";
+            GetUserInfoDal getuserinfodal = new GetUserInfoDal();
+            string openid = CookieHelper.GetCookieValue("openid");
+            string user_id = getuserinfodal.GetUserID(openid);
+            string fileExt = "";
+            List<string> filename = new List<string>();
+            //string chat_head_name = Request["chat_head_name"];
+            //string id_card_name = Request["id_card_name"];
+            int cnt = System.Web.HttpContext.Current.Request.Files.Count;
+            for (int i = 0; i < cnt; i++)
+            {
+                HttpPostedFile hpf = System.Web.HttpContext.Current.Request.Files[i];
+                string filenames = Path.GetFileName(hpf.FileName);
+                fileExt = Path.GetExtension(hpf.FileName).ToLower();//带.的后缀
+                filename.Add(filenames);
+                string fileFilt = ".jpg|.jpeg|.png|.JPG|.PNG|......";
+                if ((fileFilt.IndexOf(fileExt) <= -1) || (fileExt == "") || (hpf.ContentLength > 4 * 1024 * 1024))
+                    continue;
+                //  string filepath = HttpContext.Server.MapPath("../xwhz_uploadimages/template/" + filenames);
+                ///string filepath = context.Server.MapPath("E:\\inetpub\\wwwroot\\sj_uploadimage\\ZJZ_PIC\\" + hpf.FileName);
+                if (i == 0)
+                {
+                    hpf.SaveAs("D:\\MVCRoot\\gxdzwx\\gxdzimages\\gxdzwxlogin\\personal\\chat_head\\" + filenames);
+                    //                    hpf.SaveAs("G:\\Visual Studio\\image\\" + filenames);
+                }
+                if (i == 1)
+                {
+                    hpf.SaveAs("D:\\MVCRoot\\gxdzwx\\gxdzimages\\gxdzwxlogin\\personal\\id_card\\" + filenames);
+                    //                    hpf.SaveAs("G:\\Visual Studio\\image\\" + filenames);
+                }
+                //               hpf.SaveAs("G://Visual Studio//IMP");
+                //  var mappedPath = System.Web.Hosting.HostingEnvironment.MapPath("~/");
+                //  hpf.SaveAs(filepath);
+            }
+            responseText = LoginInfoBll.SetPersonalInfo(Personal, filename, user_id);
             return Content(responseText);
         }
     }

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GetUserInfoDal.cs" />
+    <Compile Include="LoginDal.cs" />
     <Compile Include="ReceiveTaskDal.cs" />
     <Compile Include="SendTaskDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -166,5 +166,23 @@ namespace Gxdzwxfangan.Dal
             }
             return responseText;
         }
+
+        public string GetSomeTask()
+        {
+            string responseText = "";
+            string sql = "select * from (select * from GXFW_SEND_TASK order by dbms_random.random) where rownum<=4";//随机查询四条数据
+            //string sql = string.Format("select * from GXFW_SEND_TASK");
+            DataTable dt = OracleHelper.GetTable(sql, null);
+            if (dt.Rows.Count != 0)
+            {
+                responseText = JsonHelper.getRecordJson(dt);
+                responseText = "{\"msg\":\"success\",\"middlesortinfo\":[" + responseText + "]}";
+            }
+            else
+            {
+                responseText = "{\"msg\":\"fail\",\"failinfo\":\"查询出错\"}";
+            }
+            return responseText;
+        }
     }
 }

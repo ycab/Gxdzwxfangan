@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoginBll.cs" />
     <Compile Include="ReceiveTaskBll.cs" />
     <Compile Include="SendTaskBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

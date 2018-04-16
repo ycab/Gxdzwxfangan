@@ -60,8 +60,8 @@
                 </ul>
             </nav>
         </div>
-        <div id="showgoods" class="ect-pro-list user-order" style="border-bottom:none;">
-            <ul class='fb-list ulborder'>
+        <div id="showgoods" class="ect-pro-list user-order" >
+            @*<ul class='fb-list ulborder'>
               <a onclick="javascript:task_list('63');">
                 <li>
                   <div class='middle' style='width:41%;'>
@@ -105,7 +105,7 @@
                         </div>
                     </li>
                 </a>
-            </ul>
+            </ul>*@
         </div>
         <section class="padding-all">
             <ul class="dis-box">
@@ -193,7 +193,7 @@
                 if (data.msg == "success") {
                     var info = data.middlesortinfo;//middleinfo是整个信息
                    // $("#showgoods").html("");
-                    var domli = "<ul class='fb-list'>";
+                    var domli = "";
                     for (var j = 0; j < info.length; j++) {
                        
                             if (info[j].IS_RECEIVED == "1")
@@ -212,7 +212,8 @@
                             {
                                 info[j].IS_RECEIVED = "已完成";
                             }
-                            domli += '<a onclick="javascript:task_list(\'' + info[j].TASK_ID + '\');">'
+                            domli += "<ul class='fb-list ulborder'>"
+                                     + '<a onclick="javascript:task_list(\'' + info[j].TASK_ID + '\');">'
                                        + "<li>"
                                          + "<div class='middle' style='width:41%;'>"
                                            + "<h2>"+info[j].TASK_NAME+"</h2>"
@@ -226,10 +227,10 @@
                                            + "</div>"
                                           + "</li>"
                                           +"</a>"
-
+                                     +"</ul>"
                         }
-                        domli+="</ul>"
-                        //$("#showgoods").append(domli);
+                        //domli+="</ul>"
+                        $("#showgoods").append(domli);
 
 
                                
@@ -248,7 +249,7 @@
         function task_list(task_id) {
 
 
-            window.location.href = rootUrl + "Home/GxfaWxExample?task_id=" + task_id + "&random=" + Math.floor(Math.random() * (100000 + 1));
+            window.location.href = rootUrl + "Home/GxfaWxPlanDetail?task_id=" + task_id + "&random=" + Math.floor(Math.random() * (100000 + 1));
         }
     </script>
     <style>

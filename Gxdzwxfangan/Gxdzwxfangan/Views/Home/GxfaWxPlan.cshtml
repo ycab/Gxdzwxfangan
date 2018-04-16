@@ -294,6 +294,13 @@
                         if (data == "ok") {
                             alert("发布成功");
                         }
+                        else if(data=="needfinish")
+                        {
+                            alert("发布失败,请先完善会员信息");
+                            var url = '@Url.Content("~/Home/RediretToFinish")';
+                            window.location.href = url;
+                        }
+
                         else {
                             alert("发布失败,请先注册");
                             var url = '@Url.Content("~/Home/Rediret")';
