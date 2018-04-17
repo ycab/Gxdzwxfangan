@@ -15,9 +15,9 @@ namespace Gxdzwxfangan.Controllers
         GetUserInfoDal getuserinfodal = new GetUserInfoDal();
 
 
-        public ActionResult index1()
+        public string index1()
         {
-
+            string mobile = Request["mobile"];
             ValidataCodeParameter valicodepara = new ValidataCodeParameter();
             ValidateResultMsg result = new ValidateResultMsg();
             //业务办理进度
@@ -42,14 +42,14 @@ namespace Gxdzwxfangan.Controllers
              valicodepara.AccessKeySecret = accesskeysecret;
              valicodepara.SignName = signame;
              valicodepara.TemplateCode = code;
-             valicodepara.Mobile = "18351930228";
+             valicodepara.Mobile = mobile;
              valicodepara.TemplateParam = temppar;
              result = SmsHelper.FlexVerificationCode(valicodepara);
 
              ViewBag.statuscode = result.StatusCode;
              ViewBag.info = result.Info;
             ViewBag.validatecode = validatecode;
-            return View();     
+            return validatecode;     
           }
         public ActionResult GxfaWxIndex(string openid)
         {

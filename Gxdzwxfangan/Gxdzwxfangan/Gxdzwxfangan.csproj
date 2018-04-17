@@ -265,6 +265,10 @@
     <Content Include="gxfa\images\lunbo1.jpg" />
     <Content Include="gxfa\images\lunbo2.jpg" />
     <Content Include="gxfa\images\lunbo3.jpg" />
+    <Content Include="gxfa\images\nav\footnav1.png" />
+    <Content Include="gxfa\images\nav\footnav2.png" />
+    <Content Include="gxfa\images\nav\footnav3.png" />
+    <Content Include="gxfa\images\nav\footnav4.png" />
     <Content Include="gxfa\images\nav\nav1.png" />
     <Content Include="gxfa\images\nav\nav10.png" />
     <Content Include="gxfa\images\nav\nav11.png" />

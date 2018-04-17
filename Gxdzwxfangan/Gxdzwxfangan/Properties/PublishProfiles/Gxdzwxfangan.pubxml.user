@@ -127,19 +127,19 @@
       <publishTime>04/17/2018 09:20:07</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Bll.dll">
-      <publishTime>04/17/2018 11:50:54</publishTime>
+      <publishTime>04/17/2018 23:24:12</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Dal.dll">
-      <publishTime>04/17/2018 11:50:54</publishTime>
+      <publishTime>04/17/2018 23:24:11</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.dll">
-      <publishTime>04/17/2018 12:24:01</publishTime>
+      <publishTime>04/17/2018 23:24:13</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Model.dll">
-      <publishTime>04/17/2018 11:50:53</publishTime>
+      <publishTime>04/17/2018 20:05:54</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Utilities.dll">
-      <publishTime>04/17/2018 11:50:53</publishTime>
+      <publishTime>04/17/2018 20:05:54</publishTime>
     </File>
     <File Include="bin/Microsoft.CSharp.dll">
       <publishTime>03/18/2010 19:31:26</publishTime>
@@ -539,6 +539,18 @@
     </File>
     <File Include="gxfa/images/nav/9.png">
       <publishTime>04/17/2018 11:28:41</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/footnav1.png">
+      <publishTime>04/17/2018 22:47:19</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/footnav2.png">
+      <publishTime>04/17/2018 22:46:14</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/footnav3.png">
+      <publishTime>04/17/2018 22:49:37</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/footnav4.png">
+      <publishTime>04/17/2018 12:42:59</publishTime>
     </File>
     <File Include="gxfa/images/nav/nav1.png">
       <publishTime>04/17/2018 10:46:11</publishTime>
@@ -940,31 +952,31 @@
       <publishTime>03/25/2018 19:04:03</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxFl.cshtml">
-      <publishTime>04/16/2018 17:31:38</publishTime>
+      <publishTime>04/17/2018 23:17:56</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxFl2.cshtml">
       <publishTime>04/15/2018 21:48:48</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxIndex.cshtml">
-      <publishTime>04/17/2018 12:23:31</publishTime>
+      <publishTime>04/17/2018 23:31:01</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxPersonal.cshtml">
       <publishTime>04/16/2018 22:56:19</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxPlan.cshtml">
-      <publishTime>04/17/2018 11:50:41</publishTime>
+      <publishTime>04/17/2018 23:17:54</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxPlanDetail.cshtml">
       <publishTime>04/16/2018 21:19:47</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxReceptPackge.cshtml">
-      <publishTime>03/25/2018 16:00:57</publishTime>
+      <publishTime>04/17/2018 21:49:18</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxSendPackge.cshtml">
       <publishTime>03/25/2018 15:55:37</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxUser.cshtml">
-      <publishTime>03/25/2018 16:35:54</publishTime>
+      <publishTime>04/17/2018 23:17:51</publishTime>
     </File>
     <File Include="Views/Home/index1.cshtml">
       <publishTime>04/17/2018 09:38:00</publishTime>

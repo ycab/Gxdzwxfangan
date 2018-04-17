@@ -154,6 +154,7 @@
             dataType: "json",
             data: myinfo,
             success: function (data) {
+                $("#receive_flag").html(data.receive_flag);
                 if (data.msg == "success") {
                     //if (data.receive_flag == "1") {
                     //    data.receive_flag = "全部接包";
@@ -168,18 +169,18 @@
                     //else if (data.send_flag == "4") {
                     //    data.receive_flag = "已完成";
                     //}
-                    $("#receive_flag").html(data.receive_flag);
+                    
                     var sortinfo = data.sortinfo;
                     var domli = "";
                     for (var i = 0; i < sortinfo.length; i++) {
                         if (sortinfo[i].IS_ACCEPTED == "0") {
-                            sortinfo[i].IS_ACCEPTED = "未选中,未托管,未完成";
+                            sortinfo[i].IS_ACCEPTED = "申请中";
                         }
                         else if (sortinfo[i].IS_ACCEPTED == "1") {
-                            sortinfo[i].IS_ACCEPTED = "竞标中,未托管,未完成";
+                            sortinfo[i].IS_ACCEPTED = "竞标成功";
                         }
                         else if (sortinfo[i].IS_ACCEPTED == "2") {
-                            sortinfo[i].IS_ACCEPTED = "竞标成功，未托管";
+                            sortinfo[i].IS_ACCEPTED = "竞标失败";
                         }
                         else if (sortinfo[i].IS_ACCEPTED == "3") {
                             sortinfo[i].IS_ACCEPTED = "托管中";

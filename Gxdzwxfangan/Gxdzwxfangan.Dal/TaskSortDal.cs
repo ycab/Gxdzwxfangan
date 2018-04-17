@@ -137,6 +137,16 @@ namespace Gxdzwxfangan.Dal
             DataTable dt = OracleHelper.GetTable(sql, null);
             if (dt.Rows.Count != 0)
             {
+                for (int i = 0; i < dt.Rows.Count;i++ )
+                {
+                   string sql2 = string.Format("select * from GXFW_SEND_TASK t where TASK_ID='{0}' ", dt.Rows[i]["TASK_ID"]);
+                   DataTable dt2 = OracleHelper.GetTable(sql2, null);
+                   if (dt2.Rows.Count != 0)
+                   {
+                       dt.Rows[i]["PRICE"] = dt2.Rows[0]["PRICE"];
+                       dt.Rows[i]["SEND_TIME"] = dt2.Rows[0]["SEND_TIME"];
+                   }
+                }
                 responseText = JsonHelper.getRecordJson(dt);
                 responseText = "{\"msg\":\"success\",\"receive_flag\":\"" + receive_flag + "\",\"sortinfo\":[" + responseText + "]}";
             }

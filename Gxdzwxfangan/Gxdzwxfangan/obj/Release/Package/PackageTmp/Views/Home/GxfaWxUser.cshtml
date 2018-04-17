@@ -32,6 +32,10 @@
     <script src="@Url.Content("~/gxfa/statics/js/jquery.lazyload.min.js")"></script>
 
     <script src="@Url.Content("~/gxfa/statics/js/common.js")"></script>
+    <link href="@Url.Content("~/weui-master/dist/style/weui.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/weui-master/dist/style/weui.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/weui-master/dist/example/example.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/weui-master/dist/example/example.js")"></script>
     <script type="text/javascript">var rootUrl = "@Url.Content("~")";//获取根路径，防止iis部署位置不同</script>
 </head>
 
@@ -160,7 +164,7 @@
                 <a onclick='javascript: Receive_task_list("4")' class="box-flex">
                     <li>
                         <h4 class="ellipsis-one"><i class="iconfont icon-daipingjia my-img-size"></i></h4>
-                        <p class="t-remark3">已结束</p>
+                        <p class="t-remark3">已完成</p>
                         <div id="receive_finished" class="user-list-num">
                             0
                         </div>
@@ -188,18 +192,24 @@
         </footer>
     </div>
     <footer class="footer-nav dis-box">
-        <a href="@Url.Action("GxfaWxIndex","Home")" class="box-flex nav-list">
-            <i class="nav-box i-home"></i><span>首页</span>
-        </a>
-        <a href="@Url.Action("GxfaWxFl","Home")" class="box-flex nav-list ">
-            <i class="nav-box i-cate"></i><span>分类</span>
-        </a>
-        <a href="@Url.Action("GxfaWxPlan","Home")" class="box-flex  nav-list">
-            <i class="nav-box i-flow"></i><span>发布任务</span>
-        </a>
-        <a href="@Url.Action("GxfaWxUser","Home")" class="box-flex nav-list active">
-            <i class="nav-box i-user"></i><span>我的</span>
-        </a>
+        <div class="weui-tabbar">
+            <a href="@Url.Action("GxfaWxIndex","Home")" class="weui-tabbar__item">
+                <img src="@Url.Content("~/gxfa/images/nav/footnav1.png")" alt="" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">首页</p>
+            </a>
+            <a href="@Url.Action("GxfaWxFl","Home")" class="weui-tabbar__item">
+                <img src="@Url.Content("~/gxfa/images/nav/footnav2.png")" alt="" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">分类</p>
+            </a>
+            <a href="@Url.Action("GxfaWxPlan","Home")" class="weui-tabbar__item">
+                <img src="@Url.Content("~/gxfa/images/nav/footnav3.png")" alt="" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">发布任务</p>
+            </a>
+            <a href="@Url.Action("GxfaWxUser","Home")" class="weui-tabbar__item">
+                <img src="@Url.Content("~/gxfa/images/nav/footnav4.png")" alt="" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">我的</p>
+            </a>
+        </div>
     </footer>
     @*<div class="search-div ts-3">
         <section class="search">
