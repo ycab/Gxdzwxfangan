@@ -13,6 +13,44 @@ namespace Gxdzwxfangan.Controllers
     public class HomeController : Controller
     {
         GetUserInfoDal getuserinfodal = new GetUserInfoDal();
+
+
+        public ActionResult index1()
+        {
+
+            ValidataCodeParameter valicodepara = new ValidataCodeParameter();
+            ValidateResultMsg result = new ValidateResultMsg();
+            //业务办理进度
+            //    模版CODE:SMS_89665068
+            //模版内容:您好，您申请的${type}业务办理进度状态有更新，请及时查看！
+            //验证码
+            //    模版CODE:SMS_129757561
+            //模版内容:您的验证码为:${code},该验证码5分钟内有效,请勿泄露于他人。
+            string validatecode = new Random().Next(111111, 999999).ToString();
+            string temppar = "{'code':'" + validatecode + "'}";
+            //    string temppar = "{'type':'视频'}";
+            //  string code = "SMS_89665068";//我的业务进度
+             string code = "SMS_130915976";//电子联盟
+     //       string code = "SMS_129757561";//我的短信验证码
+             string accesskeyid = "LTAIcI6HnskaEPcd";//电子联盟账号
+             string accesskeysecret = "8msoPHZT60r2RFkywOwU96wteISnFu";//电子联盟密码
+             string signame = "蓝联盟众创空间";
+         //   string accesskeyid = "LTAI2pVIR8OKNxPv";//我的
+        //    string accesskeysecret = "v3aEoHynOoxkG2uVyArUfaJzCItrSj";//我的
+          //  string signame = "乐意为";
+             valicodepara.AccessKeyId = accesskeyid;
+             valicodepara.AccessKeySecret = accesskeysecret;
+             valicodepara.SignName = signame;
+             valicodepara.TemplateCode = code;
+             valicodepara.Mobile = "18351930228";
+             valicodepara.TemplateParam = temppar;
+             result = SmsHelper.FlexVerificationCode(valicodepara);
+
+             ViewBag.statuscode = result.StatusCode;
+             ViewBag.info = result.Info;
+            ViewBag.validatecode = validatecode;
+            return View();     
+          }
         public ActionResult GxfaWxIndex(string openid)
         {
             /////获取openid

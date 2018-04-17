@@ -5,3 +5,7 @@ C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilitie
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\obj\Release\Gxdzwxfangan.Utilities.csprojResolveAssemblyReference.cache
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\obj\Release\Gxdzwxfangan.Utilities.dll
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\obj\Release\Gxdzwxfangan.Utilities.pdb
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\bin\Release\aliyun-net-sdk-core.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\bin\Release\aliyun-net-sdk-dysmsapi.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\bin\Release\Gxdzwxfangan.Model.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Utilities\bin\Release\Gxdzwxfangan.Model.pdb

@@ -265,6 +265,22 @@
     <Content Include="gxfa\images\lunbo1.jpg" />
     <Content Include="gxfa\images\lunbo2.jpg" />
     <Content Include="gxfa\images\lunbo3.jpg" />
+    <Content Include="gxfa\images\nav\nav1.png" />
+    <Content Include="gxfa\images\nav\nav10.png" />
+    <Content Include="gxfa\images\nav\nav11.png" />
+    <Content Include="gxfa\images\nav\nav12.png" />
+    <Content Include="gxfa\images\nav\nav13.png" />
+    <Content Include="gxfa\images\nav\nav14.png" />
+    <Content Include="gxfa\images\nav\nav15.png" />
+    <Content Include="gxfa\images\nav\nav16.png" />
+    <Content Include="gxfa\images\nav\nav2.png" />
+    <Content Include="gxfa\images\nav\nav3.png" />
+    <Content Include="gxfa\images\nav\nav4.png" />
+    <Content Include="gxfa\images\nav\nav5.png" />
+    <Content Include="gxfa\images\nav\nav6.png" />
+    <Content Include="gxfa\images\nav\nav7.png" />
+    <Content Include="gxfa\images\nav\nav8.png" />
+    <Content Include="gxfa\images\nav\nav9.png" />
     <Content Include="gxfa\images\nav\nav_0.png" />
     <Content Include="gxfa\images\nav\nav_1.png" />
     <Content Include="gxfa\images\nav\nav_2.png" />
@@ -288,6 +304,7 @@
     <Content Include="gxfa\images\zhifb.png" />
     <Content Include="gxfa\images\传感器.jpg" />
     <Content Include="gxfa\images\电容.jpg" />
+    <Content Include="gxfa\images\电源.png" />
     <Content Include="gxfa\layer\layer.js" />
     <Content Include="gxfa\layer\skin\default\icon.png" />
     <Content Include="gxfa\layer\skin\layer.css" />
@@ -543,6 +560,7 @@
     <Content Include="Views\Home\GxfaWxExampleReceive.cshtml" />
     <Content Include="Views\Home\GxfaWxFl2.cshtml" />
     <Content Include="Views\Home\GxfaWxPersonal.cshtml" />
+    <Content Include="Views\Home\index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gxdzwxfangan.Bll\Gxdzwxfangan.Bll.csproj">

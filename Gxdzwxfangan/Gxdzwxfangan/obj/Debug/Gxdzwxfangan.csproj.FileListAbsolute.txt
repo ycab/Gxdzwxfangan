@@ -249,3 +249,5 @@ C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan\bin\Gxdz
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan\bin\Gxdzwxfangan.Dal.pdb
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan\bin\Gxdzwxfangan.Model.pdb
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan\bin\Gxdzwxfangan.Utilities.pdb
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan\bin\aliyun-net-sdk-core.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan\bin\aliyun-net-sdk-dysmsapi.dll

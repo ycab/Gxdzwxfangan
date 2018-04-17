@@ -146,7 +146,21 @@
                 <div class="fa-more" id="submit" style="line-height:50px;height:50px; background-color:#1cbb7f"><h4 style="line-height:40px">提      交</h4></div>
             </a>
         </div>
-        <div class="hblank10"></div>
+        @*<div class="hblank10"></div>
+        <div class="weui-cells__title">任务名称</div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请填写任务名称" />
+                </div>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label for="" class="weui-label">截止时间</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="datetime-local" value="" placeholder="" />
+            </div>
+        </div>*@
     </div>
 
     <footer class="footer-nav dis-box">
@@ -264,6 +278,34 @@
            }
 
         })
+        $(".get-code").click(function () {
+            var mobile = $(".phone-num").val();
+            if (mobile == "" || isNaN(mobile) || mobile.length != '11') {
+                layer.msg("请输入正确11位手机号码");
+                return false;
+            }
+            $.post("/index.php/Home/Users/send.html", { phone: mobile }, function (data) {
+                changecode();
+            });
+
+        });
+
+        function changecode() {
+            $(".get-code").html("60秒重新获取").css({ "color": "#fff", "background-color": "#ccc " });
+            var endtime = 60;
+            var sa = setInterval(function () {
+                endtime = endtime.toString().substr(0, 2);
+                --endtime;
+                $(".get-code").html(endtime + '秒重新获取');
+
+                $("#timeend").val(endtime);
+                if (endtime == 0) {
+                    clearInterval(sa);
+                    $(".get-code").css("background-color", " #0066cc");
+                    $(".get-code").html("获取验证码");
+                }
+            }, 1000);
+        }
         $('#submit').click(function () {
             task_name = $('#task_name').val();
             deadline = $('#USER_AGE').val();

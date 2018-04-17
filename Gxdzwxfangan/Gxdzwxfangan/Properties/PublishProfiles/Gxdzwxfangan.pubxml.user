@@ -120,20 +120,26 @@
     <File Include="assets/layer/skin/layer.css">
       <publishTime>12/04/2017 15:06:30</publishTime>
     </File>
+    <File Include="bin/aliyun-net-sdk-core.dll">
+      <publishTime>04/17/2018 09:20:07</publishTime>
+    </File>
+    <File Include="bin/aliyun-net-sdk-dysmsapi.dll">
+      <publishTime>04/17/2018 09:20:07</publishTime>
+    </File>
     <File Include="bin/Gxdzwxfangan.Bll.dll">
-      <publishTime>04/16/2018 20:51:27</publishTime>
+      <publishTime>04/17/2018 11:50:54</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Dal.dll">
-      <publishTime>04/16/2018 20:51:27</publishTime>
+      <publishTime>04/17/2018 11:50:54</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.dll">
-      <publishTime>04/16/2018 21:30:41</publishTime>
+      <publishTime>04/17/2018 12:24:01</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Model.dll">
-      <publishTime>04/15/2018 21:08:13</publishTime>
+      <publishTime>04/17/2018 11:50:53</publishTime>
     </File>
     <File Include="bin/Gxdzwxfangan.Utilities.dll">
-      <publishTime>04/13/2018 16:06:25</publishTime>
+      <publishTime>04/17/2018 11:50:53</publishTime>
     </File>
     <File Include="bin/Microsoft.CSharp.dll">
       <publishTime>03/18/2010 19:31:26</publishTime>
@@ -486,6 +492,102 @@
     <File Include="gxfa/images/lunbo3.jpg">
       <publishTime>12/22/2017 13:01:40</publishTime>
     </File>
+    <File Include="gxfa/images/nav/1.png">
+      <publishTime>04/17/2018 10:46:11</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/10.png">
+      <publishTime>04/17/2018 11:30:47</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/11.png">
+      <publishTime>04/17/2018 11:32:37</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/12.png">
+      <publishTime>04/17/2018 11:34:54</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/13.png">
+      <publishTime>04/17/2018 11:36:42</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/14.png">
+      <publishTime>04/17/2018 11:38:24</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/15.png">
+      <publishTime>04/17/2018 11:42:30</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/16.png">
+      <publishTime>04/17/2018 11:44:25</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/2.png">
+      <publishTime>04/17/2018 10:49:41</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/3.png">
+      <publishTime>04/17/2018 11:25:08</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/4.png">
+      <publishTime>04/17/2018 10:55:19</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/5.png">
+      <publishTime>04/17/2018 10:56:49</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/6.png">
+      <publishTime>04/17/2018 11:08:22</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/7.png">
+      <publishTime>04/17/2018 11:12:47</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/8.png">
+      <publishTime>04/17/2018 11:13:50</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/9.png">
+      <publishTime>04/17/2018 11:28:41</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav1.png">
+      <publishTime>04/17/2018 10:46:11</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav10.png">
+      <publishTime>04/17/2018 11:30:47</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav11.png">
+      <publishTime>04/17/2018 11:32:37</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav12.png">
+      <publishTime>04/17/2018 11:34:54</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav13.png">
+      <publishTime>04/17/2018 11:36:42</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav14.png">
+      <publishTime>04/17/2018 11:38:24</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav15.png">
+      <publishTime>04/17/2018 11:42:30</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav16.png">
+      <publishTime>04/17/2018 11:44:25</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav2.png">
+      <publishTime>04/17/2018 10:49:41</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav3.png">
+      <publishTime>04/17/2018 11:25:08</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav4.png">
+      <publishTime>04/17/2018 10:55:19</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav5.png">
+      <publishTime>04/17/2018 10:56:49</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav6.png">
+      <publishTime>04/17/2018 11:08:22</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav7.png">
+      <publishTime>04/17/2018 11:12:47</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav8.png">
+      <publishTime>04/17/2018 11:13:50</publishTime>
+    </File>
+    <File Include="gxfa/images/nav/nav9.png">
+      <publishTime>04/17/2018 11:28:41</publishTime>
+    </File>
     <File Include="gxfa/images/nav/nav_0.png">
       <publishTime>12/04/2017 15:16:58</publishTime>
     </File>
@@ -554,6 +656,9 @@
     </File>
     <File Include="gxfa/images/电容.jpg">
       <publishTime>12/04/2017 15:17:20</publishTime>
+    </File>
+    <File Include="gxfa/images/电源.png">
+      <publishTime>04/17/2018 10:38:56</publishTime>
     </File>
     <File Include="gxfa/layer/layer.js">
       <publishTime>12/04/2017 15:18:36</publishTime>
@@ -807,6 +912,9 @@
     <File Include="Scripts/packpageindex/SendPackage.js">
       <publishTime>12/06/2017 19:11:46</publishTime>
     </File>
+    <File Include="Scripts/Register/Personal.js">
+      <publishTime>04/16/2018 22:50:54</publishTime>
+    </File>
     <File Include="Scripts/rotate/CJL.0.1.min.js">
       <publishTime>12/04/2017 15:22:00</publishTime>
     </File>
@@ -838,10 +946,13 @@
       <publishTime>04/15/2018 21:48:48</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxIndex.cshtml">
-      <publishTime>04/16/2018 20:47:07</publishTime>
+      <publishTime>04/17/2018 12:23:31</publishTime>
+    </File>
+    <File Include="Views/Home/GxfaWxPersonal.cshtml">
+      <publishTime>04/16/2018 22:56:19</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxPlan.cshtml">
-      <publishTime>04/16/2018 16:19:39</publishTime>
+      <publishTime>04/17/2018 11:50:41</publishTime>
     </File>
     <File Include="Views/Home/GxfaWxPlanDetail.cshtml">
       <publishTime>04/16/2018 21:19:47</publishTime>
@@ -854,6 +965,9 @@
     </File>
     <File Include="Views/Home/GxfaWxUser.cshtml">
       <publishTime>03/25/2018 16:35:54</publishTime>
+    </File>
+    <File Include="Views/Home/index1.cshtml">
+      <publishTime>04/17/2018 09:38:00</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>12/22/2017 12:44:34</publishTime>

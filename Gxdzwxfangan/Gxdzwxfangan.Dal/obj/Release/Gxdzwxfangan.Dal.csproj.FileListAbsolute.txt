@@ -9,3 +9,5 @@ C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\obj\Release\Gxdzwxfangan.Dal.csprojResolveAssemblyReference.cache
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\obj\Release\Gxdzwxfangan.Dal.dll
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\obj\Release\Gxdzwxfangan.Dal.pdb
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\Release\aliyun-net-sdk-core.dll
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Dal\bin\Release\aliyun-net-sdk-dysmsapi.dll
