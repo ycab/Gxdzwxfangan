@@ -2,3 +2,4 @@ C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Model\bi
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Model\bin\Debug\Gxdzwxfangan.Model.pdb
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Model\obj\Debug\Gxdzwxfangan.Model.dll
 C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Model\obj\Debug\Gxdzwxfangan.Model.pdb
+C:\Users\yupeng\Documents\GitHub\Gxdzwxfangan\Gxdzwxfangan\Gxdzwxfangan.Model\obj\Debug\Gxdzwxfangan.Model.csprojResolveAssemblyReference.cache

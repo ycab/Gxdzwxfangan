@@ -41,6 +41,7 @@
     <link href="@Url.Content("~/weui-master/dist/style/weui.min.css")" rel="stylesheet" />
     <link href="@Url.Content("~/weui-master/dist/example/example.css")" rel="stylesheet" />
     <script src="@Url.Content("~/weui-master/dist/example/example.js")"></script>
+    <script src="@Url.Content("~/weui-master/dist/example/zepto.min.js")"></script>
     <script type="text/javascript">var rootUrl = "@Url.Content("~")";//获取根路径，防止iis部署位置不同</script>
 </head>
 <body style="max-width:640px;">
@@ -51,14 +52,14 @@
                 <span>发布任务</span>
                 <a href="javascript:;" onclick="openMune()" class="pull-right ect-icon ect-icon1 ect-icon-mune icon-write"></a>
             </header>
-            <nav class="ect-nav ect-nav-list" style="display:none;">
+            @*<nav class="ect-nav ect-nav-list" style="display:none;">
                 <ul class="ect-diaplay-box text-center">
                     <li class="ect-box-flex"><a href="@Url.Action("GxfaWxIndex","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-home"></i>首页</a></li>
                     <li class="ect-box-flex"><a href="@Url.Action("GxfaWxFl","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-cate"></i>分类</a></li>
                     <li class="ect-box-flex"><a href="@Url.Action("GxfaWxPlan","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-flow"></i>发布任务</a></li>
                     <li class="ect-box-flex"><a href="@Url.Action("GxfaWxUser","Home")" style="font-size:1.4rem"><i class="ect-icon ect-icon-user"></i>用户中心</a></li>
                 </ul>
-            </nav>
+            </nav>*@
         </div>
 
         <ul class="choose-task">
@@ -151,7 +152,12 @@
                 <div class="fa-more" id="submit" style="line-height:50px;height:50px; background-color:#1cbb7f"><h4 style="line-height:40px">提      交</h4></div>
             </a>
         </div>
-        <div class="hblank10"></div>
+        @*<div class="hblank10"></div>
+        <div class="page__bd page__bd_spacing">
+            <a href="javascript:;" class="weui-btn weui-btn_default" id="showPicker">单列选择器</a>
+            <a href="javascript:;" class="weui-btn weui-btn_default" id="showDatePicker">日期选择器</a>
+        </div>*@
+
         @*<form method="post" id="theForm" name="theForm" enctype="multipart/form-data" onsubmit="return checkInfo(this)" action="" style="text-align:left">
             <div class="bd">
                 <div class="weui-cells__title" style=" margin-top: .77em; margin-bottom: .3em; padding-left: 15px; padding-right: 15px; color: #808080; font-size: 14px;">任务名称</div>
@@ -236,6 +242,45 @@
                 </a>*@
             </div>
         </footer>
+    <script type="text/javascript" class="picker js_show">
+    $('#showPicker').on('click', function () {
+        weui.picker([{
+            label: '飞机票',
+            value: 0
+        }, {
+            label: '火车票',
+            value: 1
+        }, {
+            label: '的士票',
+            value: 2
+        }, {
+            label: '公交票 (disabled)',
+            disabled: true,
+            value: 3
+        }, {
+            label: '其他',
+            value: 4
+        }], {
+            onChange: function (result) {
+                console.log(result);
+            },
+            onConfirm: function (result) {
+                console.log(result);
+            }
+        });
+    });
+    $('#showDatePicker').on('click', function () {
+        weui.datePicker({
+            start: 1990,
+            end: new Date().getFullYear(),
+            onChange: function (result) {
+                console.log(result);
+            },
+            onConfirm: function (result) {
+                console.log(result);
+            }
+        });
+    });</script>
         <script type="text/javascript">
             function setCookie(cname, cvalue, exdays) {
                 var d = new Date();
@@ -275,6 +320,7 @@
         <script src="@Url.Content("~/gxfa/statics/js/ectouch.js")"></script>
 
         <script src="@Url.Content("~/gxfa/statics/js/shopping_flow.js")"></script>
+
 
         <script language="javascript">
             var handler = function (e) { //禁止浏览器默认行为
@@ -545,6 +591,7 @@
                 }
             }
         </script>
+
         <script type="text/javascript">
             $(function () {
                 var currYear = (new Date()).getFullYear();

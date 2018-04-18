@@ -59,7 +59,7 @@
                     <section class="search">
                         <div class="text-all  text-all-back j-text-all">
                             <div class="input-text n-input-text i-search-input">
-                                <a class="a-search-input j-search-input" href="javascript:void(0)"></a>
+                                <a class="a-search-input " href="javascript:void(0)"></a>
                                 <i class="iconfont icon-sousuo"></i>
                                 <input type="text" placeholder="请输入您搜索的关键词!" />
                                 <i class="iconfont icon-guanbi is-null j-is-null"></i>
@@ -71,23 +71,23 @@
             <aside>
                 <div class="menu-left scrollbar-none" id="sidebar">
                     <ul>
-                        <li class="active">智能穿戴</li>
-                        <li>安防监控</li>
-                        <li>便携产品</li>
-                        <li>工业电子</li>
-                        <li>汽车电子</li>
-                        <li>测试设备</li>
-                        <li>电源电池</li>
-                        <li>机器人无人机</li>
-                        <li>通信广电</li>
-                        <li>游戏玩具</li>
-                        <li>医疗健康</li>
-                        <li>软件开发</li>
-                        <li>智能家居</li>
-                        <li>智能家电</li>
-                        <li>照明显示</li>
-                        <li>工业设计</li>
-                        <li>其他</li>
+                        <li id="nav1"class="active">智能穿戴</li>
+                        <li id="nav2">安防监控</li>
+                        <li id="nav3">便携产品</li>
+                        <li id="nav4">工业电子</li>
+                        <li id="nav5">汽车电子</li>
+                        <li id="nav6">测试设备</li>
+                        <li id="nav7">电源电池</li>
+                        <li id="nav8">机器人无人机</li>
+                        <li id="nav9">通信广电</li>
+                        <li id="nav10">游戏玩具</li>
+                        <li id="nav11">医疗健康</li>
+                        <li id="nav12">软件开发</li>
+                        <li id="nav13">智能家居</li>
+                        <li id="nav14">智能家电</li>
+                        <li id="nav15">照明显示</li>
+                        <li id="nav16">工业设计</li>
+                        <li id="nav17">其他</li>
                     </ul>
                 </div>
             </aside>
@@ -805,6 +805,7 @@
 
             </div>
     </div>
+    </div>
     <footer class="footer-nav dis-box">
         <div class="weui-tabbar">
             <a href="@Url.Action("GxfaWxIndex","Home")" class="weui-tabbar__item">
@@ -906,6 +907,8 @@
         var MiddleSortName_Last = 0;//取中分类数据的截止与开始
         var MiddleSortName_Amount = 10;//每次取中分类数据的总和
 
+        var navid = "@ViewBag.navid";
+        //alert(navid);
 
 
         var page_Init = 0;//页面初始化变量,SortNameInfo与SortGoodsInfo函数异步请求结束后再显示页面
@@ -993,13 +996,21 @@
         //        }
         //    });
         //}
-            $(function ($) {
-                $('#sidebar ul li').click(function () {
-                    $(this).addClass('active').siblings('li').removeClass('active');
-                    var index = $(this).index();
-                    $('.j-content').eq(index).show().siblings('.j-content').hide();
-                    $(window).scrollTop(0);
-                })
+        $(function ($) {
+          
+      
+
+            $('#sidebar ul li').click(function () {
+                //$("li").on("focus", function () {
+                //    this.scrollIntoView();
+                //})
+                $(this).addClass('active').siblings('li').removeClass('active');
+                var index = $(this).index();
+                $('.j-content').eq(index).show().siblings('.j-content').hide();
+                $(window).scrollTop(0);
+            });
+
+            $('#'+navid).trigger('click');
             })
             $(document).ready(function () {
                 get_asynclist("", "");

@@ -56,21 +56,21 @@ namespace Gxdzwxfangan.Controllers
             /////获取openid
             if (openid == null)
             {
-                openid = "oXx_Mw-hx0yNF3wIELsf_RP6cJoA";
-                string user_id = getuserinfodal.GetUserID(openid);
-                string username = getuserinfodal.GetUserName(user_id);
-                CookieHelper.ClearCookie("openid");
-                CookieHelper.SetCookie("openid", openid);
-                Session["user_id"] = user_id;
-                Session["user_name"] = username;
-                string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
-                string url2 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid= " + openid + "&url1=" + url1;
-                Session["RegisterUrl"] = url2;
-                Session["url"] = url2;
-                string url3 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
-                string url4 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/Register/GxLoginRegisterPersonal/?openid= " + openid + "&url1=" + url3;
-                Session["FinishRegisterUrl"] = url4;
-                ViewBag.openid = openid;
+                //openid = "oXx_Mw-hx0yNF3wIELsf_RP6cJoA";
+                //string user_id = getuserinfodal.GetUserID(openid);
+                //string username = getuserinfodal.GetUserName(user_id);
+                //CookieHelper.ClearCookie("openid");
+                //CookieHelper.SetCookie("openid", openid);
+                //Session["user_id"] = user_id;
+                //Session["user_name"] = username;
+                //string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
+                //string url2 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid= " + openid + "&url1=" + url1;
+                //Session["RegisterUrl"] = url2;
+                //Session["url"] = url2;
+                //string url3 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
+                //string url4 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/Register/GxLoginRegisterPersonal/?openid= " + openid + "&url1=" + url3;
+                //Session["FinishRegisterUrl"] = url4;
+                //ViewBag.openid = openid;
             }
             else
             {
@@ -95,6 +95,8 @@ namespace Gxdzwxfangan.Controllers
         }
         public ActionResult GxfaWxFl()
         {
+            string navid = Request["navid"];
+            ViewBag.navid = navid;
            // Response.Redirect("http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid=oXx_Mw-hx0yNF3wIELsf_RP6cJoA", false); 
             return View();
 
