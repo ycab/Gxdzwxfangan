@@ -355,5 +355,9 @@ namespace Gxdzwxfangan.Controllers
             responseText = LoginInfoBll.SetPersonalInfo(Personal, filename, user_id);
             return Content(responseText);
         }
+        public ActionResult test()
+        {
+            return View();
+        }
     }
 }

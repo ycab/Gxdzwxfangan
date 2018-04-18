@@ -65,6 +65,22 @@ namespace Gxdzwxfangan.Dal
             task.Apply_Number = dt.Rows[0]["APPLY_NUMBER"].ToString();
             task.Is_Received = dt.Rows[0]["IS_RECEIVED"].ToString();
             task.Del_Flag = dt.Rows[0]["DEL_FLAG"].ToString();
+            string sql2 = string.Format("select * from GX_USER_MEMBER_PERSONAL t where USER_ID='{0}' ", task.User_ID);
+            DataTable dt2 = OracleHelper.GetTable(sql2, null);
+            if (dt2.Rows.Count != 0)
+            {
+                string jpg = dt2.Rows[0]["CHAT_HEAD"].ToString();
+                task.Nick_Name = dt2.Rows[0]["NICK_NAME"].ToString();
+                if (dt2.Rows[0]["CHAT_HEAD"].ToString() == "")
+                {
+                    task.Chat_Head = "avatar.jpg";
+                }
+                else
+                {
+                    task.Chat_Head = dt2.Rows[0]["CHAT_HEAD"].ToString();
+                }
+
+            }
             return task;
 
         }

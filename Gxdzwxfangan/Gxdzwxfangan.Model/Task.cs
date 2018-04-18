@@ -37,6 +37,7 @@ namespace Gxdzwxfangan.Model
 
         public virtual string Del_Flag { get; set; }            //删除标志
 
-
+        public virtual string Chat_Head { get; set; }            //删除标志
+        public virtual string Nick_Name { get; set; }            //删除标志
     }
 }

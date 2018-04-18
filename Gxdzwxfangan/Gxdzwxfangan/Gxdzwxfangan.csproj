@@ -565,6 +565,7 @@
     <Content Include="Views\Home\GxfaWxFl2.cshtml" />
     <Content Include="Views\Home\GxfaWxPersonal.cshtml" />
     <Content Include="Views\Home\index1.cshtml" />
+    <Content Include="Views\Home\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gxdzwxfangan.Bll\Gxdzwxfangan.Bll.csproj">
