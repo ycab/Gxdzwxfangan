@@ -1008,9 +1008,18 @@
                 var index = $(this).index();
                 $('.j-content').eq(index).show().siblings('.j-content').hide();
                 $(window).scrollTop(0);
+                if(navid!="")
+                {
+                   var $objTr = $("#" + navid); //找到要定位的地方  tr 
+                //    $objTr.css("background-color", "lightgray"); //设置要定位地方的css 
+                var objTr = $objTr[0]; //转化为dom对象 
+                $("#sidebar").animate({ scrollTop: objTr.offsetTop }, "slow"); //定位tr 
+                }
+             
             });
 
-            $('#'+navid).trigger('click');
+            $('#' + navid).trigger('click');
+          
             })
             $(document).ready(function () {
                 get_asynclist("", "");
