@@ -56,7 +56,8 @@ namespace Gxdzwxfangan.Controllers
             /////获取openid
             if (openid == null)
             {
-                //openid = "oXx_Mw-hx0yNF3wIELsf_RP6cJoA";
+                ////openid = "oXx_Mw-hx0yNF3wIELsf_RP6cJoA";//我的
+                //openid = "oXx_Mw7JSzz218WpGTprNfSaHC7k";//鹏伟峰
                 //string user_id = getuserinfodal.GetUserID(openid);
                 //string username = getuserinfodal.GetUserName(user_id);
                 //CookieHelper.ClearCookie("openid");
@@ -110,7 +111,36 @@ namespace Gxdzwxfangan.Controllers
         }
         public ActionResult GxfaWxPlan()
         {
-            return View();
+            string openid = CookieHelper.GetCookieValue("openid");
+            string user_id = getuserinfodal.GetUserID(openid);
+            string user_name = getuserinfodal.GetUserName(user_id);
+            string membership = getuserinfodal.GetMemberType(user_id);
+            if (user_id == "none")
+            {
+                string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
+                string url2 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid= " + openid + "&url1=" + url1;
+               // string url = Session["url"].ToString();
+                Response.Redirect(url2, false);
+                //  Session["rediret_url"] = url2;
+                //非会员，跳转登陆页面
+                // System.Web.HttpContext.Current.Response.Redirect(url3);
+                return View();
+                //return Content("fail");
+            }
+            else if (membership != "个人会员")
+            {
+                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"企业会员无法接包\")" + "</script>");
+                return View("GxFaWxFl");
+            }
+            else if (user_name == "")
+            {
+                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
+                return View("GxFaWxPersonal");
+            }
+            else
+            {
+                return View();
+            }
         }
         public ActionResult GxfaWxUser()
         {
@@ -149,6 +179,7 @@ namespace Gxdzwxfangan.Controllers
             string openid = CookieHelper.GetCookieValue("openid");
             string user_id = getuserinfodal.GetUserID(openid);
             string user_name = getuserinfodal.GetUserName(user_id);
+            string membership = getuserinfodal.GetMemberType(user_id);
             if (user_id == "none")
             {
                 string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
@@ -161,6 +192,12 @@ namespace Gxdzwxfangan.Controllers
                 return View();
                 //return Content("fail");
             }
+            else if(membership!="个人会员")
+            {
+                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"企业会员无法接包\")" + "</script>");
+                return View("GxFaWxFl");
+            }
+
              else if(user_name=="")
             {
                 System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
@@ -198,25 +235,7 @@ namespace Gxdzwxfangan.Controllers
             string openid=CookieHelper.GetCookieValue("openid");
             string user_id = getuserinfodal.GetUserID(openid);
             string user_name = getuserinfodal.GetUserName(user_id);
-            if (user_id == "none")
-            {
-                    string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
-                    string url2 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid= " + openid + "&url1=" + url1;
-                   // string url3=" http://www.baidu.com/index.html";
-                  //  Session["rediret_url"] = url2;
-                    //非会员，跳转登陆页面
-                    //System.Web.HttpContext.Current.Response.Redirect(url3);
-                    //return View();
-                    //Response.Redirect(url2, false);
-                    return Content("fail");
-             }
-            else if (user_name == "")
-            {
-                //System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
-                return Content("needfinish");
-            }
-            else
-            {
+
                 Session["user_id"] = user_id;
                 Session["user_name"] = user_id;
                 Task task = new Task();
@@ -239,7 +258,7 @@ namespace Gxdzwxfangan.Controllers
                 task.Del_Flag = "0";
                 send_task.SendTask(task);
                 return Content("ok");
-            }
+            
 
         }
         public string MyTaskInfo()//我的接发包数量

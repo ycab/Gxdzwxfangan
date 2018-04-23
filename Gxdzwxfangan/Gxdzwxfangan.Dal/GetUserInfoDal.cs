@@ -44,5 +44,22 @@ namespace Gxdzwxfangan.Dal
             return username;
 
         }
+        public string GetMemberType(string userid)
+        {
+            string sql = string.Format("select * from GX_USER  where USER_ID='{0}' ", userid);
+            DataTable dt = OracleHelper.GetTable(sql, null);
+            string membership = "";
+            if (dt.Rows.Count != 0)
+            {
+                membership = dt.Rows[0]["MEMBER_TYPE"].ToString();
+
+            }
+            else
+            {
+
+            }
+            return membership;
+
+        }
     }
 }

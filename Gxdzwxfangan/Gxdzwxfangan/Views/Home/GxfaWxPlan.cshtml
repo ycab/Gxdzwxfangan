@@ -499,6 +499,8 @@
                     success: function (data) {
                         if (data == "ok") {
                             alert("发布成功");
+                            var url = '@Url.Content("~/Home/GxfaWxFl")';
+                            window.location.href = url;
                         }
                         else if (data == "needfinish") {
                             alert("发布失败,请先完善会员信息");
