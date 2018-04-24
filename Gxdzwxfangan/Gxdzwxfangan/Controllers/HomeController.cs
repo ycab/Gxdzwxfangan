@@ -56,8 +56,8 @@ namespace Gxdzwxfangan.Controllers
             /////获取openid
             if (openid == null)
             {
-                ////openid = "oXx_Mw-hx0yNF3wIELsf_RP6cJoA";//我的
-                //openid = "oXx_Mw7JSzz218WpGTprNfSaHC7k";//鹏伟峰
+                //openid = "oXx_Mw-hx0yNF3wIELsf_RP6cJoA";//我的
+                ////openid = "oXx_Mw7JSzz218WpGTprNfSaHC7k";//鹏伟峰
                 //string user_id = getuserinfodal.GetUserID(openid);
                 //string username = getuserinfodal.GetUserName(user_id);
                 //CookieHelper.ClearCookie("openid");
