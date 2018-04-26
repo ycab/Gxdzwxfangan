@@ -254,7 +254,7 @@ namespace Gxdzwxfangan.Controllers
                 task.Phone = Request["phone"];
                 task.Price = Request["price"];
                 task.Apply_Number = "0";
-                task.Is_Received = "1";
+                task.Is_Received = "0";
                 task.Del_Flag = "0";
                 send_task.SendTask(task);
                 return Content("ok");
