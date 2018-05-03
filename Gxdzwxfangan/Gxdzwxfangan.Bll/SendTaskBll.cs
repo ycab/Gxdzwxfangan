@@ -32,5 +32,11 @@ namespace Gxdzwxfangan.Bll
             task.ReceiveTaskFinished = taskinfo.GetMyReceiveTaskInfo(user_id, "4");
             return task;
         }
+        public string UpdateReceiveTaskNumber(string task_id)
+        {
+            string responseText = "";
+            responseText = taskinfo.UpdateReceiveTaskNumber(task_id);
+            return responseText;
+        }
     }
 }

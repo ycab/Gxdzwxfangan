@@ -56,22 +56,23 @@ namespace Gxdzwxfangan.Controllers
             /////获取openid
             if (openid == null)
             {
-                //openid = "oXx_Mw-hx0yNF3wIELsf_RP6cJoA";//我的
+
                 ////openid = "oXx_Mw7JSzz218WpGTprNfSaHC7k";//鹏伟峰
-                //string user_id = getuserinfodal.GetUserID(openid);
-                //string username = getuserinfodal.GetUserName(user_id);
-                //CookieHelper.ClearCookie("openid");
-                //CookieHelper.SetCookie("openid", openid);
-                //Session["user_id"] = user_id;
-                //Session["user_name"] = username;
-                //string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
-                //string url2 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid= " + openid + "&url1=" + url1;
-                //Session["RegisterUrl"] = url2;
-                //Session["url"] = url2;
-                //string url3 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
-                //string url4 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/Register/GxLoginRegisterPersonal/?openid= " + openid + "&url1=" + url3;
-                //Session["FinishRegisterUrl"] = url4;
-                //ViewBag.openid = openid;
+                openid = "oXx_Mw-hx0yNF3wIELsf_RP6cJoA";//我的
+                string user_id = getuserinfodal.GetUserID(openid);
+                string username = getuserinfodal.GetUserName(user_id);
+                CookieHelper.ClearCookie("openid");
+                CookieHelper.SetCookie("openid", openid);
+                Session["user_id"] = user_id;
+                Session["user_name"] = username;
+                string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
+                string url2 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/?openid= " + openid + "&url1=" + url1;
+                Session["RegisterUrl"] = url2;
+                Session["url"] = url2;
+                string url3 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
+                string url4 = "http://egov.jinyuc.com/gxdzwx/gxdzwxlogin/Register/GxLoginRegisterPersonal/?openid= " + openid + "&url1=" + url3;
+                Session["FinishRegisterUrl"] = url4;
+                ViewBag.openid = openid;
             }
             else
             {
@@ -176,10 +177,16 @@ namespace Gxdzwxfangan.Controllers
         }
         public ActionResult GxfaWxCheck()
         {
+            Task task = new Task();
+            Task_Receive receivetask = new Task_Receive();
+            TaskSortBll SortTaskInfo = new TaskSortBll();
+            ReceiveTaskBll receivetaskbll = new ReceiveTaskBll();
+            SendTaskBll sendtaskbll = new SendTaskBll();
             string openid = CookieHelper.GetCookieValue("openid");
             string user_id = getuserinfodal.GetUserID(openid);
             string user_name = getuserinfodal.GetUserName(user_id);
             string membership = getuserinfodal.GetMemberType(user_id);
+            string task_id = Session["task_id"].ToString();
             if (user_id == "none")
             {
                 string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
@@ -203,24 +210,27 @@ namespace Gxdzwxfangan.Controllers
                 System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
                 return View("GxFaWxPersonal");
             }
+            else if(receivetaskbll.IsMyTask(user_id,task_id)=="yes")
+            {
+                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"申请失败，无法申请您自己的项目\")" + "</script>");
+                return View("GxFaWxFl");
+            }
+            else if(receivetaskbll.IsReceived(user_id,task_id)=="yes")
+            {
+                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"申请失败，您已申请过该项目\")" + "</script>");
+                return View("GxFaWxFl");
+            }
+
             else
             {
-                Task task = new Task();
-
-                TaskSortBll SortTaskInfo = new TaskSortBll();
-
-                Task_Receive receivetask = new Task_Receive();
-                ReceiveTaskDal receivetaskdal = new ReceiveTaskDal();
-                SendTaskDal sendtaskdal = new SendTaskDal();
-                string task_id = Session["task_id"].ToString();
                 task = SortTaskInfo.GetOneTaskInfo(task_id);
-                receivetask.User_ID = Session["user_id"].ToString();
-                receivetask.User_Name = Session["user_name"].ToString();
+                receivetask.User_ID = user_id;
+                receivetask.User_Name = user_name;
                 receivetask.Task_ID = task_id;
                 receivetask.Is_Accepted = "0";
                 receivetask.Receive_Time = DateTime.Now.ToLocalTime().ToString();
-                receivetaskdal.ReceiveTask(receivetask);
-                sendtaskdal.UpdateReceiveTaskNumber(task_id);
+                receivetaskbll.ReceiveTask(receivetask);
+                sendtaskbll.UpdateReceiveTaskNumber(task_id);
                 System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"申请成功，等待审核\")" + "</script>");
                 return View("GxfaWxFl");
             }

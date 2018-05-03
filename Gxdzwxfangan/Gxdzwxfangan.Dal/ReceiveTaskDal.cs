@@ -18,6 +18,36 @@ namespace Gxdzwxfangan.Dal
             int flag = OracleHelper.ExecuteNonQuery(sql, null);
             return flag.ToString();
         }
+        public string IsMyTask(string user_id,string task_id)//判断是否是我自己发的任务
+        {
+            string response = "";
+            var sql=string.Format("select * from GXFW_SEND_TASK  where USER_ID='{0}' and TASK_ID='{1}'", user_id,task_id);
+            DataTable dt = OracleHelper.GetTable(sql, null);
+            if(dt.Rows.Count==0)
+            {
+                response = "no"; 
+            }
+            else
+            {
+                response = "yes";
+            }
+            return response;
+        }
+        public string IsReceived(string user_id,string task_id)//判断我是否已经申请过该任务
+        {
+            string response = "";
+            var sql = string.Format("select * from GXFW_RECEIVE_TASK  where USER_ID='{0}' and TASK_ID='{1}'", user_id, task_id);
+            DataTable dt = OracleHelper.GetTable(sql, null);
+            if (dt.Rows.Count == 0)
+            {
+                response = "no";
+            }
+            else
+            {
+                response = "yes";
+            }
+            return response;
+        }
 
     }
 }
