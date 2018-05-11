@@ -60,7 +60,8 @@ namespace Gxdzwxfangan.Controllers
                 ////openid = "oXx_Mw7JSzz218WpGTprNfSaHC7k";//鹏伟峰
                 openid = "oXx_Mw-hx0yNF3wIELsf_RP6cJoA";//我的
                 string user_id = getuserinfodal.GetUserID(openid);
-                string username = getuserinfodal.GetUserName(user_id);
+                string membership = getuserinfodal.GetMemberType(user_id);
+                string username = getuserinfodal.GetUserName(user_id,membership);
                 CookieHelper.ClearCookie("openid");
                 CookieHelper.SetCookie("openid", openid);
                 Session["user_id"] = user_id;
@@ -114,8 +115,8 @@ namespace Gxdzwxfangan.Controllers
         {
             string openid = CookieHelper.GetCookieValue("openid");
             string user_id = getuserinfodal.GetUserID(openid);
-            string user_name = getuserinfodal.GetUserName(user_id);
             string membership = getuserinfodal.GetMemberType(user_id);
+            string user_name = getuserinfodal.GetUserName(user_id,membership);
             if (user_id == "none")
             {
                 string url1 = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;//获取当前url端木雲 2018/3/26 21:22:46
@@ -128,20 +129,37 @@ namespace Gxdzwxfangan.Controllers
                 return View();
                 //return Content("fail");
             }
-            else if (membership != "个人会员")
+            else if(membership=="个人会员")
             {
-                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"企业会员无法接包\")" + "</script>");
-                return View("GxFaWxFl");
+                if(user_name=="")
+                {
+                    System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
+                    return View("GxFaWxPersonal");
+                }
+                else
+                {
+                    return View();
+                }
+
             }
-            else if (user_name == "")
+            else if(membership=="企业会员")
             {
-                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
-                return View("GxFaWxPersonal");
+                if(user_name=="")
+                {
+                    System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
+                    return View("GxFaWxFactory");
+                }
+                else
+                {
+                    return View();
+                        
+                }
             }
             else
             {
-                return View();
+                return Content("error");
             }
+           
         }
         public ActionResult GxfaWxUser()
         {
@@ -184,8 +202,9 @@ namespace Gxdzwxfangan.Controllers
             SendTaskBll sendtaskbll = new SendTaskBll();
             string openid = CookieHelper.GetCookieValue("openid");
             string user_id = getuserinfodal.GetUserID(openid);
-            string user_name = getuserinfodal.GetUserName(user_id);
             string membership = getuserinfodal.GetMemberType(user_id);
+            string user_name = getuserinfodal.GetUserName(user_id,membership);
+           
             string task_id = Session["task_id"].ToString();
             if (user_id == "none")
             {
@@ -199,16 +218,18 @@ namespace Gxdzwxfangan.Controllers
                 return View();
                 //return Content("fail");
             }
-            else if(membership!="个人会员")
+            else if(user_name=="")
             {
-                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"企业会员无法接包\")" + "</script>");
-                return View("GxFaWxFl");
-            }
-
-             else if(user_name=="")
-            {
-                System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
-                return View("GxFaWxPersonal");
+                if(membership=="个人会员")
+                {
+                    System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
+                    return View("GxFaWxPersonal");
+                }
+                else
+                {
+                    System.Web.HttpContext.Current.Response.Write("<script language=javascript>alert(\"请先完善会员信息\")" + "</script>");
+                    return View("GxFaWxFactory");
+                }
             }
             else if(receivetaskbll.IsMyTask(user_id,task_id)=="yes")
             {
@@ -244,7 +265,8 @@ namespace Gxdzwxfangan.Controllers
         {
             string openid=CookieHelper.GetCookieValue("openid");
             string user_id = getuserinfodal.GetUserID(openid);
-            string user_name = getuserinfodal.GetUserName(user_id);
+            string membership = getuserinfodal.GetMemberType(user_id);
+            string user_name = getuserinfodal.GetUserName(user_id,membership);
 
                 Session["user_id"] = user_id;
                 Session["user_name"] = user_id;
@@ -266,6 +288,7 @@ namespace Gxdzwxfangan.Controllers
                 task.Apply_Number = "0";
                 task.Is_Received = "0";
                 task.Del_Flag = "0";
+                task.Membership = membership;
                 send_task.SendTask(task);
                 return Content("ok");
             
@@ -383,6 +406,72 @@ namespace Gxdzwxfangan.Controllers
             }
             responseText = LoginInfoBll.SetPersonalInfo(Personal, filename, user_id);
             return Content(responseText);
+        }
+        /// <summary>
+        /// 填写企业会员信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult SetFactoryInfo(FactoryInfoModel factory, string chat_head_name, string business_license_name, string credential_name, string honor_name, string related_picture_name, string quality_guaratee_name)
+        {
+            LoginBll LoginInfoBll = new LoginBll();
+            string responseText = "";
+            string openid = CookieHelper.GetCookieValue("openid");
+            string user_id = getuserinfodal.GetUserID(openid);
+         
+            //            string user_id = "199";
+            string fileExt = "";
+            List<string> filename = new List<string>();
+            //string chat_head_name = Request["chat_head_name"];
+            //string id_card_name = Request["id_card_name"];
+            int cnt = System.Web.HttpContext.Current.Request.Files.Count;
+            for (int i = 0; i < cnt; i++)
+            {
+                HttpPostedFile hpf = System.Web.HttpContext.Current.Request.Files[i];
+                string filenames = Path.GetFileName(hpf.FileName);
+                fileExt = Path.GetExtension(hpf.FileName).ToLower();//带.的后缀
+                filename.Add(filenames);
+                string fileFilt = ".jpg|.jpeg|.png|.JPG|.PNG|......";
+                if ((fileFilt.IndexOf(fileExt) <= -1) || (fileExt == "") || (hpf.ContentLength > 5 * 1024 * 1024))
+                    continue;
+                //  string filepath = HttpContext.Server.MapPath("../xwhz_uploadimages/template/" + filenames);
+                ///string filepath = context.Server.MapPath("E:\\inetpub\\wwwroot\\sj_uploadimage\\ZJZ_PIC\\" + hpf.FileName);
+                if (filenames == chat_head_name)
+                {
+                    hpf.SaveAs("D:\\MVCRoot\\gxdzwx\\gxdzimages\\gxdzwxlogin\\factory\\chat_head\\" + filenames);
+                    //                    hpf.SaveAs("G:\\Visual Studio\\image\\" + filenames);
+                }
+                if (filenames == business_license_name)
+                {
+                    hpf.SaveAs("D:\\MVCRoot\\gxdzwx\\gxdzimages\\gxdzwxlogin\\factory\\business_license\\" + filenames);
+                    //                    hpf.SaveAs("G:\\Visual Studio\\image\\" + filenames);
+                }
+                if (filenames == credential_name)
+                {
+                    hpf.SaveAs("D:\\MVCRoot\\gxdzwx\\gxdzimages\\gxdzwxlogin\\factory\\credential\\" + filenames);
+                    //                    hpf.SaveAs("G:\\Visual Studio\\image\\" + filenames);
+                }
+                if (filenames == honor_name)
+                {
+                    hpf.SaveAs("D:\\MVCRoot\\gxdzwx\\gxdzimages\\gxdzwxlogin\\factory\\honor\\" + filenames);
+                    //                    hpf.SaveAs("G:\\Visual Studio\\image\\" + filenames);
+                }
+                if (filenames == related_picture_name)
+                {
+                    hpf.SaveAs("D:\\MVCRoot\\gxdzwx\\gxdzimages\\gxdzwxlogin\\factory\\related_picture\\" + filenames);
+                    //                    hpf.SaveAs("G:\\Visual Studio\\image\\" + filenames);
+                }
+                if (filenames == quality_guaratee_name)
+                {
+                    hpf.SaveAs("D:\\MVCRoot\\gxdzwx\\gxdzimages\\gxdzwxlogin\\factory\\quality_guaratee\\" + filenames);
+                    //                    hpf.SaveAs("G:\\Visual Studio\\image\\" + filenames);
+                }
+                //               hpf.SaveAs("G://Visual Studio//IMP");
+                //  var mappedPath = System.Web.Hosting.HostingEnvironment.MapPath("~/");
+                //  hpf.SaveAs(filepath);
+            }
+            responseText = LoginInfoBll.SetFactoryInfo(factory, filename, user_id, chat_head_name, business_license_name, credential_name, honor_name, related_picture_name, quality_guaratee_name);
+            return Content("success");
         }
         public ActionResult test()
         {

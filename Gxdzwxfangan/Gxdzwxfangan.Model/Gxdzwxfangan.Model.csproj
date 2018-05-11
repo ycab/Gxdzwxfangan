@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FactoryInfoModel.cs" />
     <Compile Include="MyTaskInfo.cs" />
     <Compile Include="PersonalInfoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

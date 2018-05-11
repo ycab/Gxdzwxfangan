@@ -169,7 +169,14 @@
                 $("#application_area").html("应用领域："+data.Application_area);
                 $("#user_name").text(data.Nick_Name);
                 var domain_name = "http://egov.jinyuc.com";
-                var server_imgurl1 = "/gxdzwx/gxdzimages/gxdzwxlogin/personal/chat_head/";
+                if (data.Membership == "个人会员")
+                {
+                    var server_imgurl1 = "/gxdzwx/gxdzimages/gxdzwxlogin/personal/chat_head/";
+                } else
+                {
+                    var server_imgurl1 = "/gxdzwx/gxdzimages/gxdzwxlogin/factory/chat_head/";
+                }
+               // var server_imgurl1 = "/gxdzwx/gxdzimages/gxdzwxlogin/personal/chat_head/";
                 var chathead = data.Chat_Head;
                    // var domli = '<img src="' + domain_name + server_imgurl1 + chathead + '" style=\"height:100px;width:auto\" />'
                     var domli = '<img src="' + domain_name + server_imgurl1 + chathead + '" class="userpic" style="margin-bottom:0px; width : 60px;height: 60px;border-radius: 30px;margin-left:10px;background-color:white">'

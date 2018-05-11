@@ -35,5 +35,56 @@ namespace Gxdzwxfangan.Dal
 
             return responseText;
         }
+        /// <summary>
+        /// 填写企业会员信息
+        /// </summary>
+        /// <returns></returns>
+        public string SetFactoryInfo(FactoryInfoModel factory, List<string> filename, string user_id, string chat_head_name, string business_license_name, string credential_name, string honor_name, string related_picture_name, string quality_guaratee_name)
+        {
+            string responseText = "";
+            string chat_headname = "";
+            string business_licensename = "";
+            string credentialname = "";
+            string honorname = "";
+            string related_picturename = "";
+            string quality_guarateename = "";
+            for (int i = 0; i < filename.Count; i++)
+            {
+                if (filename[i] == chat_head_name)
+                {
+                    chat_headname = filename[i];
+                }
+                if (filename[i] == business_license_name)
+                {
+                    business_licensename = filename[i];
+                }
+                if (filename[i] == credential_name)
+                {
+                    credentialname = filename[i];
+                }
+                if (filename[i] == honor_name)
+                {
+                    honorname = filename[i];
+                }
+                if (filename[i] == related_picture_name)
+                {
+                    related_picturename = filename[i];
+                }
+                if (filename[i] == quality_guaratee_name)
+                {
+                    quality_guarateename = filename[i];
+                }
+            }
+            string sql = string.Format("update GX_USER_MEMBER_FACTORY set CHAT_HEAD='{0}',NICK_NAME='{1}',SIGNATURE ='{2}',NAME='{3}',COMPANY_NAME='{4}',COMPANY_INDUSTRY_INVOLVED='{5}',COMPANY_INTRODUCE='{6}',BUSINESS_LICENSE='{7}',COMPANY_CAPABILITY='{8}',CREDENTIAL='{9}',HONOR='{10}',ARCHITECTURE_RELATED='{11}',RELATED_PICTURE='{12}',QUALITY_GUARANTEE='{13}',TEL='{14}',FAX='{15}',EMAIL='{16}',ADDRESS='{17}' where USER_ID = '{18}'", chat_headname, factory.nick_name, factory.signature, factory.name, factory.company_name, factory.company_industry_involved, factory.company_introduce, business_licensename, factory.company_capability, credentialname, honorname, factory.architecture_related, related_picturename, quality_guarateename, factory.tel, factory.fax, factory.email, factory.address, user_id);
+            int flag = OracleHelper.ExecuteNonQuery(sql, null);
+            if (flag > 0)
+            {
+                responseText = "success";
+            }
+            else
+                responseText = "fail";
+
+            return responseText;
+        }
     }
 }

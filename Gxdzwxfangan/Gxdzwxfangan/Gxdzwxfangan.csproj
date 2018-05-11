@@ -270,21 +270,9 @@
     <Content Include="gxfa\images\nav\footnav3.png" />
     <Content Include="gxfa\images\nav\footnav4.png" />
     <Content Include="gxfa\images\nav\nav1.png" />
-    <Content Include="gxfa\images\nav\nav10.png" />
-    <Content Include="gxfa\images\nav\nav11.png" />
-    <Content Include="gxfa\images\nav\nav12.png" />
-    <Content Include="gxfa\images\nav\nav13.png" />
-    <Content Include="gxfa\images\nav\nav14.png" />
-    <Content Include="gxfa\images\nav\nav15.png" />
-    <Content Include="gxfa\images\nav\nav16.png" />
     <Content Include="gxfa\images\nav\nav2.png" />
     <Content Include="gxfa\images\nav\nav3.png" />
     <Content Include="gxfa\images\nav\nav4.png" />
-    <Content Include="gxfa\images\nav\nav5.png" />
-    <Content Include="gxfa\images\nav\nav6.png" />
-    <Content Include="gxfa\images\nav\nav7.png" />
-    <Content Include="gxfa\images\nav\nav8.png" />
-    <Content Include="gxfa\images\nav\nav9.png" />
     <Content Include="gxfa\images\nav\nav_0.png" />
     <Content Include="gxfa\images\nav\nav_1.png" />
     <Content Include="gxfa\images\nav\nav_2.png" />
@@ -386,6 +374,7 @@
     <Content Include="Scripts\Jquery\jquery.validate.js" />
     <Content Include="Scripts\Jquery\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\packpageindex\SendPackage.js" />
+    <Content Include="Scripts\Register\Factory.js" />
     <Content Include="Scripts\Register\Personal.js" />
     <Content Include="Scripts\rotate\CJL.0.1.min.js" />
     <Content Include="Scripts\rotate\ImageTrans.js" />
@@ -566,6 +555,8 @@
     <Content Include="Views\Home\GxfaWxPersonal.cshtml" />
     <Content Include="Views\Home\index1.cshtml" />
     <Content Include="Views\Home\test.cshtml" />
+    <Content Include="Views\Home\specification.cshtml" />
+    <Content Include="Views\Home\GxfaWxFactory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gxdzwxfangan.Bll\Gxdzwxfangan.Bll.csproj">

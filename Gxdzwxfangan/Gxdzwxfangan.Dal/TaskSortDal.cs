@@ -13,7 +13,7 @@ namespace Gxdzwxfangan.Dal
         public string MiddleSortNameInfo()
         {
             string responseText = "";
-            string sql = "select * from GXFW_TASK_CATEGORY";
+            string sql = "select * from GXFW_TASK_CATEGORY order by TASK_CATEGORY_ID";
             DataTable dt = OracleHelper.GetTable(sql, null);
             if (dt.Rows.Count != 0)
             {
@@ -21,7 +21,7 @@ namespace Gxdzwxfangan.Dal
                 {
                     string task_category_name = dt.Rows[i]["TASK_CATEGORY_NAME"].ToString();
                     string task_category_id = dt.Rows[i]["TASK_CATEGORY_ID"].ToString();
-                    string sql1 = string.Format("select * from GXFW_SEND_TASK t where TECHNICAL_CLASSIFICATIONCLASS='{0}'and IS_RECEIVED <> '{1}' ", task_category_name,"0");
+                    string sql1 = string.Format("select * from GXFW_SEND_TASK t where APPLICATION_AREA='{0}'and IS_RECEIVED <> '{1}'", task_category_name, "0");
                     DataTable dt1 = OracleHelper.GetTable(sql1, null);
                     string response = JsonHelper.getRecordJson(dt1);
                     if (i == dt.Rows.Count - 1)
@@ -65,7 +65,17 @@ namespace Gxdzwxfangan.Dal
             task.Apply_Number = dt.Rows[0]["APPLY_NUMBER"].ToString();
             task.Is_Received = dt.Rows[0]["IS_RECEIVED"].ToString();
             task.Del_Flag = dt.Rows[0]["DEL_FLAG"].ToString();
-            string sql2 = string.Format("select * from GX_USER_MEMBER_PERSONAL t where USER_ID='{0}' ", task.User_ID);
+            task.Membership = dt.Rows[0]["MEMBERSHIP"].ToString();
+            string sql2 = "";
+            if(task.Membership=="个人会员")
+            {
+                 sql2 = string.Format("select * from GX_USER_MEMBER_PERSONAL t where USER_ID='{0}' ", task.User_ID);
+            }
+            else if(task.Membership=="企业会员")
+            {
+                sql2 = string.Format("select * from GX_USER_MEMBER_FACTORY t where USER_ID='{0}' ", task.User_ID);
+            }
+
             DataTable dt2 = OracleHelper.GetTable(sql2, null);
             if (dt2.Rows.Count != 0)
             {
